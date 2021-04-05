@@ -1,6 +1,6 @@
 # The 86it Developers Network
-Powered by: PHP-Nuke Titanium Dev 4
-Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f
+Powered by: PHP-Nuke Titanium Dev 4<br />
+Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 
 
 <hr />
