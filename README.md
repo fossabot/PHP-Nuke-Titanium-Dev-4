@@ -93,4 +93,4 @@ Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f
 <p>Thanks,<br />
 The 86it Team</p><br /><br />
 
-You can view the live DEMO of PHP-Nuke Titanium v3.0.0 running at https://www.96it.us
+You can view the live DEMO of PHP-Nuke Titanium v3.0.0 running at https://www.86it.us
