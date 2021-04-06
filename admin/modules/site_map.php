@@ -80,7 +80,7 @@ Opentable();
                             </tr>
                             <tr>
                             <td width="146" height="102">
-                                <p align="left">'._NNEWS.'</td>
+                                <p align="left">Blogs</td>
                             <td width="146" height="102">
                                 <p align="left">&nbsp; </p>
                                 <p align="left"><input name="nnews" size="6" value="'.$nnews.'"></p>

@@ -1,8 +1,9 @@
 <?php
 
-/*=======================================================================
- Nuke-Evolution Basic: Enhanced PHP-Nuke Web Portal System
+/*======================================================================= 
+  PHP-Nuke Titanium | Nuke-Evolution Xtreme : PHP-Nuke Web Portal System
  =======================================================================*/
+
 
 /************************************************************************/
 /* PHP-NUKE: Advanced Content Management System                         */
@@ -72,7 +73,8 @@ function login()
 {
 	global $admin_file, $db, $prefix, $admlang;
 
-	the_pagetitle();
+	//the_pagetitle();
+	title_and_meta_tags();
 	get_header();
 	title( $admlang['admin_login_header'] );
 
