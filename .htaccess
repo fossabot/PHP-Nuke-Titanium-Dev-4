@@ -1,14 +1,13 @@
 ##########################################################################
-# Nuke-Evolution Basic: Enhanced PHP-Nuke Web Portal System              #
+# PHP- Titanium v3.0.0 : Enhanced PHP-Nuke Web Portal System             #
 ##########################################################################
 
-# -------------------------------------------
+# ------------------------------------------- 
 # Comment this out if PHP is run as CGI
 # -------------------------------------------
 
 # PHP_FLAG register_globals On
 # PHP_FLAG output_buffering On
-
 
 Options All -Indexes
 # -------------------------------------------
@@ -19,6 +18,25 @@ DirectoryIndex index.php index.html
 Options +FollowSymlinks
 <IfModule mod_rewrite.c> 
 RewriteEngine on
+
+##################################################################################################
+# Force SSL - no insecure data connections!                                                      ##### Added By Ernest Allen Buffington 08/05/2019
+##################################################################################################
+RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule (.*) https://%{HTTP_HOST}:443%{REQUEST_URI}
+
+##################################################################################################
+# Force WWW - this is only needed for root domains...                                            ##### Added By Ernest Allen Buffington 03/16/2021
+##################################################################################################
+RewriteCond %{HTTP_HOST} !=""
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTPS}s ^on(s)|
+RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+##################################################################################################
+
 # -------------------------------------------
 # Security Rewrites
 # -------------------------------------------
@@ -38,22 +56,22 @@ RewriteRule ^.*$ http://127.0.0.1/ [R=301,L]
 # Lazy Google Tap
 # -------------------------------------------
 
-RewriteRule ^Evo-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html$ /modules.php?name=$1&$2=$3&$4=$5&$6=$7&$8=$9 [L]
+RewriteRule ^86it-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html$ /modules.php?name=$1&$2=$3&$4=$5&$6=$7&$8=$9 [L]
 
-RewriteRule ^Evo-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html#(.*)$ /modules.php?name=$1&$2=$3&$4=$5&$6=$7#$8 [L]
-RewriteRule ^Evo-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html$ /modules.php?name=$1&$2=$3&$4=$5&$6=$7 [L]
+RewriteRule ^86it-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html#(.*)$ /modules.php?name=$1&$2=$3&$4=$5&$6=$7#$8 [L]
+RewriteRule ^86it-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html$ /modules.php?name=$1&$2=$3&$4=$5&$6=$7 [L]
 
-RewriteRule ^Evo-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html#(.*)$ /modules.php?name=$1&$2=$3&$4=$5#$6 [L]
-RewriteRule ^Evo-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html$ /modules.php?name=$1&$2=$3&$4=$5 [L]
+RewriteRule ^86it-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html#(.*)$ /modules.php?name=$1&$2=$3&$4=$5#$6 [L]
+RewriteRule ^86it-(.*)_-_(.*)_-_(.*)_-_(.*)_-_(.*)\.html$ /modules.php?name=$1&$2=$3&$4=$5 [L]
 
-RewriteRule ^Evo-(.*)_-_(.*)_-_(.*)\.html#(.*)$ /modules.php?name=$1&$2=$3#$4 [L]
-RewriteRule ^Evo-(.*)_-_(.*)_-_(.*)\.html$ /modules.php?name=$1&$2=$3 [L]
+RewriteRule ^86it-(.*)_-_(.*)_-_(.*)\.html#(.*)$ /modules.php?name=$1&$2=$3#$4 [L]
+RewriteRule ^86it-(.*)_-_(.*)_-_(.*)\.html$ /modules.php?name=$1&$2=$3 [L]
 
-RewriteRule ^Evo-index.html#(.*)$ /index.php#$1 [L]
-RewriteRule ^Evo-index.html$ /index.php [L]
+RewriteRule ^86it-index.html#(.*)$ /index.php#$1 [L]
+RewriteRule ^86it-index.html$ /index.php [L]
 
-RewriteRule ^Evo-(.*)\.html#(.*)$ /modules.php?name=$1#$2 [L]
-RewriteRule ^Evo-(.*)\.html$ /modules.php?name=$1 [L]
+RewriteRule ^86it-(.*)\.html#(.*)$ /modules.php?name=$1#$2 [L]
+RewriteRule ^86it-(.*)\.html$ /modules.php?name=$1 [L]
 
 RewriteCond %{HTTP_USER_AGENT} ^libwww-perl
 RewriteRule ^.*$ http://127.0.0.1 [R,L]
@@ -66,6 +84,7 @@ RewriteRule ^.*$ http://127.0.0.1 [R,L]
 <IfModule mod_autoindex.c>
  IndexIgnore *
 </IfModule>
+
 
 # -------------------------------------------
 # Start of NukeSentinel(tm) admin.php Auth
@@ -106,6 +125,14 @@ RewriteRule ^.*$ http://127.0.0.1 [R,L]
 <FilesMatch "\.(inc|tpl|h|ihtml|sql|ini|conf|class|bin|spd|theme|module|exe)$">
 deny from all
 </FilesMatch>
+
+<FilesMatch "versions\feed.php">
+  allow from all
+</FilesMatch>
+<FilesMatch "versions\index.php">
+  allow from all
+</FilesMatch>
+
 # -------------------------------------------
 # Setup caching
 # -------------------------------------------
@@ -138,3 +165,12 @@ Header append Cache-Control "public"
 # -------------------------------------------
 
 # Banned Bad Bots
+deny from 185.191.171.0/24
+deny from 185.191.171.19
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
