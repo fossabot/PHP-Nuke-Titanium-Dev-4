@@ -45,6 +45,11 @@ if (!isset($db)) {
     $db = new sql_db($dbhost, $dbuname, $dbpass, $dbname, false);
 }
 
+if (!isset($db2)) {
+    $db2 = new sql_db($dbhost2, $dbuname2, $dbpass2, $dbname2, false);
+}
+
+
 if (!$db->db_connect_id) {
     exit("<br /><br /><div align='center'><img src='images/logo.gif'><br /><br /><strong>There seems to be a problem with the MySQL server, sorry for the inconvenience.<br /><br />We should be back shortly.</strong></div>");
 }
