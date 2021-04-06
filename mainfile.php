@@ -1,9 +1,7 @@
 <?php
-
-/*=======================================================================
- Nuke-Evolution Basic: Enhanced PHP-Nuke Web Portal System
+/*======================================================================= 
+  PHP-Nuke Titanium | Nuke-Evolution Xtreme : PHP-Nuke Web Portal System
  =======================================================================*/
-
 /************************************************************************/
 /* PHP-NUKE: Advanced Content Management System                         */
 /* ============================================                         */
@@ -15,7 +13,6 @@
 /* it under the terms of the GNU General Public License as published by */
 /* the Free Software Foundation; either version 2 of the License.       */
 /************************************************************************/
-
 /*****[CHANGES]**********************************************************
 -=[Base]=-
       NukeSentinel                             v2.5.08      07/11/2006
@@ -42,6 +39,7 @@
       Switch Content Script                    v2.0.0       03/30/2006
 -=[Module]=-
       CNB Your Account                         v4.4.2       06/15/2005
+      Network Projects                         v11.11.11    02/12/2017
 -=[Other]=-
       SSL Administration                       v1.0.0       08/29/2005
       Validation                               v1.1.0       10/17/2005
@@ -49,14 +47,41 @@
 	  NSN Center Blocks                        v2.2.1       05/26/2009
  ************************************************************************/
 
-if(defined('NUKE_EVO')) return;
+if(defined('NUKE_EVO')) 
+return;
+
+# Network Module Support
+if(defined('NUKE_TITANIUM')) 
+return;
 
 if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
     exit('Access Denied');
 }
-// Define File
+
+# Network Support
+#character set define XHTML1.0
+define("_CHARSET","utf-8");
+define("_LANG_DIRECTION","ltr");
+define("_LANGCODE","en");
+define("_MIME", "text/html"); 
+
+# Define File
 define_once('NUKE_EVO', '2.0.9f');
+# Network Support
+define_once('NUKE_TITANIUM', '3.0.0');
+# Network Support
+define_once('TITANIUM_BUILD', '3002');
+
+define_once('CUR_EVO', 'NUKE_EVO');
+
+# Network Support
+define_once('CUR_TITANIUM', 'NUKE_TITANIUM');
+
 define_once('EVO_EDITION', 'xtreme');
+
+# Network Support
+define_once('TITANIUM_EDITION', 'Client');
+
 define('PHPVERS', @phpversion());
 define_once('EVO_VERSION', NUKE_EVO . ' ' . EVO_EDITION);
 define('PHP_5', version_compare(PHPVERS, '5.0.0', '>='));
@@ -122,10 +147,153 @@ if (isset($_COOKIE['DONATION'])) {
     header($type . 'modules.php?name=Donations&op=thankyou');
 }
 
-//Inspired by phoenix-cms at website-portals.net
-//Absolute Nuke directory
+# absolute path Mod - Start  01/01/2012 by Ernest Allen Buffington                                                                                                    #       
+$rel_path=array();
+$rel_path['file']   = str_replace('\\', "/", realpath(dirname(__FILE__)));
+$server_ary         = pathinfo(realpath(basename($_SERVER['PHP_SELF'])));
+$rel_path['server'] = str_replace('\\', "/", $server_ary['dirname']);
+$rel_path['uri']    = realpath(basename(substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], '?'))));
+$script_abs_path    = pathinfo(realpath($_SERVER['SCRIPT_FILENAME']));
+$rel_path['script'] = str_replace('\\', "/",$script_abs_path['dirname']);
+
+if ( ($rel_path['file'] == $rel_path['script']) && (strlen($_SERVER['DOCUMENT_ROOT']) < strlen($script_abs_path['dirname'])) ) 
+{
+    $href_path = '/'.str_replace($_SERVER['DOCUMENT_ROOT'], '', $rel_path['script'] );
+
+    if ( substr($href_path, 0, 2) == '//') 
+	{
+        $href_path = substr($href_path, 1);
+    }
+} 
+else
+if (strlen($rel_path['file']) == (strlen($_SERVER['DOCUMENT_ROOT']) - 1) ) 
+{
+    $href_path = '';
+} 
+else
+if ( strlen($rel_path['script']) > strlen($_SERVER['DOCUMENT_ROOT']) && (strlen($_SERVER['DOCUMENT_ROOT']) > strlen($rel_path['file'])) ) 
+{
+    $href_path = '';
+} 
+else
+if (strlen($rel_path['file']) > strlen($_SERVER['DOCUMENT_ROOT'])) 
+{
+    $href_path = '/'.str_replace($_SERVER['DOCUMENT_ROOT'], '', $rel_path['file']);
+    if ( substr($href_path, 0, 2) == '//') {
+        $href_path = substr($href_path, 1);
+    }
+} 
+else 
+{
+    $href_path='https://'.$_SERVER['SERVER_NAME'];
+	$href_path_http='http://'.$_SERVER['SERVER_NAME'];
+}
+
+unset ($rel_path);
+unset ($server_ary);
+unset ($script_abs_path);
+
+# BASE Directory
+define('TITANIUM_BASE_DIR', dirname(__FILE__) . '/');
+
+# HTTP & HTTPS
+define('HTTPS', $href_path . '/');
+define('HTTP', $href_path_http . '/');
+
+# HTPPS for Titanium Network
+define('HTTPS-MUSIC', 'https://music.86it.us/');
+
+# Modules Directory
+define('MODULES', TITANIUM_BASE_DIR . 'modules/');
+
+# ADMIN Directory
+define('TITANIUM_ADMIN_DIR', TITANIUM_BASE_DIR . 'admin/'); 
+define('TITANIUM_ADMIN_MODULE_DIR', TITANIUM_ADMIN_DIR . 'modules/');
+
+# INCLUDES Directories
+define('TITANIUM_INCLUDE_DIR', TITANIUM_BASE_DIR . 'includes/');
+define('TITANIUM_INCLUDE_HREF_DIR', $href_path . '/includes/');
+
+# CSS Directory
+define('TITANIUM_CSS_DIR', TITANIUM_INCLUDE_DIR . 'css/');
+
+# CERT Directory
+define('TITANIUM_CERT_DIR', TITANIUM_INCLUDE_DIR . 'certs'); // pem directory
+
+# GLOBAL CSS DIR
+define('TITANIUM_CSS_HREF_DIR', $href_path . '/includes/css/');
+
+# lytebox
+define('TITANIUM_LYTEBOX_HREF_DIR', $href_path . '/includes/lytebox/');
+
+# lightbox
+define('TITANIUM_LIGHTBOX_HREF_DIR', $href_path . '/includes/lightbox/');
+
+# cache
+define('TITANIUM_CACHE_DIR', TITANIUM_INCLUDE_DIR . 'cache/');
+
+# classes
+define('TITANIUM_CLASSES_DIR', TITANIUM_INCLUDE_DIR . 'classes/');
+
+# DB Directory
+define('TITANIUM_DB_DIR', TITANIUM_INCLUDE_DIR . 'db/');
+
+# MODULES Directory
+define('TITANIUM_HREF_MODULES_DIR', $href_path . '/modules/'); 
+define('TITANIUM_MODULES_DIR', TITANIUM_BASE_DIR . 'modules/');
+define('TITANIUM_MODULES_IMAGE_DIR', $href_path . '/modules/');
+
+# Coppermine Directory
+define('TITANIUM_HREF_COPPERMINE_DIR', $href_path . '/modules/Coppermine/'); 
+define('TITANIUM_COPPERMINE_DIR', TITANIUM_BASE_DIR . 'modules/Coppermine/');
+define('TITANIUM_COPPERMINE_IMAGES_DIR', $href_path . '/modules/Coppermine/images/');
+
+# Coppermine Include Directory
+define('TITANIUM_HREF_COPPERMINE_INCLUDE_DIR', $href_path . '/modules/Coppermine/include/'); 
+define('TITANIUM_COPPERMINE_INCLUDE_DIR', TITANIUM_BASE_DIR . 'modules/Coppermine/include/');
+
+# Coppermine Java Script Directory
+define('TITANIUM_HREF_COPPERMINE_JS_DIR', $href_path . '/modules/Coppermine/js/'); 
+define('TITANIUM_COPPERMINE_JS_DIR', TITANIUM_BASE_DIR . 'modules/Coppermine/js/');
+
+# Coppermine Docs Directory
+define('TITANIUM_HREF_COPPERMINE_DOCS_DIR', $href_path . '/modules/Coppermine/docs/'); 
+define('TITANIUM_COPPERMINE_DOCS_DIR', TITANIUM_BASE_DIR . 'modules/Coppermine/docs/');
+
+# Coppermine Fonts Directory
+define('TITANIUM_HREF_COPPERMINE_FONTS_DIR', $href_path . '/modules/Coppermine/images/fonts/'); 
+define('TITANIUM_COPPERMINE_FONTS_DIR', TITANIUM_BASE_DIR . 'modules/Coppermine/images/fonts/');
+
+# BLOCKS Directory
+define('TITANIUM_BLOCKS_DIR', TITANIUM_BASE_DIR . 'blocks/');
+
+# IMAGES Directory
+define('TITANIUM_IMAGES_DIR', TITANIUM_BASE_DIR . '/images/');
+define('TITANIUM_IMAGES_BASE_DIR', $href_path . '/images/');
+
+# LANGUAGE Directory
+define('TITANIUM_LANGUAGE_DIR', TITANIUM_BASE_DIR . 'language/');
+define('TITANIUM_LANGUAGE_CUSTOM_DIR', TITANIUM_LANGUAGE_DIR . 'custom/');
+
+# STYLE Directory
+define('TITANIUM_THEMES_DIR', TITANIUM_BASE_DIR . 'themes/');
+define('TITANIUM_THEMES_IMAGE_DIR', $href_path . '/themes/');
+define('TITANIUM_THEMES_MAIN_DIR',  $href_path . '/themes/');
+
+# FORUMS Directory
+define('TITANIUM_FORUMS_DIR', TITANIUM_MODULES_DIR . 'Forums/');
+define('TITANIUM_FORUMS_ADMIN_DIR', TITANIUM_FORUMS_DIR . 'admin/');
+define('TITANIUM_FORUMS_ADMIN_HREF_DIR', $href_path . '/modules/Forums/admin/');
+
+# OTHER Directories
+define('TITANIUM_RSS_DIR', TITANIUM_INCLUDE_DIR . 'rss/');
+define('TITANIUM_STATS_DIR', TITANIUM_THEMES_DIR);
+# aboslute path Mod - End  01/01/2012 by Ernest Allen Buffington                                                                                                      #
+
+# Inspired by phoenix-cms at website-portals.net
+# Absolute Nuke directory
 define('NUKE_BASE_DIR', dirname(__FILE__) . '/');
-//Absolute Nuke directory + includes
+# Absolute Nuke directory + includes
 define('NUKE_BLOCKS_DIR', NUKE_BASE_DIR . 'blocks/');
 define('NUKE_CSS_DIR', 'includes/css/');
 define('NUKE_IMAGES_DIR', NUKE_BASE_DIR . 'images/');
@@ -145,9 +313,8 @@ define('NUKE_CACHE_DIR', NUKE_INCLUDE_DIR . 'cache/');
 define('NUKE_CLASSES_DIR', NUKE_INCLUDE_DIR . 'classes/');
 define('NUKE_ZEND_DIR', NUKE_INCLUDE_DIR . 'Zend/');
 define('NUKE_CLASS_EXCEPTION_DIR',  NUKE_CLASSES_DIR . 'exceptions/');
-// define the INCLUDE PATH
+# define the INCLUDE PATH
 define('INCLUDE_PATH', NUKE_BASE_DIR);
-
 
 define('GZIPSUPPORT', extension_loaded('zlib'));
 define('GDSUPPORT', extension_loaded('gd'));
@@ -240,6 +407,14 @@ include_once(NUKE_CLASSES_DIR.'class.zip.php');
 require_once(NUKE_INCLUDE_DIR.'functions_database.php');
 require_once(NUKE_INCLUDE_DIR.'functions_cache.php');
 
+# Network Support START
+# PHP-Nuke Titanium v3.0.0 START
+require_once(NUKE_INCLUDE_DIR.'function_img.php');                
+require_once(NUKE_INCLUDE_DIR.'functions_titanium.php');          
+require_once(NUKE_INCLUDE_DIR.'functions_titanium_custom.php');
+# Network Support END
+# PHP-Nuke Titanium END
+
 require_once(NUKE_INCLUDE_DIR.'functions_evo.php');
 require_once(NUKE_INCLUDE_DIR.'functions_evo_custom.php');
 include_once(NUKE_INCLUDE_DIR.'validation.php');
@@ -277,7 +452,7 @@ $dbi = $db->db_connect_id;
 $badreasons = 4;
 $sitekey = md5($_SERVER['HTTP_HOST']);
 $gfx_chk = 0;
-$tipath = 'modules/News/images/topics/';
+$tipath = 'modules/Blog_Topics/images/';
 $reasons = array('As Is', 'Offtopic', 'Flamebait', 'Troll', 'Redundant', 'Insighful', 'Interesting', 'Informative', 'Funny', 'Overrated', 'Underrated');
 $AllowableHTML = array('b'=>1, 'i'=>1, 'a'=>2, 'em'=>1, 'br'=>1, 'strong'=>1, 'blockquote'=>1, 'tt'=>1, 'li'=>1, 'ol'=>1, 'ul'=>1, 'pre'=>1);
 
@@ -421,12 +596,14 @@ if (!defined('FORUM_ADMIN')) {
         die('The $admin_file you defined in config.php does not exist');
     }
 }
+
 /*****[END]********************************************
  [ Base:    Admin File Check                   v3.0.0 ]
  ******************************************************/
-
-function define_once($constant, $value) {
-    if(!defined($constant)) {
+function define_once($constant, $value) 
+{
+    if(!defined($constant)) 
+	{
         define($constant, $value);
     }
 }
@@ -513,11 +690,19 @@ function cookiedecode($trash=0) {
     return false;
 }
 
-function title($text) {
-    OpenTable();
-    echo '<div class="title" style="text-align: center"><strong>'.$text.'</strong></div>';
-    CloseTable();
-    echo '<br />';
+function title($text) 
+{
+  global $name;
+
+  if ($name == ''):
+
+  else:
+  $icon = img($name.'.png', $name); 
+  OpenTable();
+  echo '<br /><div align="center"><font class="tooltip-html-side-interact tooltipstered" color="lime"><a alt="'.$text.'" href="modules.php?name='.$name.'"><img alt="'.$text.'" style="max-height: 50px;" src="'.$icon.'" border="0"></a></font></div><br/>';
+  //echo '<div class="title" style="text-align: center"><strong>'.$text.'</strong></div><br/>';
+  CloseTable();
+  endif;
 }
 
 function is_active($module) {
@@ -759,6 +944,39 @@ function headlines($bid, $side=0, $row='') {
     }
 }
 
+function blog_ultramode() {
+    global $db, $prefix, $multilingual, $currentlang;
+    $querylang = ($multilingual == 1) ? "AND (s.alanguage='".$currentlang."' OR s.alanguage='')" : "";
+    $sql = "SELECT s.sid, s.catid, s.aid, s.title, s.time, s.hometext, s.comments, s.topic, s.ticon, t.topictext, t.topicimage FROM `".$prefix."_stories` s LEFT JOIN `".$prefix."_topics` t ON t.topicid = s.topic WHERE s.ihome = '0' ".$querylang." ORDER BY s.time DESC LIMIT 0,10";
+    $result = $db->sql_query($sql);
+    
+	while ($row = $db->sql_fetchrow($result, SQL_ASSOC)) 
+	{
+        $rsid = $row['sid'];
+        $raid = $row['aid'];
+        $rtitle = htmlspecialchars(stripslashes($row['title']));
+        $rtime = $row['time'];
+        $rcomments = $row['comments'];
+        $topictext = $row['topictext'];
+        $topicimage = ($row['ticon']) ? stripslashes($row['topicimage']) : '';
+        $rtime = formatTimestamp($rtime, 'l, F d');
+        $content .= "%%\n".$rtitle."\n/modules.php?name=Blog&file=article&sid=".$rsid."\n".$rtime."\n".$raid."\n".$topictext."\n".$rcomments."\n".$topicimage."\n";
+    }
+    $db->sql_freeresult($result);
+    
+	if (file_exists(NUKE_BASE_DIR."ultramode.txt") && is_writable(NUKE_BASE_DIR."ultramode.txt")) 
+	{
+        $file = fopen(NUKE_BASE_DIR."ultramode.txt", "w");
+        fwrite($file, "General purpose self-explanatory file with news headlines\n".$content);
+        fclose($file);
+    } 
+	else 
+	{
+        global $debugger;
+        $debugger->handle_error('Unable to write ultramode content to file', 'Error');
+    }
+}
+
 function ultramode() {
     global $db, $prefix, $multilingual, $currentlang;
     $querylang = ($multilingual == 1) ? "AND (s.alanguage='".$currentlang."' OR s.alanguage='')" : "";
@@ -874,34 +1092,55 @@ function actualTime() {
 }
 
 // formatTimestamp function by ReOrGaNiSaTiOn
-function formatTimestamp($time, $format='', $dateonly='') {
+function formatTimestamp($time, $format='', $dateonly='') 
+{
     global $datetime, $locale, $userinfo, $board_config;
-    if (empty($format)) {
-        if (isset($userinfo['user_dateformat']) && !empty($userinfo['user_dateformat'])) {
+
+    if (empty($format)) 
+	{
+        if (isset($userinfo['user_dateformat']) && !empty($userinfo['user_dateformat'])) 
+		{
             $format = $userinfo['user_dateformat'];
-        } else if (isset($board_config['default_dateformat']) && !empty($board_config['default_dateformat'])) {
+        } 
+		else 
+		if (isset($board_config['default_dateformat']) && !empty($board_config['default_dateformat'])) 
+		{
             $format = $board_config['default_dateformat'];
-        } else {
+        } 
+		else 
+		{
             $format = 'D M d, Y g:i a';
         }
     }
-    if (!empty($dateonly)) {
+    
+	if (!empty($dateonly)) 
+	{
         $replaces = array('a', 'A', 'B', 'c', 'D', 'g', 'G', 'h', 'H', 'i', 'I', 'O', 'r', 's', 'U', 'Z', ':');
         $format = str_replace($replaces, '', $format);
     }
-    if ((isset($userinfo['user_timezone']) && !empty($userinfo['user_timezone'])) && $userinfo['user_id'] != 1) {
+    
+	if ((isset($userinfo['user_timezone']) && !empty($userinfo['user_timezone'])) && $userinfo['user_id'] != 1) 
+	{
         $tz = $userinfo['user_timezone'];
-    } else if (isset($board_config['board_timezone']) && !empty($board_config['board_timezone'])) {
+    } 
+	else 
+	if (isset($board_config['board_timezone']) && !empty($board_config['board_timezone'])) 
+	{
         $tz = $board_config['board_timezone'];
-    } else {
+    } 
+	else 
+	{
         $tz = '10';
     }
     setlocale(LC_TIME, $locale);
-    if (!is_numeric($time)) {
+    
+	if (!is_numeric($time)) 
+	{
         preg_match('/([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})/', $time, $datetime);
         $time = gmmktime($datetime[4],$datetime[5],$datetime[6],$datetime[2],$datetime[3],$datetime[1]);
     }
-    $datetime = EvoDate($format, $time, $tz);
+    
+	$datetime = EvoDate($format, $time, $tz);
     return $datetime;
 }
 
@@ -953,21 +1192,39 @@ function getTopics($s_sid) {
 /*****[BEGIN]******************************************
  [ Module:    Advertising                    v7.8.3.1 ]
  ******************************************************/
-function ads($position) {
+function ads($position) 
+{
     global $prefix, $db, $sitename, $adminmail, $nukeurl, $banners;
-    if(!$banners) { return ''; }
-    $position = intval($position);
+
+    echo "\n\n<!-- function ads EXECUTE -->\n";
+	
+	if(!$banners) 
+	{ 
+	  return ''; 
+	}
+    
+	$position = intval($position);
     $result = $db->sql_query("SELECT * FROM `".$prefix."_banner` WHERE `position`='$position' AND `active`='1' ORDER BY RAND() LIMIT 0,1");
     $numrows = $db->sql_numrows($result);
-    if ($numrows < 1) return '';
-    $row = $db->sql_fetchrow($result, SQL_ASSOC);
+    
+	if ($numrows < 1) 
+	return '';
+    
+	$row = $db->sql_fetchrow($result, SQL_ASSOC);
     $db->sql_freeresult($result);
-    foreach($row as $var => $value) {
-        if (isset($$var)) unset($$var);
-        $$var = $value;
+    
+	foreach($row as $var => $value) 
+	{
+        if (isset($$var)) 
+		unset($$var);
+        
+		$$var = $value;
     }
-    $bid = intval($bid);
-    if(!is_admin()) {
+    
+	$bid = intval($bid);
+    
+	if(!is_admin()) 
+	{
         $db->sql_query("UPDATE `".$prefix."_banner` SET `impmade`=" . $impmade . "+1 WHERE `bid`='$bid'");
     }
     $sql2 = "SELECT `cid`, `imptotal`, `impmade`, `clicks`, `date`, `ad_class`, `ad_code`, `ad_width`, `ad_height` FROM `".$prefix."_banner` WHERE `bid`='$bid'";
@@ -978,14 +1235,18 @@ function ads($position) {
     $imptotal = intval($imptotal);
     $impmade = intval($impmade);
     $clicks = intval($clicks);
-    /* Check if this impression is the last one and print the banner */
-    if (($imptotal <= $impmade) && ($imptotal != 0)) {
+    
+	/* Check if this impression is the last one and print the banner */
+    if (($imptotal <= $impmade) && ($imptotal != 0)) 
+	{
         $db->sql_query("UPDATE `".$prefix."_banner` SET `active`='0' WHERE `bid`='$bid'");
         $sql3 = "SELECT `name`, `contact`, `email` FROM `".$prefix."_banner_clients` WHERE `cid`='$cid'";
         $result3 = $db->sql_query($sql3);
         list($c_name, $c_contact, $c_email) = $db->sql_fetchrow($result3, SQL_NUM);
         $db->sql_freeresult($result3);
-        if (!empty($c_email)) {
+        
+		if (!empty($c_email)) 
+		{
             $from = $sitename.' <'.$adminmail.'>';
             $to = $c_contact.' <'.$c_email.'>';
             $message = _HELLO." $c_contact:\n\n";
@@ -1005,30 +1266,152 @@ function ads($position) {
             $mailcommand = removecrlf($mailcommand);
         }
     }
-    if ($ad_class == "code") {
+    
+	if ($ad_class == "code") 
+	{
         $ad_code = stripslashes($ad_code);
-        $ads = "<center>$ad_code</center>";
-    } elseif ($ad_class == "flash") {
-        $ads = "<center>"
-              ."<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0\" width=\"".$ad_width."\" height=\"".$ad_height."\" id=\"$bid\">"
+        $ads = '<div align="center">'.$ad_code.'</div>';
+    } 
+	else
+	if ($ad_class == "flash") 
+	{
+        $ads = "<div align=\"center\">"
+              ."<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0\" width=\"".$ad_width."\" height=\"".$ad_height."\" id=\"$bid\">"
               ."<param name=\"movie\" value=\"".$imageurl."\" />"
               ."<param name=\"quality\" value=\"high\" />"
-              ."<embed src=\"".$imageurl."\" quality=\"high\" width=\"".$ad_width."\" height=\"".$ad_height."\" name=\"".$bid."\" align=\"\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\"></embed></object>"
-              ."</center>";
-    } else {
-        $ads = "<center><a href=\"index.php?op=ad_click&amp;bid=$bid\" target=\"_blank\"><img src=\"$imageurl\" border=\"0\" alt=\"$alttext\" title=\"$alttext\"></a></center>";
+              ."<embed src=\"".$imageurl."\" quality=\"high\" width=\"".$ad_width."\" height=\"".$ad_height."\" name=\"".$bid."\" align=\"\" type=\"application/x-shockwave-flash\" pluginspage=\"https://www.macromedia.com/go/getflashplayer\"></embed></object>"
+              ."</div>";
+    } 
+	else 
+	{
+        $ads = "<div class=\"banner_box\" align=\"center\"><a href=\"index.php?op=ad_click&amp;bid=$bid\" target=\"_blank\"><img class=\"banner_box\" src=\"$imageurl\" border=\"0\" alt=\"$alttext\" title=\"$alttext\"></a></div>";
     }
-    return $ads;
+    
+    echo "<!-- Personal Ads DONE -->\n\n\n";
+	return $ads;
+
+}
+
+function network_ads($position) 
+{
+    global $network_prefix, $db2, $sitename, $adminmail, $nukeurl, $banners;
+
+    echo "\n\n<!-- function network_ads EXECUTE -->\n";
+	
+	if(!$banners) 
+	{ 
+	  return ''; 
+	}
+    
+	$position = intval($position);
+    $result = $db2->sql_query("SELECT * FROM `".$network_prefix."_banner` WHERE `position`='$position' AND `active`='1' ORDER BY RAND() LIMIT 0,1");
+    $numrows = $db2->sql_numrows($result);
+    
+	if ($numrows < 1) 
+	return '';
+    
+	$row = $db2->sql_fetchrow($result, SQL_ASSOC);
+    $db2->sql_freeresult($result);
+    
+	foreach($row as $var => $value) 
+	{
+        if (isset($$var)) 
+		unset($$var);
+        
+		$$var = $value;
+    }
+    
+	$bid = intval($bid);
+    
+	if(!is_admin()) 
+	{
+        $db2->sql_query("UPDATE `".$network_prefix."_banner` SET `impmade`=" . $impmade . "+1 WHERE `bid`='$bid'");
+    }
+    $sql2 = "SELECT `cid`, `imptotal`, `impmade`, `clicks`, `date`, `ad_class`, `ad_code`, `ad_width`, `ad_height` FROM `".$network_prefix."_banner` WHERE `bid`='$bid'";
+    $result2 = $db2->sql_query($sql2);
+    list($cid, $imptotal, $impmade, $clicks, $date, $ad_class, $ad_code, $ad_width, $ad_height) = $db2->sql_fetchrow($result2, SQL_NUM);
+    $db2->sql_freeresult($result2);
+    $cid = intval($cid);
+    $imptotal = intval($imptotal);
+    $impmade = intval($impmade);
+    $clicks = intval($clicks);
+    
+	/* Check if this impression is the last one and print the banner */
+    if (($imptotal <= $impmade) && ($imptotal != 0)) 
+	{
+        $db2->sql_query("UPDATE `".$network_prefix."_banner` SET `active`='0' WHERE `bid`='$bid'");
+        $sql3 = "SELECT `name`, `contact`, `email` FROM `".$network_prefix."_banner_clients` WHERE `cid`='$cid'";
+        $result3 = $db->sql_query($sql3);
+        list($c_name, $c_contact, $c_email) = $db->sql_fetchrow($result3, SQL_NUM);
+        $db2->sql_freeresult($result3);
+        
+		if (!empty($c_email)) 
+		{
+            $from = $sitename.' <'.$adminmail.'>';
+            $to = $c_contact.' <'.$c_email.'>';
+            $message = _HELLO." $c_contact:\n\n";
+            $message .= _THISISAUTOMATED."\n\n";
+            $message .= _THERESULTS."\n\n";
+            $message .= _TOTALIMPRESSIONS." $imptotal\n";
+            $message .= _CLICKSRECEIVED." $clicks\n";
+            $message .= _IMAGEURL." $imageurl\n";
+            $message .= _CLICKURL." $clickurl\n";
+            $message .= _ALTERNATETEXT." $alttext\n\n";
+            $message .= _HOPEYOULIKED."\n\n";
+            $message .= _THANKSUPPORT."\n\n";
+            $message .= "- $sitename "._TEAM."\n";
+            $message .= $nukeurl;
+            $subject = $sitename.': '._BANNERSFINNISHED;
+            $mailcommand = evo_mail($to, $subject, $message, "From: $from\nX-Mailer: PHP/" . PHPVERS);
+            $mailcommand = removecrlf($mailcommand);
+        }
+    }
+    
+	if ($ad_class == "code") 
+	{
+        $ad_code = stripslashes($ad_code);
+        $ads = '<div align="center">'.$ad_code.'</div>';
+    } 
+	else
+	if ($ad_class == "flash") 
+	{
+        $ads = "<div align=\"center\">"
+              ."<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0\" width=\"".$ad_width."\" height=\"".$ad_height."\" id=\"$bid\">"
+              ."<param name=\"movie\" value=\"".$imageurl."\" />"
+              ."<param name=\"quality\" value=\"high\" />"
+              ."<embed src=\"".$imageurl."\" quality=\"high\" width=\"".$ad_width."\" height=\"".$ad_height."\" name=\"".$bid."\" align=\"\" type=\"application/x-shockwave-flash\" pluginspage=\"https://www.macromedia.com/go/getflashplayer\"></embed></object>"
+              ."</div>";
+    } 
+	else 
+	{
+		# this opens the ad from the main hub - https://hub.86it.us
+        $ads = "<div class=\"banner_box\" align=\"center\"><a href=\"https://hub.86it.us/index.php?op=ad_network_click&amp;bid=$bid\" target=\"_blank\"><img class=\"banner_box\" src=\"$imageurl\" border=\"0\" alt=\"$alttext\" title=\"$alttext\"></a></div>";
+    }
+    
+    echo "<!-- Networks Ads DONE -->\n\n\n";
+	return $ads;
+
 }
 
 /*
  * functions added to support dynamic and ordered loading of CSS and JS in <HEAD> and before </BODY>
  * Code origin Raven Nuke CMS (http://www.ravenphpscripts.com)
  */
+
+# START for Theme Fly Kit by Ernest Buffington - 09/02/2019
+function addPHPCSSToHead($content, $type='file')
+{
+    global $headPHPCSS;
+    if (($type == 'file') && (is_array($headPHPCSS) && count($headPHPCSS) > 0) && (in_array(array($type, $content), $headPHPCSS))) return;
+    $headPHPCSS[] = array($type, $content);
+    return;
+}
+# END for Theme Fly Kit by Ernest Buffington - 09/02/2019
+
+ 
 function addCSSToHead($content, $type='file') 
 {
     global $headCSS;
-    // Duplicate external file?
     if (($type == 'file') && (is_array($headCSS) && count($headCSS) > 0) && (in_array(array($type, $content), $headCSS))) return;
     $headCSS[] = array($type, $content);
     return;
@@ -1037,7 +1420,6 @@ function addCSSToHead($content, $type='file')
 function addJSToHead($content, $type='file') 
 {
     global $headJS;
-    // Duplicate external file?
     if (($type == 'file') && (is_array($headJS) && count($headJS) > 0) && (in_array(array($type, $content), $headJS))) return;
     $headJS[] = array($type, $content);
     return;
@@ -1046,7 +1428,6 @@ function addJSToHead($content, $type='file')
 function addJSToBody($content, $type='file') 
 {
     global $bodyJS;
-    // Duplicate external file?
     if (($type == 'file') && (is_array($bodyJS) && count($bodyJS) > 0) && (in_array(array($type, $content), $bodyJS))) return;
     $bodyJS[] = array($type, $content);
     return;
@@ -1054,8 +1435,30 @@ function addJSToBody($content, $type='file')
 
 function writeHEAD() 
 {
-    global $headCSS, $headJS;
-    if (is_array($headCSS) && count($headCSS) > 0) 
+    global $headPHPCSS, $headCSS, $headJS;
+    
+    # START for Theme Fly Kit by Ernest Buffington - 09/02/2019
+	if (is_array($headPHPCSS) && count($headPHPCSS) > 0) 
+    {
+        foreach($headPHPCSS AS $php) 
+        {
+            if ($php[0]=='file') 
+            {
+				echo "<style type=\"text/css\">\n";
+                include($php[1]);
+				echo "</style>\n";
+            } 
+			else 
+			{
+				echo "<style type=\"text/css\">\n";
+                include($php[1]);
+				echo "</style>\n"; 
+            }
+        }
+    }
+    # END for Theme Fly Kit by Ernest Buffington - 09/02/2019
+	
+	if (is_array($headCSS) && count($headCSS) > 0) 
     {
         foreach($headCSS AS $css) 
         {
@@ -1123,29 +1526,33 @@ function makePass() {
  [ Base:    Theme Management                   v1.0.2 ]
  [ Base:    Evolution Functions                v1.5.0 ]
  ******************************************************/
-function get_theme() {
+function get_theme() 
+{
     static $ThemeSel;
-    if (isset($ThemeSel)) return $ThemeSel;
+
+    if (isset($ThemeSel)) 
+	return $ThemeSel;
+
     global $Default_Theme, $cookie;
 
     #Quick Theme Change - Theme Management (JeFFb68CAM)
-    if(isset($_REQUEST['chngtheme']) && is_user()) {
-        ChangeTheme($_REQUEST['theme'], $cookie[0]);
-    }
+    if(isset($_REQUEST['chngtheme']) && is_user())
+    ChangeTheme($_REQUEST['theme'], $cookie[0]);
 
     #Theme Preview Mod - Theme Management (JeFFb68CAM)
-    if(isset($_REQUEST['tpreview']) && ThemeAllowed($_REQUEST['tpreview'])) {
+    if(isset($_REQUEST['tpreview']) && ThemeAllowed($_REQUEST['tpreview'])) 
+	{
         $ThemeSel = $_REQUEST['tpreview'];
-        if(!is_user()) {
-            setcookie('guest_theme', $ThemeSel, time()+84600);
-        }
+    
+	    if(!is_user()) 
+        setcookie('guest_theme', $ThemeSel, time()+84600);
+
         return $ThemeSel;
     }
 
     #Theme Preview for guests Mod - Theme Management (JeFFb68CAM)
-    if (isset($_COOKIE['guest_theme']) && !is_user()) {
-        return (ThemeAllowed($_COOKIE['guest_theme']) ? $_COOKIE['guest_theme'] : $Default_Theme);
-    }
+    if (isset($_COOKIE['guest_theme']) && !is_user()) 
+    return (ThemeAllowed($_COOKIE['guest_theme']) ? $_COOKIE['guest_theme'] : $Default_Theme);
 
     #New feature to grab a backup theme if the one we are trying to use does not exist, no more missing theme errors :)
     $ThemeSel = (ThemeAllowed($nTheme = (isset($cookie[9]) ? $cookie[9] : $Default_Theme))) ? $nTheme : ThemeBackup($nTheme);
@@ -1296,3 +1703,19 @@ include_once(NUKE_INCLUDE_DIR."nsncb_func.php");
 /*****[END]********************************************
 [ Mod:    NSN Center Blocks                    v2.2.1 ]
 ******************************************************/
+
+/*****[BEGIN]******************************************
+ [ Module:  Network Projects                v11.11.11 ]
+ ******************************************************/
+include_once(NUKE_INCLUDE_DIR.'nsnpj_func.php');
+/*****[END]********************************************
+ [ Module:  Network Projects                v11.11.11 ]
+ ******************************************************/
+ 
+ /*****[BEGIN]******************************************
+ [ Include:  Zip Class                                ]
+ ******************************************************/
+include_once(NUKE_CLASSES_DIR.'class.zip.php');
+/*****[END]********************************************
+ [ Include:  Zip Class                                ]
+ ******************************************************/

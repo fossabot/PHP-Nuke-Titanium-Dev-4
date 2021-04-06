@@ -1,7 +1,8 @@
 <?php
-/*=======================================================================
- Nuke-Evolution Basic: Enhanced PHP-Nuke Web Portal System
+/*======================================================================= 
+  PHP-Nuke Titanium | Nuke-Evolution Xtreme : PHP-Nuke Web Portal System
  =======================================================================*/
+
 
 /************************************************************************/
 /* PHP-NUKE: Advanced Content Management System                         */
@@ -72,12 +73,35 @@ exit;
  [ Mod:     Arcade                             v3.0.2 ]
  ******************************************************/
 
-global $prefix, $db, $admin_file, $httpref, $httprefmax;
+global $network_prefix, $prefix, $db2, $db, $admin_file, $httpref, $httprefmax;
 
-/*****[BEGIN]******************************************
- [ Mod:    Banner Ads                          v1.0.0 ]
- [ Mod:    Advanced Security Code Control      v1.0.0 ]
- ******************************************************/
+/*****[BEGIN]**************************************************
+ [ Mod:    Network Banner Ads                          v1.0.0 ]#### 3/19/2021
+ [ Mod:    Network Advanced Security Code Control      v1.0.0 ]
+ **************************************************************/
+if (isset($_GET['op'])) {
+    if($_GET['op'] == 'ad_network_click' && isset($_GET['bid'])) {
+        $bid = intval($_GET['bid']);
+        list($clickurl) = $db2->sql_ufetchrow("SELECT `clickurl` FROM `".$network_prefix."_banner` WHERE `bid`='$bid'", SQL_NUM);
+        if(!is_admin()) {
+           $db2->sql_query("UPDATE `".$network_prefix."_banner` SET `clicks`=clicks+1 WHERE `bid`='$bid'");
+        }
+        redirect($clickurl);
+    } elseif($_GET['op'] == 'gfx') {
+        include_once(NUKE_INCLUDE_DIR.'gfxchk.php');
+    } else {
+        exit('Illegal Operation');
+    }
+}
+/*****[END]****************************************************
+ [ Mod:    Network Banner Ads                          v1.0.0 ]#### 3/19/2021
+ [ Mod:    Network Advanced Security Code Control      v1.0.0 ]
+ **************************************************************/
+
+/*****[BEGIN]***************************************************
+ [ Mod:    Personal Banner Ads                          v1.0.0 ]#### 3/19/2021
+ [ Mod:    Personal Advanced Security Code Control      v1.0.0 ]
+ ***************************************************************/
 if (isset($_GET['op'])) {
     if($_GET['op'] == 'ad_click' && isset($_GET['bid'])) {
         $bid = intval($_GET['bid']);
@@ -92,10 +116,10 @@ if (isset($_GET['op'])) {
         exit('Illegal Operation');
     }
 }
-/*****[END]********************************************
- [ Mod:    Banner Ads                          v1.0.0 ]
- [ Mod:    Advanced Security Code Control      v1.0.0 ]
- ******************************************************/
+/*****[END]*****************************************************
+ [ Mod:    Personal Banner Ads                          v1.0.0 ]#### 3/19/2021
+ [ Mod:    Personal Advanced Security Code Control      v1.0.0 ]
+ ***************************************************************/
 
 if (isset($_GET['url']) && is_admin()) {
     redirect($_GET['url']);
