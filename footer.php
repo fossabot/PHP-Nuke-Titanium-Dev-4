@@ -36,7 +36,35 @@ define('NUKE_FOOTER', true);
 
 function footmsg() 
 {
-    global $foot1, $foot2, $foot3, $copyright, $total_time, $start_time, $footmsg, $db, $queries_count, $use_cache, $usrclearcache, $debugger, $debug, $cache, $use_cache, $start_mem;
+    global $foot1, 
+	       $foot2, 
+		   $foot3,
+		   $foot4, 
+	   $copyright, 
+	  $total_time, 
+	  $start_time, 
+	     $footmsg, 
+		      $db,
+			 $db2, 
+   $queries_count, 
+   $usrclearcache, 
+        $debugger, 
+		   $debug, 
+		   $cache, 
+	   $use_cache,
+	       $index,
+	      $prefix,
+		    $user, 
+	 $user_prefix,
+	      $cookie,
+	    $storynum,
+   $Default_Theme,
+            $home,
+			$name,
+		   $admin,
+     $persistency, 
+$do_gzip_compress, 
+	   $start_mem;
 
     static $has_echoed;
 
@@ -73,27 +101,25 @@ function footmsg()
 			? round((round($total_mem / 1024 * 100) / 100), 2).' KB' : $total_mem.' Bytes'));
 			$total_time .= '</font></strong>';
         }
-/*****[BEGIN]******************************************
- [ Other:   Queries Count                      v2.0.1 ]
- ******************************************************/
+
+        # START Queries Count v2.0.1
         if($queries_count) {
             $total_time .= ' | DB Queries: <strong><font color="'.$digits_color.'">' . $db->num_queries;
 			$total_time .= '</font></strong>';
         }
-/*****[END]********************************************
- [ Other:   Queries Count                      v2.0.1 ]
- ******************************************************/
+        # END Queries Count v2.0.1
+
         $total_time .= ' ]';
         $total_time .= '</span>';
-/*****[BEGIN]******************************************
- [ Base:    Auto Optimize                      v1.0.0 ]
- ******************************************************/
+
+        # START Auto Optimize v1.0.0
         if(is_admin()) {
             $first_time = false;
             if (($last_optimize = $cache->load('last_optimize', 'config')) === false) {
                 $last_optimize = time();
                 $first_time = true;
             }
+			
             //For information on how to change the auto-optimize intervals
             //Please see www.php.net/strtotime
             //Default: -1 day
@@ -105,20 +131,17 @@ function footmsg()
                     $total_time .= "<br />Database Optimized";
                 }
             }
-/*****[BEGIN]******************************************
- [ Base:    Module Simplifications             v1.0.0 ]
- ******************************************************/
-            update_modules();
-/*****[END]********************************************
- [ Base:    Module Simplifications             v1.0.0 ]
- ******************************************************/
+           
+		    # START Module Simplifications v1.0.0
+			update_modules();
+		    # END Module Simplifications v1.0.0
+
         }
-/*****[END]********************************************
- [ Base:    Auto Optimize                      v1.0.0 ]
- ******************************************************/
+        # END Auto Optimize v1.0.0
+	
     $footmsg .= $total_time."<br />\n</span>\n";
 
-    #[ Base: Debugger v1.0.0 START]
+    # START Debugger v1.0.0
     if(is_admin() && $debugger->debug && count($debugger->errors) > 0) 
 	{
        $footmsg .= "<br /><center><strong>Debugging:</strong></center>";
@@ -131,7 +154,7 @@ function footmsg()
 	{
             echo $db->print_debug();
     }
-    #[ Base: Debugger v1.0.0 END]
+    # END Debugger v1.0.0
 	
 	$debug_sql = false;
 	
@@ -181,7 +204,7 @@ echo "<!-- END facebook connector -->\n\n";
 
 }
 
-#[ Base: Admin Icon/Link Pos v1.0.0 START]
+# START Admin Icon/Link Pos v1.0.0
 if ( defined('ADMIN_FILE') && defined('ADMIN_POS') && is_admin())
 {
     global $admin;
@@ -193,11 +216,9 @@ if ( defined('ADMIN_FILE') && defined('ADMIN_POS') && is_admin())
     echo "<br />";
     GraphicAdmin(0);
 }
-#[ Base: Admin Icon/Link Pos v1.0.0 END]
+# END Admin Icon/Link Pos v1.0.0
 
-global $prefix, $user_prefix, $db, $index, $user, $cookie, $storynum, $user, $cookie, $Default_Theme, $foot1, $foot2, $foot3, $foot4, $home, $name, $admin, $persistency, $do_gzip_compress, $cache;
-
-#[ Mod: NSN Center Blocks v2.2.1 START]
+# START NSN Center Blocks v2.2.1
 if (defined('HOME_FILE')) 
 {
     blocks('Down');
@@ -209,7 +230,7 @@ if (defined('HOME_FILE'))
 	include(NUKE_INCLUDE_DIR.'cblocks3.php');
 	include(NUKE_INCLUDE_DIR.'cblocks4.php');
 }
-#[ Mod: NSN Center Blocks v2.2.1 END]
+# END NSN Center Blocks v2.2.1
 
 # look to see if a copyright file exist for the currently displayed module START
 $pageURL = "".HTTPS."modules/".$module_name."/copyright.php";
@@ -292,13 +313,24 @@ echo '</html>'."\n";
 echo "<!-- END Bottom Primary Body Tags -->\n\n";
 
 # ReSync the website cache!
+# Set up the cache class reference
+$cache = new cache($use_cache);
 $cache->resync();
 
-#[ Other: DB Connector v1.0.0 START]
-#[ Other: Persistent DB Connection v1.0.0 START]
-$db->sql_close();
-#[ Other: DB Connector v1.0.0 END]
-#[ Other: Persistent DB Connection v1.0.0 END]
+/*****[BEGIN]******************************************
+ [ Other:   DB Connectors                      v2.0.0 ]
+ [ Other:   Persistent DB Connection           v2.0.0 ]
+ ******************************************************/
+if(is_object($db))
+$db->sql_close(); //close local database
+if(is_object($db2))
+$db2->sql_close(); //close network user database
+if(is_object($db3))
+$db3->sql_close(); //close music database
+/*****[END]********************************************
+ [ Other:   DB Connectors                      v2.0.0 ]
+ [ Other:   Persistent DB Connection           v2.0.0 ]
+ ******************************************************/
 
 # PHP-Nuke Copyright &copy; 2006 by Francisco Burzi. 
 # All logos, trademarks and posts in this site are property of their respective owners, all the rest &copy; 2006 by the site owner.
