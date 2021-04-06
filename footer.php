@@ -90,7 +90,17 @@ $do_gzip_compress,
         //$footmsg = (preg_match(HEX_PREG,$footmsg)) ? $footmsg : $footmsg."<br />".ord_crypt_decode(HEX_CACHED)."<br />";
         global $digits_color;
 
-        $total_time = (get_microtime() - $start_time);
+        		$footmsg .= "<hr>[ "
+                  . "<a href=\"".HTTPS."modules.php?name=Network&file=about\">"
+                  . "About Us</a> ] - [ "
+                  . "<a href=\"".HTTPS."modules.php?name=Network&file=disclaimer\">"
+                  . "Disclaimer Statement</a> ] - [ "
+                  . "<a href=\"".HTTPS."modules.php?name=Network&file=privacy\">"
+                  . "Privacy Statement</a> ] - [ "
+                  . "<a href=\"".HTTPS."modules.php?name=Network&file=terms\">"
+                  . "Terms of Use</a> ]<hr><br />\n";
+				  
+		$total_time = (get_microtime() - $start_time);
         $total_time = '<span class="copyright">[ '._PAGEGENERATION."<strong><font color='".$digits_color."'> ".substr($total_time,0,4)."</font></strong> "._SECONDS."";
         
 		if ($start_mem > 0) 
