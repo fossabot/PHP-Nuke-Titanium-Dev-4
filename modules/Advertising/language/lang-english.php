@@ -1,7 +1,8 @@
 <?php
-/*=======================================================================
- Nuke-Evolution Basic: Enhanced PHP-Nuke Web Portal System
+/*======================================================================= 
+  PHP-Nuke Titanium | Nuke-Evolution Xtreme : PHP-Nuke Web Portal System
  =======================================================================*/
+
 
 /**************************************************************************/
 /* PHP-NUKE: Advanced Content Management System                           */
@@ -85,7 +86,7 @@ define("_IMPRELEFT","Impressions Left");
 define("_RECEIVEDCLICKS","Clicks Received");
 define("_CLICKSPERCENT","Clicks Percent");
 define("_GENERATEDON","Report Generated on");
-define("_STATSSENT","Statistics for your Ad Banner has been sent by email at:");
+define("_STATSSENT","Statistics for your Portal Ad Banner has been sent to the following e-mail address:");
 define("_FLASHMOVIE","Flash Movie");
 define("_WELCOMEADS","<strong>Welcome to our Advertising Section!</strong><br /><br />If you want your banner ad here in our website, you may want to know some details because you should know what kind of target and ads plans we can offer.<br /><br />If you are already our advertising customer, please login <a href=\"modules.php?name=Advertising&amp;op=client\">here</a>.<br />");
 

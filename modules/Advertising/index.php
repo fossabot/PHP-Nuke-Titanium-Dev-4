@@ -1,7 +1,8 @@
 <?php
-/*=======================================================================
- Nuke-Evolution Basic: Enhanced PHP-Nuke Web Portal System
+/*======================================================================= 
+  PHP-Nuke Titanium | Nuke-Evolution Xtreme : PHP-Nuke Web Portal System
  =======================================================================*/
+
 
 /************************************************************************/
 /* PHP-NUKE: Web Portal System                                          */
@@ -61,11 +62,9 @@ function is_client($client) {
 
 function themenu() {
     global $module_name, $prefix, $db, $client, $op;
-
-    echo "<br />";
     if (is_client($client)) {
         if ($op == "client_home") {
-            $client_opt = "My Ads";
+            $client_opt = "My Portal Ads";
         } else {
             $client_opt = "<a href=\"modules.php?name=$module_name&amp;op=client_home\">"._MYADS."</a>";
         }
@@ -157,9 +156,10 @@ function client() {
         OpenTable();
         echo "<center><span class=\"title\"><strong>"._CLIENTLOGIN."</strong></span></center><br />";
         echo "<form method=\"post\" onsubmit=\"this.submit.disabled = true\" action=\"modules.php?name=$module_name\"><table border=\"0\" align=\"center\" cellpadding=\"3\"><tr>";
-        echo "<td align=\"right\">"._LOGIN.":</td><td><input type=\"text\" name=\"login\" size=\"15\"></td></tr>";
-        echo "<td align=\"right\">"._PASSWORD.":</td><td><input type=\"password\" name=\"pass\" size=\"15\"></td></tr>";
-        echo "<td>&nbsp;</td><td><input type=\"hidden\" name=\"op\" value=\"client_valid\"><input name=\"submit\" type=\"submit\" value=\""._ENTER."\"></tr></td></table></form>";
+        echo "<td align=\"right\"><strong>"._LOGIN."</strong>&nbsp; <i class=\"bi bi-arrow-right-square\"></i>&nbsp;</td><td><input type=\"text\" name=\"login\" size=\"15\"></td></tr>";
+        echo "<td align=\"right\"><strong>"._PASSWORD."</strong>&nbsp; <i class=\"bi bi-arrow-right-square\"></i>&nbsp;</td><td><input type=\"password\" name=\"pass\" size=\"15\"></td></tr>";
+        echo "<td align=\"right\"></td><td><br/></td></tr>";
+		echo "<td>&nbsp;</td><td><input type=\"hidden\" name=\"op\" value=\"client_valid\"><input name=\"submit\" type=\"submit\" value=\""._ENTER."\"></tr></td></table></form>";
         CloseTable();
         themenu();
         include_once(NUKE_BASE_DIR.'footer.php');
@@ -269,8 +269,14 @@ function client_home() {
                 ."<td align=\"center\">$clicks</td>"
                 ."<td align=\"center\">$percent</td>"
                 ."<td align=\"center\">".ucfirst($row['ad_class'])."</td>"
-                ."<td align=\"center\"><a href=\"modules.php?name=$module_name&amp;op=client_report&amp;cid=$cid&amp;bid=$bid\"><img src=\"images/edit.gif\" border=\"0\" alt=\""._EMAILSTATS."\" title=\""._EMAILSTATS."\"></a>  <a href=\"modules.php?name=$module_name&amp;op=view_banner&amp;cid=$cid&amp;bid=$bid\"><img src=\"images/view.gif\" border=\"0\" alt=\""._VIEWBANNER."\" title=\""._VIEWBANNER."\"></a></td><tr>";
-        }
+                ."<td align=\"center\">
+				<a href=\"modules.php?name=$module_name&amp;op=client_report&amp;cid=$cid&amp;bid=$bid\"><i class=\"bi bi-mailbox\"></i></a>
+				<a href=\"modules.php?name=$module_name&amp;op=client_report&amp;cid=$cid&amp;bid=$bid\">
+				"._EMAILSTATS."</a>  
+				<a href=\"modules.php?name=$module_name&amp;op=view_banner&amp;cid=$cid&amp;bid=$bid\"><i class=\"bi bi-binoculars\"></i></a>
+				<a href=\"modules.php?name=$module_name&amp;op=view_banner&amp;cid=$cid&amp;bid=$bid\">
+				"._VIEWBANNER."</a></td><tr>";
+		}
         $db->sql_freeresult($result);
         echo "</table>";
         $row = $db->sql_ufetchrow("SELECT * FROM ".$prefix."_banner_clients WHERE cid='$cid'");

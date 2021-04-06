@@ -1,0 +1,302 @@
+<hr>
+Updates, Error and Bug Fixes : <b>2017</b>
+ [ 10/04/2017 ] [ Time 03:38am ] Error - Need Sleep Good Night!
+ [ 10/04/2017 ] [ Time 02:47am ] Updated CHANGELOG NEW
+ [ 09/08/2017 ] [ Time 12:00pm ] Added - A Hurricane Irma Live Feed to theghost.86it.us NEW 
+ [ 09/07/2017 ] [ Time 06:33pm ] Updated - CHANGELOG module from v5.0 to v6.0 NEW 
+ [ 09/07/2017 ] [ Time 06:33pm ] Updated - Dynamic facebook Meta Tag for CHANGELOG NEW 
+ [ 09/07/2017 ] [ Time 07:00am ] Fixed - SSL error in the Music area, it is now SSL compliant! 
+ [ 09/07/2017 ] [ Time 06:00am ] Fixed - SSL error in the Blogs area, it is now SSL compliant!
+ [ 09/07/2017 ] [ Time 04:00am ] Updated - LyteBox from v3 to v4.0.a
+ [ 09/06/2017 ] [ Time 08:00pm ] Hacker - Someone on the sever caused me to be blocked from my Home IP 
+ [ 09/05/2017 ] [ Time 06:50pm ] Updated - facebook_Sandbox to v6.0 NEW
+ [ 09/05/2017 ] [ Time 06:50pm ] Added - New Auto Language Selector for XHTML auto load settings! NEW
+ [ 09/05/2017 ] [ Time 06:50pm ] Bug - Mime System and XHTML auto load settings! BUG
+ [ 09/05/2017 ] [ Time 12:30pm ] Added - New File Content Get example to facebook_SandBox NEW
+ [ 09/04/2017 ] [ Time 07:01pm ] Bug - SSL error in the Music area BUG
+ [ 09/04/2017 ] [ Time 06:58pm ] Bug - SSL error in the Blogs area BUG
+ [ 09/04/2017 ] [ Time 06:56pm ] Added - Uploaded the new PHFTP Uploads module to the Git Hub Repository NEW
+ [ 09/04/2017 ] [ Time 10:00am ] Added - We have a new repository on Git Hub for PHP-Nuke Titanium NEW
+ [ 09/03/2017 ] [ Time 08:00am ] Added - Finished adding PHFTP Upload file storage NEW
+ [ 09/03/2017 ] [ Time 04:27pm ] Added - Started to add FTP Upload file storage NEW
+ [ 09/03/2017 ] [ Time 04:27Pm ] Removed - HTTP Upload file storage for security reasons! BUG
+ [ 09/03/2017 ] [ Time 04:23am ] Added - FEDERATED table network_bbattach_quota
+ [ 08/30/2017 ] [ Time 01:49pm ] Added - Google Site Map now indexes 9,999 page entries, it was 30 NEW
+ [ 08/30/2017 ] [ Time 01:00pm ] Fixed - Google Site Map working and tested now changed & to & a m p;
+ [ 08/30/2017 ] [ Time 12:00am ] Broken - Google Site Map has wrong & need to change to &amp; BUG
+ [ 08/30/2017 ] [ Time 11:00am ] Added - HTML Microdata Markup to Blog Home and Blog articles! NEW
+ [ 08/30/2017 ] [ Time 10:00am ] Fixed - Blog article displays SWF files properly now! 
+ [ 08/30/2017 ] [ Time 09:00am ] Broken - Blog article area does not display SWF files properly! BUG
+ [ 08/30/2017 ] [ Time 07:00am ] Fixed - Extended ASCII characters in custom meta titles no longer make search bots bail!
+ [ 08/30/2017 ] [ Time 05:00am ] Bug - Extended ASCII characters in custom meta titles make search bots bail! BUG
+ [ 08/29/2017 ] [ Time 05:29am ] Bug - Loan module has unexpected box! BUG
+ [ 08/29/2017 ] [ Time 05:29am ] Bug - Proof of God Module needs to be adjusted for page views! BUG
+ [ 08/29/2017 ] [ Time 05:29am ] Broken - Nutrition Module is missing database! BUG
+ [ 08/29/2017 ] [ Time 05:28am ] Fixed - Online Member links - click member name to see their profile BUG
+ [ 08/29/2017 ] [ Time 05:02am ] Broken - Online Member links - click member name to see their profile BUG
+ [ 08/29/2017 ] [ Time 05:02am ] Added - New red <b>L</b>, <b>-</b> and <b>T</b> images for Portal Menu NEW 
+ [ 08/29/2017 ] [ Time 05:02am ] Added - added OPEN Graph PHP SDK v5.4 files NEW 
+ [ 08/29/2017 ] [ Time 05:02am ] Added - Alt 256 indent line for CHANGELOG notes! NEW 
+ [ 08/29/2017 ] [ Time 04:10am ] Added - In CHANGELOG module I Added new bug icon! 
+ [ 08/29/2017 ] [ Time 04:10am ] Added - New code to change the browsere TAB icon when the page changes!
+ [ 08/29/2017 ] [ Time 03:05am ] Fixed - facebook_SandBox - login test template for facebook 
+ [ 08/29/2017 ] [ Time 12:05am ] Bug - facebook_SandBox - login test template for facebook BUG
+ [ 08/27/2017 ] [ Time 00:00am ] Updated - facebook likes and comments in Blogs Module
+ [ 08/27/2017 ] [ Time 00:00am ] Updated - facebook likes and comments in Music Module
+ [ 08/27/2017 ] [ Time 00:00am ] Updated - 86it-Titanium theme Added 1920x1084 
+ [ 08/27/2017 ] [ Time 00:00am ] Updated - 86it-Titanium theme Added 1280x1024
+ [ 08/27/2017 ] [ Time 00:00am ] Updated - 86it-Titanium theme Added resolution check code
+ [ 08/18/2017 ] [ Time 02:15am ] Added - Already voted on this song redirect with audio to Music module
+ [ 08/18/2017 ] [ Time 02:10am ] Added - No Vote Rating redirect audio to Music module
+ [ 08/18/2017 ] [ Time 02:10am ] Added - No Vote Rating redirect to Music module BUG
+ [ 08/18/2017 ] [ Time 02:09am ] Fixed - Cookie Bug in Music Vote addon! BUG 
+<hr>
+ [ 08/17/2017 ] [ Time 06:00am ] Updated - The 86it Titanium Theme has been reworked completely! NEW
+<hr>
+ [ 08/16/2017 ] [ Time 02:01pm ] Bug - Network Calendar needs to be updated to PHP 5.6 Has code issues! BUG
+<hr>
+ [ 08/15/2017 ] [ Time 06:23pm ] Fixed - File Storage ->!eregi needed to be replaced with pregmatch! NEW 
+<hr>
+ [ 08/14/2017 ] [ Time 03:24pm ] Fixed - Images in the main Portal menu & the User Menu! NEW
+<hr>
+ [ 08/13/2017 ] [ Time 05:27pm ] Updated - Center Logo from flash to PNG on cvs.86it.us! NEW
+<hr>
+ [ 08/12/2017 ] [ Time 12:27pm ] Updated - Blogs facebook comments theme plugin~! NEW
+ [ 08/12/2017 ] [ Time 12:27pm ] Updated - Blogs facebook likes theme plugin~! NEW
+<hr>
+ [ 08/12/2017 ] [ Time 12:18pm ] Updated - PHP from v5.4.4.8 to v5.5.6 NEW
+<hr>
+ [ 08/11/2017 ] [ Time 05:27pm ] Fixed - class.nbbcode.php - line 166 - preg_replace to str_replace
+<hr>
+ [ 08/11/2017 ] [ Time 05:27pm ] Fixed - class.identify.php - line 184 - preg_replace to str_replace
+<hr>
+ [ 08/11/2017 ] [ Time 05:27pm ] Fixed - class.inputfilter.php - preg_replace to preg_replace_callback
+<hr>
+ [ 08/11/2017 ] [ Time 06:27pm ] Fixed - includes\custom_titles\blogs.php - to if (isset($topicimage))!  
+<hr>
+ [ 08/10/2017 ] [ Time 05:23am ] Bug - user online link is taking the user to the wrong user number BUG
+<hr>
+ [ 08/10/2017 ] [ Time 05:09am ] Bug - After theme change a redirect is wrong! BUG
+<hr>
+ [ 08/10/2017 ] [ Time 05:09am ] Bug - Message: 'admin_bridge.nuke_bbadvanced_username_color' missing BUG
+<hr>
+ [ 08/10/2017 ] [ Time 05:09am ] Error - Cookie Bug in Music Vote addon! ( please fix ) BUG
+<hr>
+ [ 08/10/2017 ] [ Time 03:53am ] Fixed - Music module tables spacing on reply articles.php page!
+ [ 08/10/2017 ] [ Time 03:53am ] Bug - Music module tables spacing on reply articles.php page!
+<hr>
+ [ 08/09/2017 ] [ Time 05:12pm ] Fixed - RSS Feeds have been repaired!
+ [ 08/09/2017 ] [ Time 05:12pm ] Broken - RSS Feeds need to be repaired! BUG
+<hr>
+ [ 08/09/2017 ] [ Time 04:27pm ] Fixed - missing fields in the Blog tables and also the Music Table!
+ [ 08/09/2017 ] [ Time 04:27pm ] Broken - missing fields in the Blog tables and also the Music Table!
+<hr>
+ [ 08/09/2017 ] [ Time 04:27pm ] Fixed - Auto Block Resize 1920x1080 [ includes\cookies.php ] NEW
+<hr>
+ [ 08/09/2017 ] [ Time 04:27pm ] Fixed - e-mail login on main page was broken! NEW
+ [ 08/09/2017 ] [ Time 04:27pm ] Bug - e-mail login on main page was broken! BUG
+<hr>
+ [ 08/08/2017 ] [ Time 00:00pm ] Fixed - The server has been down for 4 years it is now back online~! NEW
+<hr>
+ [ 08/07/2017 ] [ Time 06:00pm ] Fixed - Federated mySQL ENGINE has been put back in place~! NEW
+ [ 08/07/2017 ] [ Time 06:00pm ] Broken - Federated mySQL ENGINE has been put back in place~! BUG NEW
+<hr>
+<b>Updates, Error and Bug Fixes : 2014</b>
+ [ 05/24/2014 ] [ Time 11:00pm ] Fixed - Music_Search" It was returning an "empty delimiter" message
+ [ 05/24/2014 ] [ Time 10:00pm ] Fixed - Blog_Search" It was returning an "empty delimiter" message
+ [ 05/14/2014 ] [ Time 09:16am ] Fixed - Groups" now forwards to "modules.php?name=Network_Groups"
+ [ 05/14/2014 ] [ Time 09:14am ] Fixed - Journal&file=edit" PHP-Nuke Titanium does not have a Journal
+ [ 05/13/2014 ] [ Time 05:00am ] Fixed - Archive Index Listing Error
+<hr>
+<b>Updates, Error and Bug Fixes : 2012</b>
+ [ 08/17/2012 ] [  12:00am to 06:00am ] Updated - $db is the local database for the website/portal NEW
+ [ 08/17/2012 ] [  12:00am to 06:00am ] Updated - $db2 is the Network User Database NEW
+ [ 08/17/2012 ] [  12:00am to 06:00am ] Updated - $db3 is the Network Music Database NEW
+<hr>		
+	 <b>PHP 5 Fixes</b>        
+	 <hr>
+        -[ 11/04/2012 ] Added Zend Extension v220100525 NEW
+        -[ 11/04/2012 ] Updated MySQL to 5.5.27-cll NEW
+        -[ 11/04/2012 ] Updated PHP v5.3.1.8 to v5.4.4.8 NEW
+        -[ 11/02/2012 ] Fixed the Portal Menu and upgraded it to v5.01b NEW
+        -[ 10/29/2012 ] Updated PHP v5.3.1.7 to v5.3.1.8 
+        -[ 10/29/2012 ] Updated Apache from v2.0.64 to v2.2.23
+	 <hr>
+
+	 <b>Network System Updates</b>        
+	 <hr>
+        -[ 11/02/2012 ] [  03:17am ] Added lisa.86it.us
+        -[ 11/02/2012 ] [  03:14am ] Added psychotaz.86it.us
+        -[ 10/31/2012 ] [  09:53pm ] Added www.scottybcoder.com
+		-[ 10/31/2012 ] Fixed DNS Error
+        -[ 10/30/2012 ] [  08:17pm ] Added music.86it.us
+        -[ 10/30/2012 ] Fixed Zone file errors
+        -[ 10/30/2012 ] Fixed named crashing
+        -[ 10/29/2012 ] [  03:31pm ] Added upload.86it.us
+        -[ 10/29/2012 ] [  03:21pm ] Added www.86it.us
+        -[ 10/29/2012 ] Upgraded The Network Server - New Rack Config - RACK 68
+	 <hr>
+
+	 <b>Titanium General Updates</b>        
+	 <hr>
+        -[ 10/25/2012 ] [  04:00mm to 05:00pm ] Fixed Titanium Tunes Music Search SQL Error
+	 <hr>
+        -[ 10/25/2012 ] [  06:00am to 07:27am ] Updated facebook SandBox Module to v4.7 (user menu bug squashed) 
+	 <hr>
+        -[ 10/25/2012 ] [  12:00pm to 12:22am ] Fixed the Titanium Tunes Module (was not showing the song artist on facebooks like and share)
+	 <hr>
+        -[ 10/24/2012 ] [  06:00am to 09:00pm ] Fixed Calendar Link in User Menu.
+        -[ 10/24/2012 ] [  06:00am to 09:00pm ] Fixed Calendar Topic - network_topics is where it retrieves the Event topic from.
+        -[ 10/24/2012 ] [  06:00am to 09:00pm ] Added protected range for user Brian Brower
+        -[ 10/24/2012 ] [  06:00am to 09:00pm ] Added http://psychotaz.86it.us to the network. (setup and installed)
+	 <hr>
+        -[ 09/06/2012 ] Fixed Download Module (missing field in database)
+	 <hr>
+        -[ 09/05/2012 ] Updated PHP-Nuke Titanium CHANGELOG to v3.0 
+	 <hr>
+		-[ 09/03/2012 ] Added the ability to use image icons without links - You can turn it off under settings now
+	 <hr>
+		-[ 09/03/2012 ] Added New admin icon set (designed by Ernest Buffington)
+	 <hr>
+		-[ 09/02/2012 ] Updated e-mail message that is sent to a network memeber that has a message waiting.
+	 <hr>
+        -[ 09/02/2012 ] Fixed Private Message System was sending messsages from and to the wrong user ids.
+        -[ 09/02/2012 ] Fixed Private Message System did not show images in users sent box.
+        -[ 09/02/2012 ] Fixed Private Message System did not transport the image information across domains. 
+	 <hr>
+        -[ 02/19/2012 ] Added NEW Network Users Database Bridge ( Network Users ) 
+        -[ 02/18/2012 ] [  06:00am to 10:45pm ] Added NEW Network Groups Database Bridge ( Network Groups )
+        -[ 02/17/2012 ] [  06:00am to 11:59pm ] Added NEW AUC Database Bridge ( Network User Name Colors ) 
+	 <hr>
+		-[ 02/09/2012 ] [  06:00pm to 07:52pm ] Added NEW Dynamic facebook Meta Tags 
+	 <hr>
+		-[ 02/09/2012 ] [  03:47am to 04:45am ] Added NEW RSS Feed for Titanium Blogs
+        -[ 02/09/2012 ] Updated Titanium Blogs English Language files
+	 <hr>
+		-[ 02/09/2012 ] Updated Statistics Module - Now shows Titanium Version!
+        -[ 02/09/2012 ] Updated Statistics Module - Now shows Base Engine starting version!
+        -[ 02/09/2012 ] Updated Statistics Module - Now shows Titanium Blogs publised/waiting!
+	 <hr>
+		-[ 02/09/2012 ] Added NEW Titanium Blog Search Module v1.0 
+        -[ 02/09/2012 ] Added NEW Titanium Top 100 Blogs Module v1.0 
+        -[ 02/09/2012 ] Added NEW Titanium Blog Topics Module v1.0 
+        -[ 02/09/2012 ] Added NEW Titanium Blog Archive Module v1.0 
+        -[ 02/09/2012 ] Added NEW Titanium Blog Module v1.0 
+	 <hr>
+		-[ 02/06/2012 ] [  04:00pm to 04:57pm ] Updated Sommaire 2.1.2 to 3.01b - I do not see much of a change... 
+	 <hr>
+        -[ 02/05/2012 ] [  06:08pm to 04:36am ] Updated RSS Feeds - Now they work with Chrome! 
+	 <hr>
+        -[ 02/05/2012 ] [  06:00pm to 06:08pm ] Updated FAQ Module - added support for advanced design! 
+	 <hr>
+        -[ 02/05/2012 ] Updated includes/messagebox.php - added support for advanced design! 
+	 <hr>
+        -[ 02/05/2012 ] Updated 86it-Titanium Theme - added more support for advanced design! 
+	 <hr>
+		-[ 02/05/2012 ] Updated Server to XHTML 1.0 Transitional! 
+	 <hr>
+		-[ 02/05/2012 ] Added NEW XML namespace for facebook! 
+	 <hr>
+	    -[ 02/05/2012 ] Added NEW SWF HEADER - version 1.0 - SWF HEADER CLASS - PHP SWF header parser 
+	 <hr>
+        -[ 02/05/2012 ] Added NEW Chrome RSS Extension Link - adds a link to the bottom of the page for chrome users!
+	 <hr>
+		-[ 02/05/2012 ] Updated Live CHANGELOG Module from v1.0 to v2.0 
+	 <hr>
+        -[ 02/05/2012 ] Updated facebook Mod v1.0 to 2.0 which consist of the facebook SDK v3.1.1 NEW
+	 <hr>
+        -[ 02/05/2012 ] Added NEW FLVMetaData - This tiny class is provided to parse FLV file headers NEW
+	 <hr>
+	 <b>Titanium CHANGELOG Module</b>        
+	 <hr>
+		-[ 01/22/2012 ] [  03:37am to 06:30am ] Updated CHANGELOG Module - Live Change Log v1.0 now has HTML string change
+        -[ 01/21/2012 ] [  10:00pm to 10:30pm ] Added NEW CHANGELOG Module - Live Change Log v1.0 
+	 <hr>
+	 <b>Titanium facebook SandBox Module</b>        
+	 <hr>
+	    -[ 01/21/2012 ] Added NEW the facebook SandBox Module v1.0 	
+	 <hr>
+	 <b>Titanium Network Music Module</b>        
+	 <hr>
+	    -[ 01/21/2012 ] Added NEW the Titanium Tunes Module Set v1.0 
+	 <hr>
+	 <b>Titanium Version Checking</b>        
+	 <hr>
+	    -[ 01/20/2012 ] Updated Version checking - checks entire version string now
+	 <hr>
+	 <b>facebook Mod</b>
+	 <hr>
+        -[ 01/20/2012 ] Moved facebook Mod v3.1.1 - moved the  s,d and i call to includes/javascript.php
+        -[ 01/20/2012 ] Added NEW facebook Mod v3.1.1 
+	 <hr>
+	 <b>Browser Checking Updates:</b>
+	 <hr>
+	    -[ 01/20/2012 ] Added MSN Explorer Browser (legacy)        
+		-[ 01/20/2012 ] Added Bing/MSN Robot (Thanks Rob MacDonald)
+        -[ 01/20/2012 ] Added the Android Platform (PLATFORM_ANDROID)
+        -[ 01/20/2012 ] Fixed issue with Android 1.6/2.2 (Thanks Tom Hirashima)
+        -[ 01/20/2012 ] Added iPad Support
+	 <hr>
+	 <b>*MAJOR* Rebuild (preg_match and other "slow" routine removal(s)) - replaced Large PHPUNIT testing environment</b>
+	 <hr>
+        -[ 01/20/2012 ] Added FreeBSD Platform
+        -[ 01/20/2012 ] Added OpenBSD Platform
+        -[ 01/20/2012 ] Added NetBSD Platform
+        -[ 01/20/2012 ] Added SunOS Platform
+        -[ 01/20/2012 ] Added OpenSolaris Platform
+        -[ 01/20/2012 ] Added support of the Iceweazel Browser
+        -[ 01/20/2012 ] Added isChromeFrame() call to check if chromeframe is in use
+        -[ 01/20/2012 ] Moved the Opera check in front of the Firefox check due to legacy Opera User Agents
+        -[ 01/20/2012 ] Added the __toString() method (Thanks Deano)
+        -[ 01/20/2012 ] Updated the checkes for Firefox
+	 <hr>
+	 <b>Add the NOKIA platform</b>
+	 <hr>
+        -[ 01/20/2012 ] Added Checks for the NOKIA brower(s)
+	 <hr>
+	 <b>PHP 5.3 Support</b>
+	 <hr>
+        -[ 01/20/2012 ] Added support for BlackBerry OS and BlackBerry browser
+        -[ 01/20/2012 ] Added support for the Opera Mini browser
+        -[ 01/20/2012 ] Added additional documenation
+        -[ 01/20/2012 ] Added support for isRobot() and isMobile()
+        -[ 01/20/2012 ] Added support for Opera version 10
+        -[ 01/20/2012 ] Added support for deprecated Netscape Navigator version 9
+        -[ 01/20/2012 ] Added support for IceCat
+        -[ 01/20/2012 ] Added support for Shiretoko
+	 <hr>
+	 <b>Add iPad Support</b>
+	 <hr>
+        -[ 01/20/2012 ] Updated to support PHP 5.3 - removed all deprecated function calls
+        -[ 01/20/2012 ] Updated to remove all double quotes (") -- converted to single quotes (')
+	 <hr>
+        -[ 01/20/2012 ] Updated the IE check to remove a typo and bug (thanks John)
+        -[ 01/20/2012 ] Added detection for GoogleBot
+        -[ 01/20/2012 ] Added detection for the W3C Validator.
+        -[ 01/20/2012 ] Added detection for Yahoo! Slurp
+        -[ 01/20/2012 ] Added detection for iPods.
+        -[ 01/20/2012 ] Added Platform detection for iPhones
+        -[ 01/20/2012 ] Added Platform detection for iPods
+        -[ 01/20/2012 ] Added version detection for Android phones.
+        -[ 01/20/2012 ] Removed unused constant
+        -[ 01/20/2012 ] Added Google's Chrome to the detection list
+        -[ 01/20/2012 ] Added isBrowser(string) to the list of functions special thanks to
+	 <hr>
+	 <b>Add Browser class constants</b>
+	 <hr>
+        -[ 01/20/2012 ] Added detection and version detection for Google's Chrome
+        -[ 01/20/2012 ] Updated the version detection for Amaya
+        -[ 01/20/2012 ] Updated the version detection for Firefox
+        -[ 01/20/2012 ] Updated the version detection for Lynx
+        -[ 01/20/2012 ] Updated the version detection for WebTV
+        -[ 01/20/2012 ] Updated the version detection for NetPositive
+        -[ 01/20/2012 ] Updated the version detection for IE
+        -[ 01/20/2012 ] Updated the version detection for OmniWeb
+        -[ 01/20/2012 ] Updated the version detection for iCab
+        -[ 01/20/2012 ] Updated the version detection for Safari
+        -[ 01/20/2012 ] Updated Safari to remove mobile devices (iPhone)
+        -[ 01/20/2012 ] Added detection for iPhone
+        -[ 01/20/2012 ] Added detection for robots
+        -[ 01/20/2012 ] Added detection for mobile devices
+        -[ 01/20/2012 ] Added detection for BlackBerry
+        -[ 01/20/2012 ] Removed Netscape checks (matches heavily with firefox & mozilla)

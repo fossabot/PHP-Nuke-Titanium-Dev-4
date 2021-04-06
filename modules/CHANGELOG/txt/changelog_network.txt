@@ -1,0 +1,30 @@
+*************************************************************************************
+* 
+* Changelog 1.0.2GER01 and 2.0.7 to 2.1.0
+*
+*************************************************************************************
+
+- XHTML 1.0 Transitional compliant
+- PHP 5.3.x ready
+- new installer
+- character set ISO-8859-1 conversion to UTF-8
+- eMail Client replaced by SwiftEmailer
+- variables inspection centralized
+- new HTML validator
+- hard coded error messages replaced by language variables
+- all modules and blocks revised
+- logos and icons new and with better transparency
+- drag and drop block and modules management (Sajax)
+- new: Downloads, Reviews, WebLinks, Link-Us
+- theme-handling revised
+- choise from different wysiwyg-editors (TinyMCE, FCK und Xinha)
+- DHTML Collapsible FAQ Mod
+- new drag and drop UserInfo block management (Sajax)
+- Lightbox in WebLinks und Reviews
+- Admin control panel for Legal Docs
+- Reload capability for security code
+- Cache, database und folders optimised
+- new error manager in ACP
+- user group colors revised
+- all e-notices and e-warning removed
+- more than 500 bug fixes
