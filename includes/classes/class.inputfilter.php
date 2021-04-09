@@ -27,8 +27,34 @@ class InputFilter {
     var $attrMethod;        // default = 0
 
     var $xssAuto;           // default = 1
-    var $tagBlacklist = array('applet', 'body', 'bgsound', 'base', 'basefont', 'embed', 'frame', 'frameset', 'head', 'html', 'id', 'iframe', 'ilayer', 'layer', 'link', 'meta', 'name', 'object', 'script', 'style', 'title', 'xml');
-    var $attrBlacklist = array('action', 'background', 'codebase', 'dynsrc', 'lowsrc');  // also will strip ALL event handlers
+    var $tagBlacklist = array('applet', 
+	                            'body', 
+							 'bgsound', 
+							    'base', 
+							'basefont', 
+							   'embed', 
+							   'frame', 
+							'frameset', 
+							    'head', 
+								'html', 
+								  'id', 
+							  'iframe', 
+							  'ilayer', 
+							   'layer', 
+							    'link', 
+								'meta', 
+								'name', 
+							  'object', 
+							  'script', 
+							   'style', 
+							   'title', 
+							     'xml');
+								 
+    var $attrBlacklist = array('action', 
+	                       'background', 
+						     'codebase', 
+							   'dynsrc', 
+							   'lowsrc');  // also will strip ALL event handlers
     var $current_string;
 
 /*****[BEGIN]******************************************

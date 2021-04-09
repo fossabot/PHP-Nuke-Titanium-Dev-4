@@ -745,6 +745,34 @@ function group_selectbox($fieldname, $current=0, $mvanon=false, $all=true)
 //     // return var_dump($conditions['disabled']);
 // }
 
+function select_box_forum($name, $default, $options, $multiple=false, $conditions=array()) 
+{
+    $selectboxforum  = '<select name="'.$name.'" id="'.$name.'"'.(($multiple <> false) ? ' multiple="multiple" size="'.$multiple.'"' : '').'>';
+    foreach($options as $key => $value):
+
+            if (is_array($value))
+                $selectboxforum .= '<optgroup label="'.$key.'">';
+
+            if (!is_array($value))
+                $selectboxforum .= '<option value="'.$key.'"'.(($key == $default) ? ' selected="selected"' : '').'>'.$value.'</option>';
+
+            if (is_array($value)):
+            
+                foreach( $value as $key2 => $value2):
+                    $selectboxforum .= '<option value="'.$key2.'"'.(($key2 == $default) ? ' selected="selected"' : '').'>'.$value2.'</option>';
+                endforeach;
+            
+            endif;
+
+            if (is_array($value))
+                $selectbox .= '</optgroup>';
+
+        // endif;
+
+    endforeach;
+    return $selectboxforum.'</select>'; # <pre>' . var_export($options, true) . '</pre>
+}
+
 function select_box($name, $default, $options, $multiple=false, $conditions=array()) 
 {
     $selectbox  = '<select name="'.$name.'" id="'.$name.'"'.(($multiple <> false) ? ' multiple="multiple" size="'.$multiple.'"' : '').'>';

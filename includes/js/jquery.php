@@ -8,7 +8,7 @@
 if(!defined('NUKE_FILE')) 
 die('Access forbbiden');
 
-global $wysiwyg;
+global $fwysiwyg, $wysiwyg;
 
 add_css_to_head(NUKE_CSS_DIR.'fontawesome/all.css','file', '5.8.1');
 # Devicon 2.0
