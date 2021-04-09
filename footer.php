@@ -72,14 +72,17 @@ $do_gzip_compress,
 	return; 
 
         $footmsg = "<span class=\"footmsg\"><br />\n";
-        if (!empty($foot1)) {
-            $footmsg .= $foot1."<br />\n";
+        
+$footmsg .= '<font size="5"><strong><a class="greatminds" href="modules.php?name=Site_Map" target="_self"><font color="#4285f4">G</font><font color="#ea4335">o</font><font color="#fbbc05">o</font><font color="#4285f4">g</font><font color="#34a853">l</font><font color="#ea4335">e</font> <font color="#4285f4">S</font><font color="#ea4335">i</font><font color="#fbbc05">t</font><font color="#4285f4">e</font><font color="#ea4335">m</font><font color="#34a853">a</font><font color="#ea4335">p</font></a></strong></font><br />';
+		
+		if (!empty($foot1)) {
+            $footmsg .= $foot1."\n";
         }
         if (!empty($foot2)) {
-            $footmsg .= $foot2."<br />\n";
+            $footmsg .= $foot2."\n";
         }
         if (!empty($foot3)) {
-            $footmsg .= $foot3."<br />\n";
+            $footmsg .= $foot3."\n";
         }
 
         // DO NOT REMOVE THE FOLLOWING COPYRIGHT LINE. YOU'RE NOT ALLOWED TO REMOVE NOR EDIT THIS.
@@ -98,7 +101,7 @@ $do_gzip_compress,
                   . "<a href=\"".HTTPS."modules.php?name=Network&file=privacy\">"
                   . "Privacy Statement</a> ] - [ "
                   . "<a href=\"".HTTPS."modules.php?name=Network&file=terms\">"
-                  . "Terms of Use</a> ]<hr><br />\n";
+                  . "Terms of Use</a> ]<hr>\n";
 				  
 		$total_time = (get_microtime() - $start_time);
         $total_time = '<span class="copyright">[ '._PAGEGENERATION."<strong><font color='".$digits_color."'> ".substr($total_time,0,4)."</font></strong> "._SECONDS."";
@@ -188,19 +191,23 @@ $do_gzip_compress,
 
 	global $browser;
 	
+	# with this span tag it is invisble to the main website
 	if ($browser == 'Bot' || $browser == 'Other') 
     {
         $footmsg .= '<span style="display:none;"><a href="includes/trap.php">Do Not Click</a></span>'.PHP_EOL;
     }
+	# with this span tag it is invisble to the main website
 	
-	if($use_cache && $usrclearcache) 
-	{
-      $footmsg .= "<form method='post' name='clear_cache' action='".$_SERVER['REQUEST_URI']."'>";
-      $footmsg .= "<input type='hidden' name='clear_cache' value='1'><span style='font-size: 11px'>";
-      $footmsg .= _SITECACHED . "<br /></span> <a href=\"javascript:clear_cache.submit()\">" . _UPDATECACHE . "</a>";
-      $footmsg .= "</form>";
-    }
-
+        # START updated 09/12/2019 Ernest Allen Buffington
+        if($use_cache && $usrclearcache) 
+		{
+          $footmsg .= "<form method='post' name='clear_cache' action='".$_SERVER['REQUEST_URI']."'>";
+          $footmsg .= "<input type='hidden' name='clear_cache' value='1'>";
+          $footmsg .= ""._SITECACHED . "</span> <a href=\"javascript:clear_cache.submit()\">" . _UPDATECACHE . "</a>";
+          $footmsg .= "</form>";
+        }
+		# END updated 09/12/2019 Ernest Allen Buffington
+		
 	echo $footmsg;
     $has_echoed = 1;
 
