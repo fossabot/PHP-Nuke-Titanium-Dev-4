@@ -1,3 +1,17 @@
 General purpose self-explanatory file with news headlines
+%%
+We have dumped MariaDB and here is why!
+/modules.php?name=Blog&file=article&sid=10
+Wednesday, May 05
+TheGhost
+The 86it Dev Team
+0
 
+%%
+What has changed in PHP-Nuke Titanium?
+/modules.php?name=Blog&file=article&sid=3
+Tuesday, March 16
+TheGhost
+PHP-Nuke Titanium / Evolution Xtreme
+0
 
