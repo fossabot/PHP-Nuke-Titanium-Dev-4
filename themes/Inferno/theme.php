@@ -90,7 +90,7 @@ $make_xtreme_avatar_small,
 # be sure and set your user number in the config.php file.
 //$my_welcome_message = '<a class = "welcome" href="'.$domain.'">Welcome to The 86it Developers Network</a>';
 //$my_welcome_message = '<a class = "welcome" href="'.$domain.'">Welcome to '.$portaladminname.'\'s 86it Portal</a>';
-$my_welcome_message = '<a class = "welcome" href="'.$domain.'">Home of NukeScripts.Net™ <font color="#FF9900" size="1">EST 2000</font></a>';
+$my_welcome_message = '<a class = "welcome" href="'.$domain.'">Welcome to The 86it Developers Network <font color="#FF9900" size="3">86it™</font></a>';
 
 # This is to tell the main portal menu to look for the images
 # in the theme dir "theme_name/images/menu"
@@ -100,7 +100,7 @@ $use_theme_image_dir_for_portal_menu = false;
 #-------------------------#
 # Theme Colors Definition #
 #-------------------------#
-$digits_txt_color ='yellow'; # Reads
+$digits_txt_color ='yellow';  # Reads
 $digits_color ='#FF0000';     # How many reads
 $fieldset_border_width = '1px'; 
 $fieldset_color = '#4e4e4e';
