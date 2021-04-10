@@ -30,17 +30,18 @@ Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 <h2>Changes in the Dev 4 Version</h2>
 
 <ul>
-	<li>04/09/2021 Friday @ 2:21 am added <strong>Auto MimeType</strong> which allows the support of themes that use XHTML or HTML</li>
+
+<li>Added <strong>Titanium Facebook SDK v5</strong> You can now add anything you like that is available to Facebook developers</li>
+	<li>Facebook Likes for Blogs by <strong>TheGhost</strong></li>
+	<li>Facebook Commenting for Blogs by <strong>TheGhost</strong></li>
+	<li>Portals now come with a preconfigured facebook app (associated with your web portal)</li>
+<li>Added <strong>Auto MimeType</strong> which allows the support of themes that use XHTML or HTML</li>
 	<li>Admin <strong>Portal Menu</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong>by <strong>TheGhost</strong></li>
 	<li><strong>Web_Links</strong> Module re-write by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Authors Panel</strong>&nbsp;updated by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Blocks Panel</strong>&nbsp;updated by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Backup Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong>&nbsp; by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Modules Panel</strong> re-write by <strong>TheGhost</strong></li>
-	<li>Titanium facebook SDK by <strong>TheGhost</strong></li>
-	<li>Facebook Likes for Blogs by <strong>TheGhost</strong></li>
-	<li>Facebook Commenting for Blogs by <strong>TheGhost</strong></li>
-	<li>Portals now come with a preconfigured facebook app (associated with your web portal)</li>
 	<li><strong>Blog</strong> by <strong>TheGhost</strong></li>
 	<li><strong>Blog_Archive</strong>&nbsp;by <strong>TheGhost</strong></li>
 	<li><strong>Blog_Submit</strong>&nbsp;by <strong>TheGhost</strong></li>
