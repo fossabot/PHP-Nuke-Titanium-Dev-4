@@ -87,11 +87,11 @@ function message($message, $die=false){
 function generate_config(){
     global $directory_mode, $file_mode, $install_lang, $next_step;
 
-    if (@is_file('cfg.php')){
-        @unlink('cfg.php');
+    if (@is_file('config.php')){
+        @unlink('config.php');
     }
 
-    $filename = 'install/config_blank_new.php';
+    $filename = 'install/config_blank.php';
     if (!$handle = @fopen ($filename, 'r')){
         $message = $install_lang['cant_open'].' '.$filename;
         message($message);
@@ -107,7 +107,7 @@ function generate_config(){
     $contents = str_replace("%user_prefix%", $_SESSION['user_prefix'], $contents);
     $contents = str_replace("%dbtype%", $_SESSION['dbtype'], $contents);
 
-    $filename = 'cfg.php';
+    $filename = 'config.php';
 
     if (!@touch($filename)){
         $DownloadData = true;

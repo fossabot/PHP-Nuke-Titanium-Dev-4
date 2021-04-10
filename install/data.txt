@@ -1,8 +1,6 @@
 install/install.sql
 config.php
-cfg.php
 install/config_blank.php
-install/config_blank_new.php
 ###
 .htaccess [666]
 .staccess [666]
