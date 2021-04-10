@@ -36,7 +36,8 @@ Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 	<li>Facebook Commenting for Blogs by <strong>TheGhost</strong></li>
 	<li>Portals now come with a preconfigured facebook app (associated with your web portal)</li>
 <li>Added <strong>Auto MimeType</strong> which allows the support of themes that use XHTML or HTML</li>
-	<li>Admin <strong>Portal Menu</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong>by <strong>TheGhost</strong></li>
+	<li>Each theme will now automatically switch to the needed mime-type on the Fly! i.e. XHTML or HTML5 (awesome for old themes)</strong></li>
+<li>Admin <strong>Portal Menu</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong>by <strong>TheGhost</strong></li>
 	<li><strong>Web_Links</strong> Module re-write by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Authors Panel</strong>&nbsp;updated by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Blocks Panel</strong>&nbsp;updated by <strong>TheGhost</strong></li>
@@ -54,7 +55,6 @@ Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 	<li>Resolution Checking for Advanced Themes by <strong>TheGhost</strong></li>
 	<li>Flykit for designing themes on the Fly (used to edit CSS in realtime) by <strong>TheGhost</strong></li>
 	<li>Network Projects (fixed for network use, used to report errors with themes modules or general code bugs) by <strong>NukeScripts.Net</strong></li>
-	<li>Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes) by <strong>TheGhost</strong></li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> BBCode on the main page used an incorrect display path. i.e. root/filename.png it now uses root/modules/Forum/images/smiles/filename.png.</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> Site_Map was using read_article i.e.&nbsp;modules.php?name=Blog&amp;amp;file=read_article&amp;amp;sid=4 which was not displaying the header and footer.</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> Site_Map was using Topics instead of Blog_Topics</li>
