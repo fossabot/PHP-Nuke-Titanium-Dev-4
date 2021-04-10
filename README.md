@@ -46,7 +46,7 @@ Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 	<li><strong>Blog Archive Module</strong>&nbsp;by <strong>TheGhost -  This is where you can access you Blog history</strong></li>
 	<li><strong>Blog Submit Module</strong>&nbsp;by <strong>TheGhost - Anyone can submit Blogs to your portal</strong></li>
 	<li><strong>Blog Top Module</strong>&nbsp;by <strong>TheGhost - Top 10 list of your Blogs</strong></li>
-	<li><strong>Blog Topics Module</strong>&nbsp;by <strong>TheGhost - This will list all the Blog Topis available.</strong></li>
+	<li><strong>Blog Topics Module</strong>&nbsp;by <strong>TheGhost - This will list all the Blog Topics available.</strong></li>
 	<li><strong>Network_Advertising Module</strong> by <strong>NukeScripts.Net</strong> This is used for Network advertising</li>
 	<li><strong>Loan Module</strong> by <strong>ScottybCoder</strong> -  30-360 Rule Loan Calculator</li>
 	<li><strong>Network Bookmarks  Module</strong> (private bookmark vault for users) - Keep your favorite browser links in one place</li>
