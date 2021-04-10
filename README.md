@@ -42,15 +42,15 @@ Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 	<li>Admin <strong>Blocks Panel</strong>&nbsp;updated by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Backup Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong>&nbsp; by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Modules Panel</strong> re-write by <strong>TheGhost</strong></li>
-	<li><strong>Blog</strong> by <strong>TheGhost</strong></li>
-	<li><strong>Blog_Archive</strong>&nbsp;by <strong>TheGhost</strong></li>
-	<li><strong>Blog_Submit</strong>&nbsp;by <strong>TheGhost</strong></li>
-	<li><strong>Blog_Top</strong>&nbsp;by <strong>TheGhost</strong></li>
-	<li><strong>Blog_Topics</strong>&nbsp;by <strong>TheGhost</strong></li>
-	<li><strong>Network_Advertising</strong> Module by <strong>NukeScripts.Net</strong></li>
-	<li><strong>Loan</strong> Module by <strong>ScottybCoder</strong></li>
-	<li><strong>Network Bookmarks</strong> (private bookmark vault for users)</li>
-	<li><strong>Proof_Of_God</strong> Module by <strong>ScottyBcoder</strong></li>
+	<li><strong>Blog Module</strong> by <strong>TheGhost - Main Blog Module</strong></li>
+	<li><strong>Blog Archive Module</strong>&nbsp;by <strong>TheGhost -  This is where you can access you Blog history</strong></li>
+	<li><strong>Blog Submit Module</strong>&nbsp;by <strong>TheGhost - Anyone can submit Blogs to your portal</strong></li>
+	<li><strong>Blog Top Module</strong>&nbsp;by <strong>TheGhost - Top 10 list of your Blogs</strong></li>
+	<li><strong>Blog Topics Module</strong>&nbsp;by <strong>TheGhost - This will list all the Blog Topis available.</strong></li>
+	<li><strong>Network_Advertising Module</strong> by <strong>NukeScripts.Net</strong> This is used for Network advertising</li>
+	<li><strong>Loan Module</strong> by <strong>ScottybCoder</strong> -  30-360 Rule Loan Calculator</li>
+	<li><strong>Network Bookmarks  Module</strong> (private bookmark vault for users) - Keep your favorite browser links in one place</li>
+	<li><strong>Proof_Of_God  Module</strong> by <strong>ScottyBcoder</strong> - Proof of God</li>
 	<li>Resolution Checking for Advanced Themes by <strong>TheGhost</strong></li>
 	<li>Flykit for designing themes on the Fly (used to edit CSS in realtime) by <strong>TheGhost</strong></li>
 	<li>Network Projects (fixed for network use, used to report errors with themes modules or general code bugs) by <strong>NukeScripts.Net</strong></li>
