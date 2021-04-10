@@ -1,5 +1,5 @@
 # The 86it Developers Network
-Powered by: PHP-Nuke Titanium Dev 4<br />
+Powered by: PHP-Nuke Titanium Dev 4 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/c7fdae0b4f14425c84f6b972557fec5a)](https://www.codacy.com/gh/ernestbuffington/PHP-Nuke-Titanium-Dev-4/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ernestbuffington/PHP-Nuke-Titanium-Dev-4&amp;utm_campaign=Badge_Grade)<br />
 Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 
 <h2>Server Requirements</h2>
