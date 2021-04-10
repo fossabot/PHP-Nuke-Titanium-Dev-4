@@ -1,0 +1,67 @@
+---------[SQL Error]------------------------------------------------------------------------------------------------------------
+- [09 Apr 2021 - 04:14:16] - 
+User: <span style="color: #d12727">TheGhost</span>
+IP: 47.206.216.196
+URL: <a href="http://www.86it.us/admin.php">/admin.php</a>
+
+File: /home/main/public_html/modules/Network_Projects/admin/RequestTypeInsert.php
+Line: 32
+Message: Incorrect integer value: '' for column `hub_db`.`network_requests_types`.`type_weight` at row 1
+Code: 1366
+Query: INSERT INTO `network_requests_types` VALUES (NULL, 'Install Help', '')
+---------------------------------------------------------------------------------------------------------------------------------
+
+---------[SQL Error]------------------------------------------------------------------------------------------------------------
+- [09 Apr 2021 - 04:14:38] - 
+User: <span style="color: #d12727">TheGhost</span>
+IP: 47.206.216.196
+URL: <a href="http://www.86it.us/admin.php">/admin.php</a>
+
+File: /home/main/public_html/modules/Network_Projects/admin/RequestTypeInsert.php
+Line: 32
+Message: Incorrect integer value: '' for column `hub_db`.`network_requests_types`.`type_weight` at row 1
+Code: 1366
+Query: INSERT INTO `network_requests_types` VALUES (NULL, 'Install Help', '')
+---------------------------------------------------------------------------------------------------------------------------------
+
+---------[SQL Error]------------------------------------------------------------------------------------------------------------
+- [09 Apr 2021 - 04:16:18] - 
+User: <span style="color: #d12727">TheGhost</span>
+IP: 47.206.216.196
+URL: <a href="http://www.86it.us/admin.php">/admin.php</a>
+
+File: /home/main/public_html/modules/Network_Projects/admin/RequestTypeInsert.php
+Line: 32
+Message: Incorrect integer value: '' for column `hub_db`.`network_requests_types`.`type_weight` at row 1
+Code: 1366
+Query: INSERT INTO `network_requests_types` VALUES (NULL, 'Install', '')
+---------------------------------------------------------------------------------------------------------------------------------
+
+---------[SQL Error]------------------------------------------------------------------------------------------------------------
+- [09 Apr 2021 - 13:49:40] - 
+User: 
+IP: 104.37.31.134
+URL: <a href="http://www.86it.us/modules.php?name="><script%20>alert(String.fromCharCode(88,83,83))</script>&l_op=visit&lid=11">/modules.php?name="><script%20>alert(String.fromCharCode(88,83,83))</script>&l_op=visit&lid=11</a>
+
+File: /home/main/public_html/header.php
+Line: 387
+Message: Data too long for column 'module' at row 1
+Code: 1406
+Query: replace into `nuke_session` (uname, 
+	                                                     time, 
+													starttime, 
+													host_addr, 
+													    guest, 
+													   module, 
+													      url) 
+	values ('MSN Bot', 
+	        '1617976180', 
+			'1617976180', 
+			'104.37.31.134', 
+			'3', 
+			'\&quot;&amp;gt;&lt;script type=\&quot;text/javascript\&quot;&gt;&lt;!--//--&gt;&lt;![CDATA[//&gt;&lt;!--
+alert(String.fromCharCode(88,83,83))
+//--&gt;&lt;!]]&gt;&lt;/script&gt;', 
+			'/modules.php?name=\&quot;&gt;&lt;script%20&gt;alert(String.fromCharCode(88,83,83))&lt;/script&gt;&amp;l_op=visit&amp;lid=11');
+---------------------------------------------------------------------------------------------------------------------------------
+

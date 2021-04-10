@@ -64,7 +64,7 @@ global $theme_options;
 
 $theme_options   = array();
 
-$theme_options[] = array( "name" => "Inferno v1 Theme Options",
+$theme_options[] = array( "name" => "Limo Tint v1.9 Theme Options",
                     "type" => "heading");
 
 $theme_options[] = array( "name" => "Upload your logo",

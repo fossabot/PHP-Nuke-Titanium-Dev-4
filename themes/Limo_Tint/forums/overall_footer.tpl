@@ -16,12 +16,12 @@
     The phpBB Group : 2019
 // -->
 <br />
-Powered by <a href="http://www.phpbb.com/" target="_blank">phpBB</a> &copy; 2001, 2019 phpBB Group
+Powered by <a href="http://dev-phpbb2.86it.us/" target="_tab">phpBB Titanium v2.0.23n</a> | Core &copy; 2001, 2019 phpBB Group
 <br />
 {TRANSLATION_INFO}
 <!-- IF TRANSLATION_INFO -->
 <br />
 <!-- ENDIF -->
-Universal Designed By: TheGhost &copy; 2019 <a class="tooltip-html copyright" href="https://www.86it.us/" target="_blank" title="Universal Designed By: TheGhost<br />Copyright &copy 2019 The 86it Developers Network<br />All Rights Reserved">The 86it Developers Network</a>
+Limo Tint v1.9 Theme Designed By: Ernest Buffington AKA TheGhost &copy; 2021 <a class="tooltip-html copyright" href="https://www.86it.us/" target="_tab" title="Inferno v1.0 Theme Designed By: Ernest Buffington AKA TheGhost &copy; 2021 <br />Copyright &copy 2021 Ernest Buffington<br />All Rights Reserved">The 86it Developers Network</a>
 
 </div>

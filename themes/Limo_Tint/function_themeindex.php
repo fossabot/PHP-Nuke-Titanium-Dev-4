@@ -62,6 +62,7 @@ if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
 function themeindex($aid, $informant, $time, $title, $counter, $topic, $thetext, $notes, $morelink, $topicname, $topicimage, $topictext, $writes = false) 
 {
     global $anonymous, $tipath, $theme_name, $sid, $ThemeSel, $nukeurl, $customlang;
+    global $digits_color, $digits_txt_color;
 
     if (!empty($topicimage)):
     
@@ -96,7 +97,7 @@ function themeindex($aid, $informant, $time, $title, $counter, $topic, $thetext,
 $posted = sprintf($customlang['global']['posted_by'], get_author($aid), $time);
 $datetime = substr($morelink, 0, strpos($morelink, '|')-strlen($morelink));
 $morelink = substr($morelink, strlen($datetime)+2);
-$reads = '( <span style="color: yellow;">'.$customlang['global']['reads'].'</span>: <span style="color: red;">'.$counter.'</span> )';
+$reads = '( <span style="color: '.$digits_txt_color.';">'.$customlang['global']['reads'].'</span>: <span style="color: '.$digits_color.';">'.$counter.'</span> )';
 
 echo "\n\n<!-- function themeindex START -->\n";
 
@@ -120,7 +121,7 @@ echo '<div align="left" id="locator" class="title"><img src="themes/'.$theme_nam
 
 //content
 echo '<div align="left" id="text">';
-echo ''.$content.'</div>';	
+echo '<hr />'.$content.'<hr /></div>';	
 
 echo '<div align="right">'.$posted.'<img src="themes/'.$theme_name.'/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /><br />'.$datetime.' '.$topictext.' | '.$morelink.' '.$reads.'<img src="themes/'.$theme_name.'/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /></div>';
 echo '</td>';

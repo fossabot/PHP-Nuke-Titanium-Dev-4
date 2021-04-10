@@ -57,6 +57,11 @@
 if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) 
 exit('Access Denied');
 
+#000000
+#11111
+#222222
+#333333
+
 global $theme_title;
 
 $theme_title = 'Limo Tint v1.9 (Thee Tint Shop)';
@@ -72,7 +77,8 @@ include(NUKE_THEMES_DIR.$theme_name.'/theme_info.php');
        global $powered_by, 
       $my_welcome_message, 
            $eighty_six_it, 
-	        $digits_color, 
+	        $digits_color,
+		$digits_txt_color, 
    $fieldset_border_width, 
           $fieldset_color, 
 $define_theme_xtreme_209e, 
@@ -87,9 +93,9 @@ $make_xtreme_avatar_small,
 				   $email) = $db->sql_ufetchrow("SELECT `username`,`user_avatar`, `user_email` FROM `nuke_users` WHERE `user_id`=".$portaladmin."", SQL_NUM);
 				   
 # be sure and set your user number in the config.php file.
-$my_welcome_message = '<a class = "welcome" href="'.$domain.'">Welcome to The 86it Developers Network</a>';
+//$my_welcome_message = '<a class = "welcome" href="'.$domain.'">Welcome to The 86it Developers Network</a>';
 //$my_welcome_message = '<a class = "welcome" href="'.$domain.'">Welcome to '.$portaladminname.'\'s 86it Portal</a>';
-
+$my_welcome_message = '<a class = "welcome" href="'.$domain.'">Home of NukeScripts.Net™ <font color="#FF9900" size="1">EST 2000</font></a>';
 
 # This is to tell the main portal menu to look for the images
 # in the theme dir "theme_name/images/menu"
@@ -99,9 +105,12 @@ $use_theme_image_dir_for_portal_menu = false;
 #-------------------------#
 # Theme Colors Definition #
 #-------------------------#
-$digits_color ='#ffb825';
+$digits_txt_color ='yellow'; # Reads
+$digits_color ='#FF0000';     # How many reads
+
 $fieldset_border_width = '1px'; 
 $fieldset_color = '#4e4e4e';
+
 $define_theme_xtreme_209e = false;
 $avatar_overide_size = '150';
 $make_xtreme_avatar_small = true;

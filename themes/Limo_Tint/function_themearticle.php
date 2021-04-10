@@ -62,7 +62,8 @@ if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
 function themearticle($aid, $informant, $datetime, $title, $counter, $thetext, $topic, $topicname, $topicimage, $topictext, $writes = false) 
 {
     global $admin, $sid, $tipath, $theme_name, $appID, $my_url;
-
+    global $digits_color, $digits_txt_color;
+	
 echo "\n\n<!-- function themearticle START -->\n";
 
 if (!empty($topicimage)) 
@@ -97,7 +98,7 @@ if (!empty($topicimage))
 
 $posted = _POSTEDON.' '.$datetime.' '._BY.' ';
 $posted .= get_author($aid);
-$reads = '( <span style="color: yellow;">Reads</span>: <span style="color: red;">'.$counter.'</span> )';
+$reads = '( <span style="color: '.$digits_txt_color.';">Reads</span>: <span style="color: '.$digits_color.';">'.$counter.'</span> )';
 
 echo '<table class="emiddleflames" border="0" align=center cellpadding="0" cellspacing="0" width="100%">';
 echo '<tr>';
@@ -118,7 +119,7 @@ echo '<div align="left" id="locator" class="title"><img src="themes/'.$theme_nam
 
 //content
 echo '<div align="left" id="text">';
-echo ''.$content.'</div>';
+echo '<hr />'.$content.'<hr /></div>';
 
 echo "\n\n<!-- facebook functions START -->\n";
 facebook_likes();

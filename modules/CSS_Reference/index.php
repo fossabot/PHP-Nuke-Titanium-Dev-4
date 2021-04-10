@@ -1,25 +1,20 @@
 <?php
-if (!defined('MODULE_FILE')) {
-   die('You can\'t access this file directly...');
-}
+if (!defined('MODULE_FILE')) die('You can\'t access this file directly...');
 
 $module_name = basename(dirname(__FILE__));
 
 if ( isset($HTTP_GET_VARS['mode']) || isset($HTTP_POST_VARS['mode']) )
-{
         $mode = ( isset($HTTP_POST_VARS['mode']) ) ? htmlspecialchars($HTTP_POST_VARS['mode']) : htmlspecialchars($HTTP_GET_VARS['mode']);
-}
 else
-{
         $mode = '';
-}
 //
 // Generate page
 //
-global $module_name;
-if(!isset($module_name) || empty($module_name)){
-    $module_name = basename(dirname(__FILE__));
-}
+global $module_name, $bgcolor2;
+
+if(!isset($module_name) || empty($module_name))
+$module_name = basename(dirname(__FILE__));
+
 get_lang($module_name);
 
 $pagetitle = 'Complete CSS Reference';
@@ -50,7 +45,7 @@ include(NUKE_BASE_DIR.'header.php');
 
 <table class=clsRef width=100% border=0 cellpadding=5 cellspacing=2>
 
-<tr align=LEFT valign=MIDDLE bgcolor="#00D900">
+<tr align=LEFT valign=MIDDLE bgcolor="<?=$bgcolor2?>">
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Property</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Valid Values</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Example</b></td>
@@ -104,7 +99,7 @@ include(NUKE_BASE_DIR.'header.php');
 <h3><font color="#FF0000"><b>- <a name="2"></a></b></font>Color and Background Properties</h3>
 
 <table class=clsRef width=100% border=0 cellpadding=5 cellspacing=2>
-<tr align=LEFT valign=MIDDLE bgcolor="#00D900">
+<tr align=LEFT valign=MIDDLE bgcolor="<?=$bgcolor2?>">
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Property</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Valid Values</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Example</b></td>
@@ -167,7 +162,7 @@ inherited.&nbsp;</font></h3>
 <h3><font color="#FF0000"><b>- <a name="3"></a></b></font>Text Properties</h3>
 
 <table class=clsRef width=100% border=0 cellpadding=5 cellspacing=2>
-<tr align=LEFT valign=MIDDLE bgcolor="#00D900">
+<tr align=LEFT valign=MIDDLE bgcolor="<?=$bgcolor2?>">
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Property</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Valid Values</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Example</b></td>
@@ -227,7 +222,7 @@ inherited.&nbsp;</font></h3>
 <h3><font color="#FF0000"><b>- <a name="4"></a></b></font>Box Properties</h3>
 
 <table class=clsRef width=100% border=0 cellpadding=5 cellspacing=2>
-<tr align=LEFT valign=MIDDLE bgcolor="#00D900">
+<tr align=LEFT valign=MIDDLE bgcolor="<?=$bgcolor2?>">
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Property</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Valid Values</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Example</b></td>
@@ -464,7 +459,7 @@ inherited.&nbsp;</font></h3>
 
 <table class=clsRef width=100% border=0 cellpadding=5 cellspacing=2>
 
-<tr align=LEFT valign=MIDDLE bgcolor="#00D900">
+<tr align=LEFT valign=MIDDLE bgcolor="<?=$bgcolor2?>">
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Property</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Valid Values</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Example</b></td>
@@ -512,7 +507,7 @@ inherited.&nbsp;</font></h3>
 
 <table class=clsRef width=100% border=0 cellpadding=5 cellspacing=2>
 
-<tr align=LEFT valign=MIDDLE bgcolor="#00D900">
+<tr align=LEFT valign=MIDDLE bgcolor="<?=$bgcolor2?>">
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Property</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Valid Values</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Example</b></td>
@@ -601,7 +596,7 @@ inherited.&nbsp;</font></h3>
 
 <table class=clsRef width=100% border=0 cellpadding=5 cellspacing=2>
 
-<tr align=LEFT valign=MIDDLE bgcolor="#00D900">
+<tr align=LEFT valign=MIDDLE bgcolor="<?=$bgcolor2?>">
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Property</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Valid Values</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Example</b></td>
@@ -630,7 +625,7 @@ inherited.&nbsp;</font></h3>
 
 <table class=clsRef width=100% border=0 cellpadding=5 cellspacing=2>
 
-<tr align=LEFT valign=MIDDLE bgcolor="#00D900">
+<tr align=LEFT valign=MIDDLE bgcolor="<?=$bgcolor2?>">
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Property</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Valid Values</b></td>
 <td bgcolor="#999999" style="border-style: inset; border-width: 1px"><b>Example</b></td>
