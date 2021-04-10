@@ -63,6 +63,9 @@ exit('Access Denied');
 /* echo "<script type=\"text/javascript\" language=\"javascript\" src=\"".HTTPS."themes/".$ThemeSel."/js/liveclock.js\"></script>\n"; */
 global $domain;
 ?>
+<!-- 80sPXL W00 Thin V1 Font Info CSS -->
+<link href="//db.onlinewebfonts.com/c/783dd6c2d08bdc67012a0eec73fc1702?family=80sPXLW00-Thin" rel="stylesheet" type="text/css"/>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

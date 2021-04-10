@@ -298,10 +298,15 @@ else
 $marquee_one = $date.' '.$connected.' Welcome back <strong><font color="yellow"><span class="blink-one">'.$username.'</span></font></strong> It\'s quite awesome to see you my friend! We are so glad you could make it back over to visit... We know with your super tight busy schedule and all, it most certainly must have been quite a task! ::: '.$newmessages.' ::: Your current Monitor Resolution is <font color="#f48024">'.$screen_res.'</font> '.$moreuser_info.' ::: Your current browser version is <font color="#f48024">'.$titanium_browser->getVersion().'</font> ::: '.$scrollmsg.'</div>';
 
 //$bullshit2 = 'Sept 28th 2019, Oct 4th 2019, Oct 5th 2019, Oct 11th 2019, Oct 13th 2019, Oct 14th 2019 Oct 20th 2019, Oct 22nd 2019, Oct 24th 2019';
+# right finger
+$lfinger = '<img border="0" align="absmiddle" height="16" src="themes/'.$theme_name.'/images/finger-pointing-left-icon.png" alt="Look at this!" title="Look at this!">';
+$rfinger = '<img border="0" align="absmiddle" height="16" src="themes/'.$theme_name.'/images/finger-pointing-right-icon.png" alt="Look at this!" title="Look at this!">';
+
+
 $marquee_two = '
                <strong>IPHub is an IP lookup website featuring Proxy/VPN detection. 
 			   A free API is available, so you can perform fraud checks on online stores, 
-			   detect malicious players on online games and much more! <a href="https://iphub.info" target="new">Click here to sign up for FREE today at ipHub</a></strong>
+			   detect malicious players on online games and much more! <a href="https://iphub.info" target="new"> '.$rfinger.' Click here '.$lfinger.' to sign up for FREE today at ipHub</a></strong>
               <strong>::: <font color="#e48e00"><a href="https://soulcircuscowboys.com" target="_blank">Country Music: The Soul Circus Cowboys</a></font></strong>
               <strong>::: <font color="#e48e00"><a href="https://facebook.com/brandon.maintenance" target="_blank">Sponsor: Brandon Maintenance Management, LLC Phone: 813-846-2865</a></font></strong>
               <strong>::: <font color="#e48e00"><a href="https://bigcountryradio.net" target="_blank">Sponsor: Big Country Radio - The EJ Morning Show</a></font> :::</strong>';

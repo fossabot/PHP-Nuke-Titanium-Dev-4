@@ -63,6 +63,20 @@ echo "/* When we are done we will move this code to style.css */\n\n";
 global $screen_width, $screen_height;
 
 ?>
+fieldset 
+{
+	display: block; 
+	margin-left: 2px; 
+	margin-right: 2px; 
+	padding-top: 0.15em; 
+	padding-bottom: 0.625em; 
+	padding-left: 0.75em; 
+	padding-right: 0.75em; 
+	border:2px solid;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+}
 
 .banner_box
 {

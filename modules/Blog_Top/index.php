@@ -35,6 +35,8 @@ get_lang($module_name);
 include_once(NUKE_BASE_DIR.'header.php');
 
 global $fieldset_color, $fieldset_border_width, $digits_color;
+global $prefix, $db, $textcolor1;
+
 title($sitename.' '.'Blog Top 10');
 
 if ($multilingual == 1) 
@@ -56,7 +58,6 @@ else
 
 OpenTable();
 
-global $prefix, $digits_color, $db, $textcolor1;
 $top = '10';
 ##############################################################################################################################################################################
 # Top 10 read stories 
