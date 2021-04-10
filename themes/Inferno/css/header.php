@@ -63,6 +63,11 @@ echo "/* When we are done we will move this code to style.css */\n\n";
 global $screen_width, $screen_height;
 
 ?>
+
+.frame {
+  background-clip: padding-box;
+}
+
 fieldset 
 {
 	display: block; 

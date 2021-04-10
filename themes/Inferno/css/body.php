@@ -196,7 +196,7 @@ width: 481px;
 height: 20px;
 border: 1px solid #404040;
 position: absolute;
-margin: -83px 115px 15px 115px;
+margin: -83px 115px 150px 115px;
 right: 0;
 display:inline;
 z-index: 779;

@@ -150,7 +150,7 @@ echo '<tr>';
 echo '<td background="themes/'.$theme_name.'/header/left_side.gif"><img name="leftside" src="themes/'.$theme_name.'/header/invisible_pixel.gif" width="1" height="1" border="0" alt=""></td>';
 
 # flames start
-echo '<td id="bg" class="flames" height"0" valign="top" >';
+echo '<td id="bg" style="background-clip: padding-box;" class="flames" height"0" valign="top" >';
 
 # ad banner for left side of header - 86it ads only! 
 echo '<div class="banner_left">'.ads(3).'</div>'; 
