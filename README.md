@@ -60,7 +60,6 @@ Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 	<li><strong><span style="color:#c0392b">Fixed</span></strong> cookieconsent.min.js was opening the learn link in the <strong>_parent</strong> window thus directing the user away from the current page.</li>
 	<li><span style="color:#c0392b"><strong>Fixed </strong></span>The printer-friendly icon was not right when you clicked on read more or comments.</li>
 	<li><strong><span style="color:#c0392b">Fixed</span></strong> The send to friend icon was not right when you clicked on read more or comments.</li>
-	<li><span style="color:#c0392b"><strong>Fixed</strong></span>&nbsp;In the admin area the modules admin block was listing the index page as a module left a <strong>..</strong> in the module list that says can&#39;t be edited.</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> In the admin area&nbsp;the modules admin block was listing the index.html file as if it were a module.</li>
 </ul>
 
