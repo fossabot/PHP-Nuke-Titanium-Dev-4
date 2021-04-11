@@ -1,7 +1,7 @@
 <?php
 
 /*=======================================================================
- PHP-Nuke Titanium v3.0.0 : Enhanced PHP-Nuke Web Portal System
+ Nuke-Evolution Basic: Enhanced PHP-Nuke Web Portal System
  =======================================================================*/
 
 if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
@@ -24,8 +24,9 @@ $lang_evo_userblock['BLOCK']['LOGIN']['LOST'] = 'Lost Password';
 $lang_evo_userblock['BLOCK']['LOGIN']['LOGIN'] = 'Login';
 $lang_evo_userblock['BLOCK']['LOGIN']['USERNAME'] = 'Username';
 $lang_evo_userblock['BLOCK']['LOGIN']['PASSWORD'] = 'Password';
-$lang_evo_userblock['BLOCK']['LOGIN']['LOGOUT'] = 'Logout';
-$lang_evo_userblock['BLOCK']['LOGIN']['COOKIES'] = 'Clear Cookies';
+$lang_evo_userblock['BLOCK']['LOGIN']['LOGOUT'] = 'Log Me Out';
+$lang_evo_userblock['BLOCK']['LOGIN']['COOKIES'] = 'View My Cookies';
+$lang_evo_userblock['BLOCK']['LOGIN']['DELETE'] = 'Deactivate Account';
 
 //Online
 $lang_evo_userblock['BLOCK']['ONLINE']['BREAK'] = ':';
@@ -64,9 +65,6 @@ $lang_evo_userblock['BLOCK']['PMS']['OPEN_INBOX'] = 'Open Inbox';
 //Members
 $lang_evo_userblock['BLOCK']['MEMBERS']['MEMBERS'] = 'Group Memberships';
 
-# added for groups pending in Evo User Block by Ernest Allen Buffington 09/03/2019
-$lang_evo_userblock['BLOCK']['MEMBERS']['PENDING'] = 'Group Memberships Pending';
-
 //Users
 $lang_evo_userblock['BLOCK']['USERS']['MEMBERSHIPS'] = 'Memberships';
 $lang_evo_userblock['BLOCK']['USERS']['NEW_TODAY'] = 'New Today';
@@ -76,11 +74,11 @@ $lang_evo_userblock['BLOCK']['USERS']['TOTAL'] = 'Total';
 $lang_evo_userblock['BLOCK']['USERS']['LATEST'] = 'Latest';
 
 //Posts
-$lang_evo_userblock['BLOCK']['POSTS']['FORUMS'] = 'Network Forums';
+$lang_evo_userblock['BLOCK']['POSTS']['FORUMS'] = 'Forums';
 $lang_evo_userblock['BLOCK']['POSTS']['TOPICS'] = 'Topics';
 $lang_evo_userblock['BLOCK']['POSTS']['POSTS'] = 'Posts';
-$lang_evo_userblock['BLOCK']['POSTS']['UR_POSTS'] = 'My Posts';
-$lang_evo_userblock['BLOCK']['POSTS']['UR_TOPICS'] = 'My Topics';
+$lang_evo_userblock['BLOCK']['POSTS']['UR_POSTS'] = 'Your Posts';
+$lang_evo_userblock['BLOCK']['POSTS']['UR_TOPICS'] = 'Your Topics';
 
 //Good afternoon
 $lang_evo_userblock['BLOCK']['AFTERNOON']['AFTERNOON'] = 'Good afternoon'; 
