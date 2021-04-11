@@ -694,15 +694,29 @@ function title($text)
 {
   global $name;
 
-  if ($name == ''):
+    # Opera Hack as images were not showing up
+    if ($name == 'Advertising'):
+      $icon = img('AdvertisngFixed.png', $name); 
+    # Opera Hack as images were not showing up
+    elseif ($name == 'Network_Advertising'):
+      $icon = img('NetworkAdvertisingFixed.png', $name); 
+    else:
 
-  else:
-  $icon = img($name.'.png', $name); 
-  OpenTable();
-  echo '<br /><div align="center"><font class="tooltip-html-side-interact tooltipstered" color="lime"><a alt="'.$text.'" href="modules.php?name='.$name.'"><img alt="'.$text.'" style="max-height: 50px;" src="'.$icon.'" border="0"></a></font></div><br/>';
-  //echo '<div class="title" style="text-align: center"><strong>'.$text.'</strong></div><br/>';
-  CloseTable();
-  endif;
+       if ($name == ''):
+       # Index Hack as images were not showing up	   
+	   else:
+	   $icon = img($name.'.png', $name); 
+	   endif;
+
+	endif;
+
+    if ($name == ''):
+	# Index Hack as images were not showing up
+    else:
+    OpenTable();
+    echo '<br /><div align="center"><a alt="'.$text.'" href="modules.php?name='.$name.'"><img alt="'.$text.'" style="height: 50px;" src="'.$icon.'" border="0"></a></div><br/>';
+    CloseTable();
+	endif;
 }
 
 function is_active($module) {
