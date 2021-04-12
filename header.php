@@ -282,20 +282,14 @@ function online()
     || ($ip == '69.171.251.22')
 
     || ($ip == '54.36.149.13')	
-
 	|| ($ip == '13.66.139.107')
-
-	|| ($ip == '47.206.216.196')
-
 	|| ($ip == '92.118.160.61')
-
 	){
 
         $uname = 'Facebook';
 		$guest = 3;
 
 	}
-
     # This is a Tor Exit Router
 	if($ip == '173.252.127.24'){
 
@@ -303,7 +297,6 @@ function online()
 		$guest = 3;
 
 	}
-
     # This is Apple Bot
 	if($ip == '17.58.99.233'){
 
@@ -311,7 +304,6 @@ function online()
 		$guest = 3;
 
 	}
-
     # This is a Tor Exit Router
 	if($ip == '	199.16.157.183'){
 
@@ -319,7 +311,6 @@ function online()
 		$guest = 3;
 
 	}
-	
 	# Google User Accounts
 	if($ip == '34.82.56.201'){
 
@@ -327,7 +318,6 @@ function online()
 		$guest = 3;
 
 	}
-
 	# MSN Bot
 	if(($ip == '13.66.139.157') 
 	|| ('13.66.139.19')
@@ -337,7 +327,6 @@ function online()
 		$guest = 3;
 
 	}	
-	
     # This AWS
 	if(($ip == '34.233.208.215') 
 	|| ($ip == '34.233.58.209')
@@ -348,7 +337,6 @@ function online()
 		$guest = 3;
 
 	}
-
 	# Verizon
 	if($ip == '174.228.141.231'){
 
@@ -357,7 +345,6 @@ function online()
 
 	}	
 	endif;
-
 
     $custom_title = $name;
     $url = str_replace("&amp;", "&", $url);

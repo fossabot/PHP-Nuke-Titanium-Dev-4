@@ -1,12 +1,3 @@
-User-agent: Baidu
-Disallow: /
-
-User-agent: *alexa*
-Disallow: /
-
-User-agent: Googlebot-Image
-Disallow: /
-
 User-agent: ia_archiver
 Disallow: /admin/
 Disallow: /install/

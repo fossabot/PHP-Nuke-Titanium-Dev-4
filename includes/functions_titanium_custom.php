@@ -72,7 +72,7 @@ function title_and_meta_tags()
 			
 			$facebook_ogimage_normal = '<meta property="og:image" content="'.HTTP.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/ad1.png">'."\n";
 		    $facebook_ogimage = '<meta property="og:image:secure_url" content="'.HTTPS.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/ad1.png">'."\n";
-	        $newpagetitle = $sitename.' '.$item_delim.' Google Sitmap v1.0';
+	        $newpagetitle = $sitename.' '.$item_delim.' Google Site Map v1.0';
 			$facebook_og_title = '<meta property="og:title" content="'.$newpagetitle.'">'."\n";
 			  
             $facebook_ogdescription = '<meta property="og:description" content="Google Site Map v1.0 written by Ernest Buffington, have a look!" />'."\n";
