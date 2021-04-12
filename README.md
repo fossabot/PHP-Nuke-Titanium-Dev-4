@@ -87,7 +87,7 @@ If you need help with an install do not hesitate to submit a request by clicking
 <p>Thanks for using our enhanced PHP-Nuke Web Portal System and we hope you enjoy it&nbsp;&nbsp;</p>
 
 <p><strong>The PHP-Nuke Titanium Team </strong>(This is the US Support Team)<br />
-<a href="https://dev-php-nuke-evolution-xtreme.86it.us/index.php" rel="nofollow">http://dev-php-nuke-evolution-xtreme.86it.us/index.php</a></p>
+<a href="https://www.86it.us/index.php">http://www.86it.us/index.php</a></p>
 
 <h2>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</h2>
 
