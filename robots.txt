@@ -7,8 +7,9 @@ Disallow: /
 User-agent: Googlebot-Image
 Disallow: /
 
-User-agent: *
+User-agent: ia_archiver
 Disallow: /admin/
+Disallow: /install/
 Disallow: /blocks/
 Disallow: /cgi-bin/
 Disallow: /images/
@@ -18,5 +19,22 @@ Disallow: /modules/
 Disallow: /themes/
 Disallow: /admin.php
 Disallow: /config.php
+Disallow: /fbconfig.php
+Disallow: /ips.php
+Disallow: /trap.php
+
+User-agent: *
+Disallow: /admin/
+Disallow: /install/
+Disallow: /blocks/
+Disallow: /cgi-bin/
+Disallow: /images/
+Disallow: /includes/
+Disallow: /language/
+Disallow: /modules/
+Disallow: /themes/
+Disallow: /admin.php
+Disallow: /config.php
+Disallow: /fbconfig.php
 Disallow: /ips.php
 Disallow: /trap.php
