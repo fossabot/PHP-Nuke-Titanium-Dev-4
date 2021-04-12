@@ -1,33 +1,33 @@
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
 <ul>
-	<li><strong>Added fbconfig.php configuration file</strong>&nbsp; for Facebook SDK v5</li>
+	<li><strong>Added</strong> fbconfig.php configuration file for Facebook SDK v5</li>
 	<li><strong>Complete re-write of the title_and_meta_tags(); function</strong>&nbsp; for Facebook SDK v5</li>
 	<li><strong>Deactivate Account</strong>&nbsp;added for Facebook SDK v5</li>
-	<li><strong>Google Site Map v1.0</strong>&nbsp;added for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
+	<li><strong>Added</strong> Google Site Map v1.0 for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
 	<li>Admin <strong>Portal Menu</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
 	<li><strong>Web_Links</strong> Module re-write</li>
 	<li>Admin <strong>Authors Panel</strong>&nbsp;updated</li>
 	<li>Admin <strong>Blocks Panel</strong>&nbsp;updated</li>
 	<li>Admin <strong>Backup Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
 	<li>Admin <strong>Modules Panel</strong> re-write</li>
-	<li>Titanium facebook SDK</li>
-	<li>Facebook Likes for Blogs</li>
-	<li>Facebook Commenting for Blogs</li>
+	<li><strong>Added</strong> Titanium facebook SDK</li>
+	<li><strong>Added</strong> Facebook Likes for Blogs</li>
+	<li><strong>Added</strong> Facebook Commenting for Blogs</li>
 	<li>Portals now come with a preconfigured facebook app (associated with your web portal)</li>
-	<li><strong>Blog</strong></li>
-	<li><strong>Blog_Archive</strong></li>
-	<li><strong>Blog_Submit</strong></li>
-	<li><strong>Blog_Top</strong></li>
-	<li><strong>Blog_Topics</strong></li>
-	<li><strong>Network_Advertising</strong> Module by <strong>NukeScripts.Net</strong></li>
-	<li><strong>Loan</strong> Module by <strong>ScottybCoder</strong></li>
-	<li><strong>Network Bookmarks</strong> (private bookmark vault for users)</li>
-	<li><strong>Proof_Of_God</strong> Module by <strong>ScottyBcoder</strong></li>
-	<li>Resolution Checking for Advanced Themes</li>
-	<li>Flykit for designing themes on the Fly (used to edit CSS in realtime)</li>
-	<li>Network Projects (fixed for network use, used to report errors with themes modules or general code bugs) by <strong>NukeScripts.Net</strong></li>
-	<li>Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes)</li>
+	<li><strong>Added</strong> <strong>Blog</strong></li>
+	<li><strong>Added</strong> <strong>Blog_Archive</strong></li>
+	<li><strong>Added</strong> <strong>Blog_Submit</strong></li>
+	<li><strong>Added</strong> <strong>Blog_Top</strong></li>
+	<li><strong>Added</strong> <strong>Blog_Topics</strong></li>
+	<li><strong>Added</strong> <strong>Network_Advertising</strong> Module by <strong>NukeScripts.Net</strong></li>
+	<li><strong>Added</strong> <strong>Loan</strong> Module by <strong>ScottybCoder</strong></li>
+	<li><strong>Added</strong> <strong>Network Bookmarks</strong> (private bookmark vault for users)</li>
+	<li><strong>Added</strong> <strong>Proof_Of_God</strong> Module by <strong>ScottyBcoder</strong></li>
+	<li><strong>Added</strong> Resolution Checking for Advanced Themes</li>
+	<li><strong>Added</strong> Flykit for designing themes on the Fly (used to edit CSS in realtime)</li>
+	<li><strong>Added</strong> Network Projects (fixed for network use, used to report errors with themes modules or general code bugs) by <strong>NukeScripts.Net</strong></li>
+	<li><strong>Added</strong> Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes)</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> BBCode on the main page used an incorrect display path. i.e. root/filename.png it now uses root/modules/Forum/images/smiles/filename.png.</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> Site_Map was using read_article i.e.&nbsp;modules.php?name=Blog&amp;amp;file=read_article&amp;amp;sid=4 which was not displaying the header and footer.</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> Site_Map was using Topics instead of Blog_Topics</li>
