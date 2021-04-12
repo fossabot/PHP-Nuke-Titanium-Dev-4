@@ -14,12 +14,11 @@ global $prefix, $db, $sitename, $currentlang, $admin, $multilingual, $module_nam
 
 $result = $db->sql_query('SELECT * FROM `'.$prefix.'_jmap`');
 
-while ($row=$db->sql_fetchrow($result))
-{
+while ($row=$db->sql_fetchrow($result)):
     $nametask = $row['name'];
     $value = $row['value'];
     $conf[$nametask]=$value;
-}
+endwhile;
 
 $db->sql_freeresult($result);
 $xml = $conf['xml'];
@@ -60,7 +59,7 @@ include_once(NUKE_BASE_DIR.'header.php');
 
 Opentable();
 
-print '<div align="center"><strong>'._NJMAP.' '.$sitename.'</strong></div>';
+print '<div align="center"><strong>'._GOOGLE_MAP.' '.$sitename.'</strong></div>';
 print '<div align="center">';
 print '<font color="violet"><i style="vertical-align: middle;" class="fa fa-unlock-alt"></i></font>&nbsp;<font size="1">(EVERYONE)</font>&nbsp;';
 print '<font color="green"><i style="vertical-align: middle;" class="fa fa-unlock-alt"></i></font>&nbsp;<font size="1">(EVERYONE)</font>&nbsp;';
@@ -81,8 +80,8 @@ print '<tr><td><font color="aqua"><i style="vertical-align: middle;" class="fa f
 
 $result2 = $db->sql_query("SELECT `title`, `custom_title`, `view`, `groups` FROM `" . $prefix . "_modules` WHERE `active` =1 ORDER BY `custom_title`");
 
-while ($row2 = $db->sql_fetchrow($result2)) 
-{
+while ($row2 = $db->sql_fetchrow($result2)): 
+
 	$the_module_title = $row2['custom_title'];
 	
 	$link = $row2['title'];
@@ -104,12 +103,11 @@ while ($row2 = $db->sql_fetchrow($result2))
 	    $ingroup = false;
 	    global $userinfo;
 	
-	    foreach ($groups as $group) 
-		{
+	    foreach ($groups as $group): 
 		     if (isset($userinfo['groups'][$group])) 
 		     $ingroup = true;
-	    }
-	    
+	    endforeach;
+		
 		if (!$ingroup): 
 	        print '<font color="lime"><i style="vertical-align: middle;" class="fa fa-unlock-alt"></i>';
 		else: 
@@ -132,8 +130,8 @@ while ($row2 = $db->sql_fetchrow($result2))
 	
 			$result3 = $db->sql_query("SELECT `cid`, `title` FROM `".$prefix."_downloads_categories` WHERE `active`=1 AND `parentid`=0 ORDER BY `title`");
 	
-			while ($row3 = $db->sql_fetchrow($result3)) 
-			{
+			while ($row3 = $db->sql_fetchrow($result3)): 
+				
 				$titolodown = $row3['title'];
 			
 				$cid1 = $row3['cid'];
@@ -141,15 +139,12 @@ while ($row2 = $db->sql_fetchrow($result2))
 				print '<tr><td>&nbsp;</td><td><font color="violet"><i style="vertical-align: absmiddle;" class="fa fa-unlock-alt"></i></font> <a href="modules.php?name=Downloads&amp;cid='.$cid1.'">'.$titolodown.'</a></td>';
 			
 				if($xml)
-                {
-                    //XML
-                    @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Downloads&amp;cid='.$cid1.'</loc></url>'."\n");
-                }
-            
+                @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Downloads&amp;cid='.$cid1.'</loc></url>'."\n");
+         
 			    $result4 = $db->sql_query('SELECT `cid`, `title` FROM `'.$prefix.'_downloads_categories` WHERE `active`=1 AND `parentid`="'.$cid1.'" ORDER BY `title`');
 			
-				while ($row4 = $db->sql_fetchrow($result4)) 
-				{
+				while ($row4 = $db->sql_fetchrow($result4)): 
+				
 					$titolodown2 = $row4['title'];
 				
 					$cid2 = $row4['cid'];
@@ -157,15 +152,12 @@ while ($row2 = $db->sql_fetchrow($result2))
 					print '<tr><td>&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green"><i style="vertical-align: middle;" class="fa fa-unlock-alt"></i></font> <a href="modules.php?name=Downloads&amp;cid='.$cid2.'">'.$titolodown2.'</a></td>';
 				
 					if($xml)
-                    {
-                            //XML
-                            @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Downloads&amp;cid='.$cid2.'</loc></url>'."\n");
-                   }
+                    @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Downloads&amp;cid='.$cid2.'</loc></url>'."\n");
                 
 				   $result4b = $db->sql_query('SELECT `cid`, `lid`, `title` FROM `'.$prefix.'_downloads_downloads` WHERE `active`= 1 AND `cid`="'.$cid2.'" ORDER BY `hits` LIMIT 0,'.$ndown);
                 
-				    while ($row4b = $db->sql_fetchrow($result4b)) 
-					{
+				    while ($row4b = $db->sql_fetchrow($result4b)): 
+					
         				$titolodown3=$row4b['title'];
         			
 						$cid3=$row4b['lid'];
@@ -173,15 +165,12 @@ while ($row2 = $db->sql_fetchrow($result2))
 						print '<tr><td>&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="modules/Google-Site-Map/images/catt.gif" alt="cat"> <a href="modules.php?name=Downloads&amp;op=getit&amp;lid='.$cid3.'">'.$titolodown3.'</a></td>';
         			
 						if($xml)
-                        {
-                                //XML
-                                @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Downloads&amp;op=getit&amp;lid='.$cid3.'</loc></url>'."\n");
-                        }
-                    }
+                        @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Downloads&amp;op=getit&amp;lid='.$cid3.'</loc></url>'."\n");
+                    endwhile;
                     $db->sql_freeresult($result4b);
-                }
+                endwhile;
                 $db->sql_freeresult($result4);
-			}
+			endwhile;
             $db->sql_freeresult($result3);
 		break;
 		
@@ -245,13 +234,10 @@ while ($row2 = $db->sql_fetchrow($result2))
 
 					endwhile;
 					$db->sql_freeresult($result4b);
-
 				endwhile;
 				$db->sql_freeresult($result4);
-
 			endwhile;
             $db->sql_freeresult($result3);
-
 		break;		
 		
 
@@ -259,28 +245,26 @@ while ($row2 = $db->sql_fetchrow($result2))
 
 			$result5 = $db->sql_query('SELECT `cat_id`, `cat_title` FROM `'.$prefix.'_bbcategories` ORDER BY `cat_order`');
 
-			while ($row5 = $db->sql_fetchrow($result5)) 
-			{
+			while ($row5 = $db->sql_fetchrow($result5)): 
+			
 				$titolocatf = $row5['cat_title'];
 				$cat_id = $row5['cat_id'];
 
 				//Check to make sure its not a blank category
 				$number_of_forums = $db->sql_numrows($db->sql_query('SELECT * FROM '.$prefix.'_bbforums WHERE `cat_id`="'.$cat_id.'" AND auth_view < 2 AND auth_read < 2 ORDER BY forum_order'));
 				
-				if ($number_of_forums <= 0) continue;
+				if ($number_of_forums <= 0) 
+				continue;
 
 				print '<tr><td>&nbsp;</td><td><font color="violet"><i style="vertical-align: absmiddle;" class="fa fa-unlock-alt"></i></font> <a href="modules.php?name=Forums&amp;file=index&amp;c='.$cat_id.'">'.$titolocatf.'</a></td>';
 		        
 				if($xml)
-                {
-                    //XML
-                    @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Forums&amp;file=index&amp;c='.$cat_id.'</loc></url>'."\n");
-                }
+                @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Forums&amp;file=index&amp;c='.$cat_id.'</loc></url>'."\n");
                 
 				$result6 = $db->sql_query('SELECT `forum_name`,`forum_id`,`auth_view`,`auth_read` FROM `'.$prefix.'_bbforums` WHERE `cat_id`="'.$cat_id.'" AND `auth_view`< 2 AND `auth_read` < 2 ORDER BY `forum_order`');
 				
-				while ($row6 = $db->sql_fetchrow($result6)) 
-				{
+				while ($row6 = $db->sql_fetchrow($result6)): 
+				
 					$titoloforum = $row6['forum_name'];
 					$fid = $row6['forum_id'];
 					$auth_view = $row6['auth_view'];
@@ -288,41 +272,36 @@ while ($row2 = $db->sql_fetchrow($result2))
 				
 					print '<tr><td>&nbsp;</td><td>';
 					
-					if ($auth_view && !is_user()) 
-					{
+					if ($auth_view && !is_user()): 
+					
 						print '<font color="#FF0000"><i class="fa fa-lock"></i></font>&nbsp;';
 						print $titoloforum.'</td></tr>';
-					} 
-					else 
-					{
+					 
+					else: 
+					
 						print '&nbsp;&nbsp;&nbsp;&nbsp;<font color="green"><i style="vertical-align: absmiddle;" class="fa fa-unlock-alt"></i></font>';
 						print  '<a href="modules.php?name=Forums&amp;file=viewforum&amp;f='.$fid.'">'.$titoloforum.'</a></td></tr>';
     			        
 						if($xml)
-                        {
-                            //XML
-                            @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Forums&amp;file=viewforum&amp;f='.$fid.'</loc><changefreq>daily</changefreq></url>'."\n");
-                        }
+                        @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Forums&amp;file=viewforum&amp;f='.$fid.'</loc><changefreq>daily</changefreq></url>'."\n");
                         
 						$resultT = $db->sql_query('SELECT topic_title, topic_id FROM '.$prefix.'_bbtopics WHERE `forum_id`="'.$fid.'" ORDER BY topic_id DESC LIMIT 0,'.$ntopics);
 						
-						while($rowT = $db->sql_fetchrow($resultT)) 
-						{
+						while($rowT = $db->sql_fetchrow($resultT)): 
+						
 						    print '<tr><td>&nbsp;</td><td>';
 							print '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="modules/Google-Site-Map/images/catt.gif" alt="cat">';
 							print '<a href="modules.php?name=Forums&amp;file=viewtopic&amp;t='.$rowT[topic_id].'">'.$rowT[topic_title].'</a></td>';
 							
 							if($xml)
-							{
-                                //XML
-                                @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Forums&amp;file=viewtopic&amp;t='.$rowT[topic_id].'</loc><changefreq>daily</changefreq></url>'."\n");
-                            }
-                       }
+                            @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Forums&amp;file=viewtopic&amp;t='.$rowT[topic_id].'</loc><changefreq>daily</changefreq></url>'."\n");
+                        
+						endwhile;
                        $db->sql_freeresult($resultT);
-					}
-				}
+					endif;
+				endwhile;
 				$db->sql_freeresult($result6);
-			}
+			endwhile;
 			$db->sql_freeresult($result5);
 		break;
 
@@ -330,8 +309,8 @@ while ($row2 = $db->sql_fetchrow($result2))
 			
 			$result7 = $db->sql_query('select `secid`, `secname`, `image` from `'.$prefix.'_sections` order by `secname`');
 			
-			while ($row7 = $db->sql_fetchrow($result7)) 
-			{
+			while ($row7 = $db->sql_fetchrow($result7)): 
+			
 				$secid = $row7['secid'];
 				
 				$secname = $row7['secname'];
@@ -341,22 +320,15 @@ while ($row2 = $db->sql_fetchrow($result2))
 				print '<tr><td>&nbsp;</td><td>';
 			
 				if ($view==1) 
-				{
 					print '<font color="#FF0000"><i class="fa fa-lock"></i></font>&nbsp;';
-				} 
 				else 
-				{
 					print '&nbsp;&nbsp;&nbsp;&nbsp;<i style="vertical-align: absmiddle;" class="fa fa-unlock-alt"></i></font> ';
-				}
 				
 				print '<a href="modules.php?name=Sections&amp;op=listarticles&amp;secid='.$secid.'">'.$secname.'</a></td>';
 				
 				if($xml)
-				{
-                    //XML
 			        @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Sections&amp;op=listarticles&amp;secid='.$secid.'</loc></url>'."\n");
-		         }
-			}
+			endwhile;
 			$db->sql_freeresult($result7);
 		break;
 
@@ -364,8 +336,8 @@ while ($row2 = $db->sql_fetchrow($result2))
             
 			$result8 = $db->sql_query('SELECT `cid`, `title` from `'.$prefix.'_links_categories` where `parentid`="'.$cid.'" order by `title`');
 			
-			while ($row8 = $db->sql_fetchrow($result8)) 
-			{
+			while ($row8 = $db->sql_fetchrow($result8)): 
+			
 				$titololink = $row8['title'];
 			
 				$cid1 = $row8['cid'];
@@ -373,34 +345,33 @@ while ($row2 = $db->sql_fetchrow($result2))
 				print '<tr><td>&nbsp;</td><td><font color="green"><i style="vertical-align: absmiddle;" class="fa fa-unlock-alt"></i></font> <a href="modules.php?name=Web_Links&amp;l_op=viewlink&amp;cid='.$cid1.'">'.$titololink.'</a></td>';
 			
 				if($xml)
-				{
-                     //XML
-			         @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Web_Links&amp;l_op=viewlink&amp;cid='.$cid1.'</loc></url>'."\n");
-			    }
-            }
+	           @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Web_Links&amp;l_op=viewlink&amp;cid='.$cid1.'</loc></url>'."\n");
+            
+			endwhile;
             $db->sql_freeresult($result8);
 		break;
 
 		case 'Blog_Topics':
+			
 			$result9 = $db->sql_query("SELECT topictext,topicid FROM ".$prefix."_topics ORDER BY topictext");
-			while ($row9 = $db->sql_fetchrow($result9)) {
+			
+			while ($row9 = $db->sql_fetchrow($result9)):
 				$topiclink=$row9['topictext'];
 				$cidtopic=$row9['topicid'];
 				print '<tr><td>&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green"><i style="vertical-align: absmiddle;" class="fa fa-unlock-alt"></i></font> <a href="modules.php?name=Blog_Topics&amp;cid='.$cidtopic.'">'.$topiclink.'</a></td>';
 				if($xml)
-		        {
-                    //XML
-			        @fwrite($var, "<url><loc>$nukeurl/modules.php?name=Blog_Topics&amp;cid=$cidtopic</loc></url>\n");
-		        }
-            }
+		        @fwrite($var, "<url><loc>$nukeurl/modules.php?name=Blog_Topics&amp;cid=$cidtopic</loc></url>\n");
+
+            endwhile;
             $db->sql_freeresult($result9);
 		break;
 
 		case 'Blog':
+			
 			$result10 = $db->sql_query('SELECT `title`, `sid` FROM `'.$prefix.'_stories` ORDER BY `sid` DESC LIMIT 0,'.$nnews);
 			
-			while ($row10 = $db->sql_fetchrow($result8)) 
-			{
+			while ($row10 = $db->sql_fetchrow($result8)): 
+
 				$newslink = $row10['title'];
 			
 				$cidnews = $row10['sid'];
@@ -408,11 +379,9 @@ while ($row2 = $db->sql_fetchrow($result2))
 				print '<tr><td>&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green"><i style="vertical-align: absmiddle;" class="fa fa-unlock-alt"></i></font> <a href="modules.php?name=Blog&amp;file=article&amp;sid='.$cidnews.'">'.$newslink.'</a></td>';
 			
 				if($xml)
-		        {
-                //XML
 			    @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Blog&amp;file=article&amp;sid='.$cidnews.'</loc></url>'."\n");
-		        }
-            }
+            endwhile;
+			
             $db->sql_freeresult($result10);
 		break;
 
@@ -420,11 +389,10 @@ while ($row2 = $db->sql_fetchrow($result2))
 		
 			$result11 = $db->sql_query('SELECT `username`, `user_id` FROM `'.$user_prefix.'_users` ORDER BY `user_id` DESC LIMIT 0,'.$nuser);
 		
-			if ($show) 
-			{
-			
-			while ($row11 = $db->sql_fetchrow($result11)) 
-			{
+		if ($show): 
+		
+			   while ($row11 = $db->sql_fetchrow($result11)): 
+			   
 				$user=$row11['username'];
 			
 				$ciduser=$row11['user_id'];
@@ -432,21 +400,20 @@ while ($row2 = $db->sql_fetchrow($result2))
 				print '<tr><td>&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green"><i style="vertical-align: absmiddle;" class="fa fa-unlock-alt"></i></font> <a href="modules.php?name=Profile&amp;mode=viewprofile&amp;u='.$ciduser.'">'.$user.'</a></td>';
 
 				if($xml)
-		        {
-                //XML
 			    @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Profile&amp;mode=viewprofile&amp;u='.$ciduser.'</loc></url>'."\n");
-		        }
-            }
+
+               endwhile;
             $db->sql_freeresult($result11);
-			}
+		
+		endif;
 		break;
 
 		case 'Reviews':
 			
 			$result12 = $db->sql_query('SELECT `title`, `id` FROM `'.$prefix.'_reviews` ORDER BY `id` DESC LIMIT 0,'.$nrev);
 			
-			while ($row12 = $db->sql_fetchrow($result12)) 
-			{
+			while ($row12 = $db->sql_fetchrow($result12)): 
+			
 				$titrev=$row12['title'];
 			
 				$cidrev=$row12['id'];
@@ -454,15 +421,14 @@ while ($row2 = $db->sql_fetchrow($result2))
 				print '<tr><td></td><td>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green"><i style="vertical-align: absmiddle;" class="fa fa-unlock-alt"></i></font> <a href="modules.php?name=Reviews&amp;rop=showcontent&amp;id='.$cidrev.'">'.$titrev.'</a></td>';
 			
 				if($xml)
-		        {
-                //XML
 			    @fwrite($var, '<url><loc>'.$nukeurl.'/modules.php?name=Reviews&amp;rop=showcontent&amp;id='.$cidrev.'</loc></url>'."\n");
-		        }
-            }
+
+            endwhile;
             $db->sql_freeresult($result12);
 		break;
 	}
-}
+endwhile;
+
 $db->sql_freeresult($result2);
 
 print '</table>';
@@ -473,11 +439,7 @@ print '</tbody>';
 print '</table>';
 print '</div>';
 
-CloseTable();
-
-// YOU ARE NOT AUTHORISED TO REMOVE OR EDIT BELOW LINES WITHOUT AUTHORS PERMISSIONS. PLEASE PLAY FAIR.
-// NON MOFIFICARE O RIMUOBERE LE LINEE SEGUENTI SENZA IL PERMESSO DELL'AUTORE
-echo'
+print'
 <script type="text/javascript">
  <!--
  function copy() {
@@ -488,8 +450,10 @@ echo'
       window.open("modules/Google-Site-Map/copyright.php","","width=" + w + ",height=" + h + ",top=" + t + ",left=" + l);
  }
  //-->
-</script>
-<div align="center"><a href="javascript:copy()">&copy; Google Site Map</a></div>';
+</script>';
+print '<div align="center"><a href="javascript:copy()">&copy; Google Site Map</a></div>';
+
+CloseTable();
 
 if($xml)
 {
@@ -499,4 +463,3 @@ if($xml)
 // FOOTER GRAPHIC
 include_once(NUKE_BASE_DIR.'footer.php');
 
-?>

@@ -1,26 +1,20 @@
 <?php
-
 /************************************************************************/
-/* NukeJMap [Site_Map]	4.0 by z3rb			                			*/
+/* [Google-Site-Map] 1.0 by TheGhost              			            */
 /* =================================                                    */
-/*                                                                      */
-/* Copyright (c) 2006 by Techgen			                			*/
-/* http://www.techg3n.net                                               */
-/*                                                                      */
+/* Copyright (c) 2021 by The 86it Developers Network          			*/
+/* http://www.86it.us                                                   */
 /************************************************************************/
-
-define("_NJMAP","Sitemap of");
-define("_SITEMAPADMIN","Sitemap Administration");
-define("_SITEMAP_ADMIN_HEADER", "Nuke-Evolution NukeJMap [Site Map] :: Admin Panel");
-define("_SITEMAP_RETURNMAIN", "Return to Main Administration");
+define("_GOOGLE_MAP","Sitemap of");
+define("_GOOGLE_SITEMAPADMIN","Google Site Map Administration");
+define("_GOOGLE_SITEMAP_ADMIN_HEADER", "Google Site Map : Admin Panel");
+define("_GOOGLE_SITEMAP_RETURNMAIN", "Return to Main Administration");
 define("_XMLCREATE","XML Creation:");
 define("_YES","Yes:");
 define("_NO","No:");
-define("_NDOWN","# Downloads / File Repository:");
-define("_NNEWS","# News:");
-define("_NREV","# Reviews:");
-define("_NUSER","# Users:");
-define("_NTOPICS","# Last forum's post:");
+define("_BDOWN","File Repository:");
+define("_BLOGS","Blogs:");
+define("_BREV","Reviews:");
+define("_BUSER","Users:");
+define("_NTOPICS","Forum posts:");
 define("_OK","Ok");
-
-?>
