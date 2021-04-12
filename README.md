@@ -1,6 +1,7 @@
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
 <ul>
+	<li><strong>Updated</strong> Portal Menu v5 now works with PHP 7.xx</li>
 	<li><strong>Added</strong> fbconfig.php configuration file for Facebook SDK v5</li>
 	<li><strong>Complete re-write of the title_and_meta_tags(); function</strong>&nbsp; for Facebook SDK v5</li>
 	<li><strong>Added</strong> Deactivate Account for Facebook SDK v5</li>
