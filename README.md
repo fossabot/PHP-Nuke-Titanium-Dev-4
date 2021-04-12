@@ -19,7 +19,7 @@
 	<li><strong>Added</strong> <strong>Blog_Archive</strong> This is the archives module it keeps a history of your blogs</li>
 	<li><strong>Added</strong> <strong>Blog_Submit</strong> This allows people to submit Blogs to your portal</li>
 	<li><strong>Added</strong> <strong>Blog_Top</strong> This is a module that displays the top 10 Blogs on your portal</li>
-	<li><strong>Added</strong> <strong>Blog_Topics</strong> This is a module thats lists all you Blog topics</li>
+	<li><strong>Added</strong> <strong>Blog_Topics</strong> This is a module thats lists all your Blog topics</li>
 	<li><strong>Added</strong> <strong>Network_Advertising</strong> Module by <strong>NukeScripts.Net</strong></li>
 	<li><strong>Added</strong> <strong>Loan</strong> Module by <strong>ScottybCoder</strong> A 30/360 Rule loan caluclator</li>
 	<li><strong>Added</strong> <strong>Network Bookmarks</strong> (private bookmark vault for users)</li>
@@ -29,8 +29,6 @@
 	<li><strong>Added</strong> Network Projects (fixed for network use, used to report errors with themes modules or general code bugs) by <strong>NukeScripts.Net</strong></li>
 	<li><strong>Added</strong> Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes)</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> BBCode on the main page used an incorrect display path. i.e. root/filename.png it now uses root/modules/Forum/images/smiles/filename.png.</li>
-	<li><span style="color:#c0392b"><strong>Fixed</strong></span> Site_Map was using read_article i.e.&nbsp;modules.php?name=Blog&amp;amp;file=read_article&amp;amp;sid=4 which was not displaying the header and footer.</li>
-	<li><span style="color:#c0392b"><strong>Fixed</strong></span> Site_Map was using Topics instead of Blog_Topics</li>
 	<li><strong><span style="color:#c0392b">Fixed</span></strong> cookieconsent.min.js was opening the learn link in the <strong>_parent</strong> window thus directing the user away from the current page.</li>
 	<li><span style="color:#c0392b"><strong>Fixed </strong></span>The printer-friendly icon was not right when you clicked on read more or comments.</li>
 	<li><strong><span style="color:#c0392b">Fixed</span></strong> The send to friend icon was not right when you clicked on read more or comments.</li>
