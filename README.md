@@ -1,6 +1,7 @@
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
 <ul>
+	<li><strong>Google Site Map v1.0</strong>&nbsp;added for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong>by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Portal Menu</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong>by <strong>TheGhost</strong></li>
 	<li><strong>Web_Links</strong> Module re-write by <strong>TheGhost</strong></li>
 	<li>Admin <strong>Authors Panel</strong>&nbsp;updated by <strong>TheGhost</strong></li>
