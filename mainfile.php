@@ -350,6 +350,23 @@ if (CAN_MOD_INI) {
     ini_set('zlib.output_compression', 0);
 }
 
+# facebook SDK Mod START
+if (@file_exists(NUKE_BASE_DIR.'fbconfig.php')):  
+@require_once(NUKE_BASE_DIR.'fbconfig.php');
+  if ( defined('facebook') ):
+  global $fb, $appID, $api_version, $appSecret, $my_url;
+  if(!isset($my_url) || empty($my_url)) 
+  die('$my_url <- your domain is not set in your fbconfig.php file!');
+  if(!isset($appSecret) || empty($appSecret)) 
+  die('$appSecret <- your facebook appSecret is not defined in your fbconfig.php file!');
+  if(!isset($appID) || empty($appID)) 
+  die('$appID <- your facebook appID is not defined in your fbconfig.php file!');
+  if(!isset($api_version) || empty($api_version)) 
+  die('$api_version <- your facebook api_version is not defined in your fbconfig.php file!');
+  endif;
+endif;
+# facebook SDK Mod END
+
 // Include config file
 @require_once(NUKE_BASE_DIR.'config.php');
 if(!$directory_mode) {

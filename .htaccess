@@ -116,6 +116,12 @@ RewriteRule ^.*$ http://127.0.0.1 [R,L]
     Satisfy All
 </files>
 
+# facebook Titanium SDK v5
+# Disable fbconfig.php viewing from browser
+<files ~ "\fbconfig.php$">
+    deny from all
+</files>
+
 # Disable config.php viewing from browser
 <files ~ "\config.php$">
     deny from all
