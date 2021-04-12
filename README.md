@@ -11,17 +11,17 @@
 	<li>Admin <strong>Blocks Panel</strong>&nbsp;updated</li>
 	<li>Admin <strong>Backup Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
 	<li>Admin <strong>Modules Panel</strong> re-write</li>
-	<li><strong>Added</strong> Titanium facebook SDK</li>
+	<li><strong>Added</strong> Titanium facebook SDK v5</li>
 	<li><strong>Added</strong> Facebook Likes for Blogs</li>
 	<li><strong>Added</strong> Facebook Commenting for Blogs</li>
 	<li><strong>Added</strong> Portals now come with a preconfigured facebook app (associated with your web portal)</li>
-	<li><strong>Added</strong> <strong>Blog</strong></li>
-	<li><strong>Added</strong> <strong>Blog_Archive</strong></li>
-	<li><strong>Added</strong> <strong>Blog_Submit</strong></li>
-	<li><strong>Added</strong> <strong>Blog_Top</strong></li>
-	<li><strong>Added</strong> <strong>Blog_Topics</strong></li>
+	<li><strong>Added</strong> <strong>Blog</strong> This is the main portal Blog module</li>
+	<li><strong>Added</strong> <strong>Blog_Archive</strong> This is the archives module it keeps a history of your blogs</li>
+	<li><strong>Added</strong> <strong>Blog_Submit</strong> This allows people to submit Blogs to your portal</li>
+	<li><strong>Added</strong> <strong>Blog_Top</strong> This is a module that displays the top 10 Blogs on your portal</li>
+	<li><strong>Added</strong> <strong>Blog_Topics</strong> This is a module thats lists all you Blog topics</li>
 	<li><strong>Added</strong> <strong>Network_Advertising</strong> Module by <strong>NukeScripts.Net</strong></li>
-	<li><strong>Added</strong> <strong>Loan</strong> Module by <strong>ScottybCoder</strong></li>
+	<li><strong>Added</strong> <strong>Loan</strong> Module by <strong>ScottybCoder</strong> A 30/360 Rule loan caluclator</li>
 	<li><strong>Added</strong> <strong>Network Bookmarks</strong> (private bookmark vault for users)</li>
 	<li><strong>Added</strong> <strong>Proof_Of_God</strong> Module by <strong>ScottyBcoder</strong></li>
 	<li><strong>Added</strong> Resolution Checking for Advanced Themes</li>
