@@ -34,6 +34,11 @@
 	<li><strong><span style="color:#c0392b">Fixed</span></strong> The send to friend icon was not right when you clicked on read more or comments.</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span>&nbsp;In the admin area the modules admin block was listing the index page as a module left a <strong>..</strong> in the module list that says can&#39;t be edited.</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> In the admin area&nbsp;the modules admin block was listing the index.html file as if it were a module.</li>
+    <li><strong>Removed</strong> News Module</li>
+    <li><strong>Removed</strong> Stories_Archive Module</li>
+    <li><strong>Removed</strong> Top Module</li>
+	<li><strong>Removed</strong> Topics Module</li>
+	<li><strong>Removed</strong> Site_Map Module</li>
 </ul>
 
 
