@@ -25,7 +25,7 @@
 	<li><strong>Update</strong> - Admin <strong>Authors Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
 	<li><strong>Update</strong> - Admin <strong>Blocks Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
 	<li><strong>Update</strong> - Admin <strong>Backup Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
-	<li><strong>Update</strong> - Admin <strong>Modules Panel</strong></li>
+	<li><strong>Update</strong> - Admin <strong>Modules Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
 	<li><strong>Re-Write</strong> - <strong>of the title_and_meta_tags(); function</strong> for Facebook SDK v5</li>
 	<li><strong>Re-Write</strong> - <strong>Web_Links</strong> Module</li>
 	<li><strong>Removed</strong> - News Module</li>
