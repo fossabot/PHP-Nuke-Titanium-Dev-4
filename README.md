@@ -22,11 +22,11 @@
 	<li><strong>Added</strong> - Network Projects (fixed for network use, used to report errors with themes modules or general code bugs) by <strong>NukeScripts.Net</strong></li>
 	<li><strong>Added</strong> - Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes)</li>
 
-	<li><span style="color:#c0392b"><strong>Fixed</strong></span> BBCode on the main page used an incorrect display path. i.e. root/filename.png it now uses root/modules/Forum/images/smiles/filename.png.</li>
-	<li><strong><span style="color:#c0392b">Fixed</span></strong> cookieconsent.min.js was opening the learn link in the <strong>_parent</strong> window thus directing the user away from the current page.</li>
-	<li><span style="color:#c0392b"><strong>Fixed </strong></span>- The printer-friendly icon was not right when you clicked on read more or comments.</li>
+	<li><span style="color:#c0392b"><strong>Fixed</strong></span> - BBCode on the main page used an incorrect display path. i.e. root/filename.png it now uses root/modules/Forum/images/smiles/filename.png.</li>
+	<li><strong><span style="color:#c0392b">Fixed</span></strong> - cookieconsent.min.js was opening the learn link in the <strong>_parent</strong> window thus directing the user away from the current page.</li>
+	<li><span style="color:#c0392b"><strong>Fixed </strong></span> - The printer-friendly icon was not right when you clicked on read more or comments.</li>
 	<li><strong><span style="color:#c0392b">Fixed</span></strong> - The send to friend icon was not right when you clicked on read more or comments.</li>
-	<li><span style="color:#c0392b"><strong>Fixed</strong></span>&nbsp;- In the admin area the modules admin block was listing the index page as a module left a <strong>..</strong> in the module list that says can&#39;t be edited.</li>
+	<li><span style="color:#c0392b"><strong>Fixed</strong></span> - In the admin area the modules admin block was listing the index page as a module left a <strong>..</strong> in the module list that says can&#39;t be edited.</li>
 	<li><span style="color:#c0392b"><strong>Fixed</strong></span> - In the admin area&nbsp;the modules admin block was listing the index.html file as if it were a module.</li>
 
 	<li>Admin <strong>Portal Menu v5</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
