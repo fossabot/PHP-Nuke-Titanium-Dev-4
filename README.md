@@ -3,7 +3,7 @@
 <ul>
 	<li><strong>Added</strong> fbconfig.php configuration file for Facebook SDK v5</li>
 	<li><strong>Complete re-write of the title_and_meta_tags(); function</strong>&nbsp; for Facebook SDK v5</li>
-	<li><strong>Deactivate Account</strong>&nbsp;added for Facebook SDK v5</li>
+	<li><strong>Added</strong> Deactivate Account for Facebook SDK v5</li>
 	<li><strong>Added</strong> Google Site Map v1.0 for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
 	<li>Admin <strong>Portal Menu</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
 	<li><strong>Web_Links</strong> Module re-write</li>
@@ -14,7 +14,7 @@
 	<li><strong>Added</strong> Titanium facebook SDK</li>
 	<li><strong>Added</strong> Facebook Likes for Blogs</li>
 	<li><strong>Added</strong> Facebook Commenting for Blogs</li>
-	<li>Portals now come with a preconfigured facebook app (associated with your web portal)</li>
+	<li><strong>Added</strong> Portals now come with a preconfigured facebook app (associated with your web portal)</li>
 	<li><strong>Added</strong> <strong>Blog</strong></li>
 	<li><strong>Added</strong> <strong>Blog_Archive</strong></li>
 	<li><strong>Added</strong> <strong>Blog_Submit</strong></li>
