@@ -19,7 +19,7 @@
 	<li><strong>Added</strong> - <strong>Proof_Of_God</strong> Module by <strong>ScottyBcoder</strong></li>
 	<li><strong>Added</strong> - Resolution Checking for Advanced Themes</li>
 	<li><strong>Added</strong> - Flykit for designing themes on the Fly (used to edit CSS in realtime)</li>
-	<li><strong>Added</strong> - Network Projects (fixed for network use, used to report errors with themes modules or general code bugs)</li>
+	<li><strong>Added</strong> - Network Projects for network use, to report errors with themes modules or general code bugs</li>
 	<li><strong>Added</strong> - Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes)</li>
 	<li><strong>Update</strong> - Admin <strong>Portal Menu v5</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
 	<li><strong>Update</strong> - Admin <strong>Authors Panel</strong>&nbsp;updated</li>
