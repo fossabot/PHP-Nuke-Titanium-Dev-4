@@ -1,45 +1,48 @@
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
 <ul>
-	<li><strong>Updated</strong> Portal Menu v5 now works with PHP 7.xx</li>
-	<li><strong>Added</strong> fbconfig.php configuration file for Facebook SDK v5</li>
-	<li><strong>Complete re-write of the title_and_meta_tags(); function</strong>&nbsp; for Facebook SDK v5</li>
-	<li><strong>Added</strong> Deactivate Account for Facebook SDK v5</li>
-	<li><strong>Added</strong> Google Site Map v1.0 for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
-	<li>Admin <strong>Portal Menu</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
-	<li><strong>Web_Links</strong> Module re-write</li>
+	<li><strong>Added</strong> - fbconfig.php configuration file for Facebook SDK v5</li>
+	<li><strong>Added</strong> - Deactivate Account for Facebook SDK v5</li>
+	<li><strong>Added</strong> - Google Site Map v1.0 for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
+	<li><strong>Added</strong> - Titanium facebook SDK v5</li>
+	<li><strong>Added</strong> - Facebook Likes for Blogs</li>
+	<li><strong>Added</strong> - Facebook Commenting for Blogs</li>
+	<li><strong>Added</strong> - Portals now come with a preconfigured facebook app (associated with your web portal)</li>
+	<li><strong>Added</strong> - <strong>Blog</strong> This is the main portal Blog module</li>
+	<li><strong>Added</strong> - <strong>Blog_Archive</strong> This is the archives module it keeps a history of your blogs</li>
+	<li><strong>Added</strong> - <strong>Blog_Submit</strong> This allows people to submit Blogs to your portal</li>
+	<li><strong>Added</strong> - <strong>Blog_Top</strong> This is a module that displays the top 10 Blogs on your portal</li>
+	<li><strong>Added</strong> - <strong>Blog_Topics</strong> This is a module thats lists all your Blog topics</li>
+	<li><strong>Added</strong> - <strong>Network_Advertising</strong> Module by <strong>NukeScripts.Net</strong></li>
+	<li><strong>Added</strong> - <strong>Loan</strong> Module by <strong>ScottybCoder</strong> A 30/360 Rule loan caluclator</li>
+	<li><strong>Added</strong> - <strong>Network Bookmarks</strong> (private bookmark vault for users)</li>
+	<li><strong>Added</strong> - <strong>Proof_Of_God</strong> Module by <strong>ScottyBcoder</strong></li>
+	<li><strong>Added</strong> - Resolution Checking for Advanced Themes</li>
+	<li><strong>Added</strong> - Flykit for designing themes on the Fly (used to edit CSS in realtime)</li>
+	<li><strong>Added</strong> - Network Projects (fixed for network use, used to report errors with themes modules or general code bugs) by <strong>NukeScripts.Net</strong></li>
+	<li><strong>Added</strong> - Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes)</li>
+
+	<li><span style="color:#c0392b"><strong>Fixed</strong></span> BBCode on the main page used an incorrect display path. i.e. root/filename.png it now uses root/modules/Forum/images/smiles/filename.png.</li>
+	<li><strong><span style="color:#c0392b">Fixed</span></strong> cookieconsent.min.js was opening the learn link in the <strong>_parent</strong> window thus directing the user away from the current page.</li>
+	<li><span style="color:#c0392b"><strong>Fixed </strong></span>- The printer-friendly icon was not right when you clicked on read more or comments.</li>
+	<li><strong><span style="color:#c0392b">Fixed</span></strong> - The send to friend icon was not right when you clicked on read more or comments.</li>
+	<li><span style="color:#c0392b"><strong>Fixed</strong></span>&nbsp;- In the admin area the modules admin block was listing the index page as a module left a <strong>..</strong> in the module list that says can&#39;t be edited.</li>
+	<li><span style="color:#c0392b"><strong>Fixed</strong></span> - In the admin area&nbsp;the modules admin block was listing the index.html file as if it were a module.</li>
+
+	<li>Admin <strong>Portal Menu v5</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
 	<li>Admin <strong>Authors Panel</strong>&nbsp;updated</li>
 	<li>Admin <strong>Blocks Panel</strong>&nbsp;updated</li>
 	<li>Admin <strong>Backup Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
 	<li>Admin <strong>Modules Panel</strong> re-write</li>
-	<li><strong>Added</strong> Titanium facebook SDK v5</li>
-	<li><strong>Added</strong> Facebook Likes for Blogs</li>
-	<li><strong>Added</strong> Facebook Commenting for Blogs</li>
-	<li><strong>Added</strong> Portals now come with a preconfigured facebook app (associated with your web portal)</li>
-	<li><strong>Added</strong> <strong>Blog</strong> This is the main portal Blog module</li>
-	<li><strong>Added</strong> <strong>Blog_Archive</strong> This is the archives module it keeps a history of your blogs</li>
-	<li><strong>Added</strong> <strong>Blog_Submit</strong> This allows people to submit Blogs to your portal</li>
-	<li><strong>Added</strong> <strong>Blog_Top</strong> This is a module that displays the top 10 Blogs on your portal</li>
-	<li><strong>Added</strong> <strong>Blog_Topics</strong> This is a module thats lists all your Blog topics</li>
-	<li><strong>Added</strong> <strong>Network_Advertising</strong> Module by <strong>NukeScripts.Net</strong></li>
-	<li><strong>Added</strong> <strong>Loan</strong> Module by <strong>ScottybCoder</strong> A 30/360 Rule loan caluclator</li>
-	<li><strong>Added</strong> <strong>Network Bookmarks</strong> (private bookmark vault for users)</li>
-	<li><strong>Added</strong> <strong>Proof_Of_God</strong> Module by <strong>ScottyBcoder</strong></li>
-	<li><strong>Added</strong> Resolution Checking for Advanced Themes</li>
-	<li><strong>Added</strong> Flykit for designing themes on the Fly (used to edit CSS in realtime)</li>
-	<li><strong>Added</strong> Network Projects (fixed for network use, used to report errors with themes modules or general code bugs) by <strong>NukeScripts.Net</strong></li>
-	<li><strong>Added</strong> Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes)</li>
-	<li><span style="color:#c0392b"><strong>Fixed</strong></span> BBCode on the main page used an incorrect display path. i.e. root/filename.png it now uses root/modules/Forum/images/smiles/filename.png.</li>
-	<li><strong><span style="color:#c0392b">Fixed</span></strong> cookieconsent.min.js was opening the learn link in the <strong>_parent</strong> window thus directing the user away from the current page.</li>
-	<li><span style="color:#c0392b"><strong>Fixed </strong></span>The printer-friendly icon was not right when you clicked on read more or comments.</li>
-	<li><strong><span style="color:#c0392b">Fixed</span></strong> The send to friend icon was not right when you clicked on read more or comments.</li>
-	<li><span style="color:#c0392b"><strong>Fixed</strong></span>&nbsp;In the admin area the modules admin block was listing the index page as a module left a <strong>..</strong> in the module list that says can&#39;t be edited.</li>
-	<li><span style="color:#c0392b"><strong>Fixed</strong></span> In the admin area&nbsp;the modules admin block was listing the index.html file as if it were a module.</li>
-    <li><strong>Removed</strong> News Module</li>
-    <li><strong>Removed</strong> Stories_Archive Module</li>
-    <li><strong>Removed</strong> Top Module</li>
-	<li><strong>Removed</strong> Topics Module</li>
-	<li><strong>Removed</strong> Site_Map Module</li>
+
+	<li><strong>Complete re-write of the title_and_meta_tags(); function</strong>&nbsp; for Facebook SDK v5</li>
+	<li><strong>Web_Links</strong> Module re-write</li>
+
+    <li><strong>Removed</strong> - News Module</li>
+    <li><strong>Removed</strong> - Stories_Archive Module</li>
+    <li><strong>Removed</strong> - Top Module</li>
+	<li><strong>Removed</strong> - Topics Module</li>
+	<li><strong>Removed</strong> - Site_Map Module</li>
 </ul>
 
 
