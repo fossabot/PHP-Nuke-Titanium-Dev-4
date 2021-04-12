@@ -5,10 +5,10 @@ function facebook_likes()
 {
 if ( defined('facebook') ):	
 global $sid, $appID, $my_url;
-echo '<div id="fb-root"></div>'."\n";
+echo '<br /><br /><div id="fb-root"></div>'."\n";
 echo '<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId='.$appID.'&autoLogAppEvents=1" nonce="dv0pyfMc"></script>'."\n";
 
-echo '<div style="background-color: grey" class="fb-like" data-href="https://'.$my_url.'/modules.php?name=Blog&amp;file=article&amp;sid='.$sid.'" data-width="1209" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>'."\n";
+echo '<div style="background-color: none" class="fb-like" data-href="https://'.$my_url.'/modules.php?name=Blog&amp;file=article&amp;sid='.$sid.'" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div><br /><br />'."\n";
 endif;
 }
 function facebook_comments() 
@@ -18,7 +18,7 @@ if ( defined('facebook') ):
   #facebook comment plugin START
   echo '<div id="fb-root"></div>'."\n";
   echo '<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId='.$appID.'&autoLogAppEvents=1" nonce="JBKXliWW"></script>'."\n";
-  echo '<div style="background-color: grey" class="fb-comments" data-colorscheme="light" data-href="https://'.$my_url.'/modules.php?name=Blog&amp;file=article&amp;sid='.$sid.'" data-width="100%" data-numposts="5"></div>'."\n"; 
+  echo '<div style="background-color: grey" class="fb-comments" data-colorscheme="light" data-href="https://'.$my_url.'/modules.php?name=Blog&amp;file=article&amp;sid='.$sid.'" data-width="100%" data-numposts="5"></div><br /><br />'."\n"; 
   #facebook comment plugin END
 endif;
 }
@@ -53,23 +53,48 @@ function title_and_meta_tags()
 		  if(!defined('HOME_FILE')):
 
 	        # PHP-Nuke Titanium Shout Box Module v1.0
-			if($module_name == Shout_Box):
+			if($module_name == "Shout_Box"):
+			
 			$facebook_ogimage_normal = '<meta property="og:image" content="'.HTTP.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/'.$module_name.'FB.png">'."\n";
 		    $facebook_ogimage = '<meta property="og:image:secure_url" content="'.HTTPS.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/'.$module_name.'FB.png">'."\n";
 	        $newpagetitle= $sitename.' '.$item_delim.' Shout Box';
 			$facebook_og_title = '<meta property="og:title" content="'.$newpagetitle.'">'."\n";  
-            $facebook_ogdescription = "<meta property=\"og:description\" content=\"PHP-Nuke Titanium ".$item_delim." Shout Box Module v1.0\" />\n";
+            $facebook_ogdescription = '<meta property="og:description" content="PHP-Nuke Titanium '.$item_delim.' Shout Box Module v1.0" />'."\n";
+
+			$facebookimagetype = '<meta property="og:image:type" content="image/png">'."\n";
+            $facebook_ogimage_width = '<meta property="og:image:width" content="200">'."\n";
+            $facebook_ogimage_height = '<meta property="og:image:height" content="200">'."\n";
+		    $facebookimage_alt = '<meta property="og:image:alt" content="'.$newpagetitle.'">'."\n";
+			$facebook_ogurl = '<meta property="og:url" content="'.HTTPS.'modules.php?name='.$name.'" />'."\n";
+			
+			# PHP-Nuke Titanium Google Site Map Module v1.0
+			elseif($module_name == "Google-Site-Map"):
+			
+			$facebook_ogimage_normal = '<meta property="og:image" content="'.HTTP.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/ad1.png">'."\n";
+		    $facebook_ogimage = '<meta property="og:image:secure_url" content="'.HTTPS.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/ad1.png">'."\n";
+	        $newpagetitle = $sitename.' '.$item_delim.' Google Sitmap v1.0';
+			$facebook_og_title = '<meta property="og:title" content="'.$newpagetitle.'">'."\n";
+			  
+            $facebook_ogdescription = '<meta property="og:description" content="Google Site Map v1.0 written by Ernest Buffington, have a look!" />'."\n";
+
+			$facebookimagetype = '<meta property="og:image:type" content="image/png">'."\n";
+            $facebook_ogimage_width = '<meta property="og:image:width" content="1200">'."\n";
+            $facebook_ogimage_height = '<meta property="og:image:height" content="630">'."\n";
+		    $facebookimage_alt = '<meta property="og:image:alt" content="Google Site Map Module v1.0">'."\n";
+			$facebook_ogurl = '<meta property="og:url" content="'.HTTPS.'modules.php?name='.$name.'" />'."\n";
+            
 			else:
 			$facebook_ogimage_normal = '<meta property="og:image" content="'.HTTP.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/'.$module_name.'.png">'."\n";
 			$facebook_ogimage = '<meta property="og:image:secure_url" content="'.HTTPS.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/'.$module_name.'.png">'."\n";
-            endif;
-	        
-			
+
 			$facebookimagetype = '<meta property="og:image:type" content="image/png">'."\n";
             $facebook_ogimage_width = '<meta property="og:image:width" content="200">'."\n";
             $facebook_ogimage_height = '<meta property="og:image:height" content="200">'."\n";
 		    $facebookimage_alt = '<meta property="og:image:alt" content="Title png File">'."\n";
 			$facebook_ogurl = "<meta property=\"og:url\" content=\"".HTTPS."modules.php?name=$name\" />\n";
+
+			endif;
+	        
 			
             if ($file == 'article' && isset($sid) && is_numeric($sid)):
 	        
@@ -101,7 +126,7 @@ function title_and_meta_tags()
 
 			     $hometext = stripslashes(check_html($hometext, "nohtml")); 	 	 
 
-                 $facebook_ogdescription = "<meta property=\"og:description\" content=\"$hometext\" />\n";
+                 $facebook_ogdescription = '<meta property="og:description" content="'.$hometext.'" />'."\n";
             }
 			endif; 			
 			   if (@file_exists(TITANIUM_THEMES_DIR.'/includes/facebook/'.$module_name.'/'.$module_name.'.php')): # Added by Ernest Buffington
@@ -137,27 +162,28 @@ function title_and_meta_tags()
     endif;
 	
     echo $google_site_verification;
+	
 	if ($appID > 0):
-	echo $facebook_admin;
-	echo $facebook_page_type;
-    echo $facebookappid;
-    echo $facebook_ogimage_normal;
-    echo $facebook_ogimage;
-	echo $facebookimage_alt; 
-    //echo $facebook_page_id;
-	echo $facebook_ia_markup_url;
-	echo $facebook_ia_markup_url_dev;
-	echo $facebook_ia_rules_url;
-	echo $facebook_ia_rules_url_dev;
-	echo $facebook_ogurl;
-    echo $facebook_ogimage_width;
-    echo $facebook_ogimage_height;
-    echo $facebookimagetype;
-	echo $facebook_ogdescription;
-	echo $facebook_og_title;
+	print $facebook_admin;
+	print $facebook_page_type;
+    print $facebookappid;
+    print $facebook_ogimage_normal;
+    print $facebook_ogimage;
+	print $facebookimage_alt; 
+    //print $facebook_page_id;
+	print $facebook_ia_markup_url;
+	print $facebook_ia_markup_url_dev;
+	print $facebook_ia_rules_url;
+	print $facebook_ia_rules_url_dev;
+	print $facebook_ogurl;
+    print $facebook_ogimage_width;
+    print $facebook_ogimage_height;
+    print $facebookimagetype;
+	print $facebook_ogdescription;
+	print $facebook_og_title;
 	endif;
 	
-	echo '<title>'.$sitename.' '.$newpagetitle.'</title>';
+	print '<title>'.$sitename.' '.$newpagetitle.'</title>';
 }
 
 /**
