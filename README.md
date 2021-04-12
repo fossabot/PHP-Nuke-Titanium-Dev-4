@@ -1,6 +1,7 @@
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
 <ul>
+	<li><strong>Added fbconfig.php configuration file</strong>&nbsp; for Facebook SDK v5 by <strong>TheGhost</strong></li>
 	<li><strong>Complete re-write of the title_and_meta_tags(); function</strong>&nbsp; for Facebook SDK v5 by <strong>TheGhost</strong></li>
 	<li><strong>Deactivate Account</strong>&nbsp;added for Facebook SDK v5 by <strong>TheGhost</strong></li>
 	<li><strong>Google Site Map v1.0</strong>&nbsp;added for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong>by <strong>TheGhost</strong></li>
