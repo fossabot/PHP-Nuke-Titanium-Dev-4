@@ -56,12 +56,12 @@
 
 <h2>Installation and Upgrade</h2>
 
-<p>While PHP-Nuke Titanium uses the same core as PHP-Nuke Evolution Basic there have been a lot of updates to it which improve performance and security, please see the following links for installing a fresh copy or upgrading.</p>
+<p>While PHP-Nuke Titanium uses the same core as PHP-Nuke Evolution Xtreme there have been a lot of updates to it which improve performance and security, please see the following links for installing a fresh copy or upgrading.</p>
 
 <h5>NOTE</h5>
 
-<p><a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=Project&amp;project_id=77" rel="nofollow" target="_tab">Fresh install</a><br />
-<a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=Project&amp;project_id=77" rel="nofollow" target="_tab">Upgrade</a></p>
+<p><a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=Project&amp;project_id=76" rel="nofollow" target="_tab">Fresh install</a><br />
+<a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=Project&amp;project_id=76" rel="nofollow" target="_tab">Upgrade</a></p>
 
 <h2>Security</h2>
 
@@ -71,16 +71,16 @@
 
 <h2>Help</h2>
 
-<p>If you are having issues with your installation please do not hesitate to submit a report by clicking <a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=RequestSubmit&amp;project_id=77" target="_tab">HERE</a><br />
-If you need help with an install do not hesitate to submit a request by clicking <a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=RequestSubmit&amp;project_id=77" target="_tab">HERE</a></p>
+<p>If you are having issues with your installation please do not hesitate to submit a report by clicking <a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=RequestSubmit&amp;project_id=76" target="_tab">HERE</a><br />
+If you need help with an install do not hesitate to submit a request by clicking <a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=RequestSubmit&amp;project_id=76" target="_tab">HERE</a></p>
 
 <h2>Feedback, Bugs, and Improvements</h2>
 
 <p>If you have any suggestions, feedback, or ideas you feel will be a nice contribution to PHP-Nuke Titanium please use the following links</p>
 
-<p><a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=RequestSubmit&amp;project_id=77" target="_tab">Help improve the US version of PHP-Nuke Evolution</a><br />
-<a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=ReportSubmit&amp;project_id=77" target="_tab">Report a PHP-Nuke Evolution bug</a><br />
-<a href="https://www.86it.us/modules.php?name=Feedback" target="_tab">Your PHP-Nuke Evolution feedback</a></p>
+<p><a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=RequestSubmit&amp;project_id=76" target="_tab">Help improve the US version of PHP-Nuke Titanium</a><br />
+<a href="https://www.86it.us/modules.php?name=Network_Projects&amp;op=ReportSubmit&amp;project_id=76" target="_tab">Report a PHP-Nuke Titanium bug</a><br />
+<a href="https://www.86it.us/modules.php?name=Feedback" target="_tab">Your PHP-Nuke Titanium feedback</a></p>
 
 <hr />
 <p>Thanks for using our enhanced PHP-Nuke Web Portal System and we hope you enjoy it&nbsp;&nbsp;</p>
