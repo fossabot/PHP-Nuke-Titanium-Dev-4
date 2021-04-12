@@ -1,10 +1,10 @@
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
 <ul>
-	<li><strong>Added</strong> - fbconfig.php configuration file for Facebook SDK v5</li>
-	<li><strong>Added</strong> - Deactivate Account for Facebook SDK v5</li>
+	<li><strong>Added</strong> - fbconfig.php configuration file for the Titanium Facebook SDK v5</li>
+	<li><strong>Added</strong> - Deactivate Account for Titanium Facebook SDK v5</li>
 	<li><strong>Added</strong> - Google Site Map v1.0 for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
-	<li><strong>Added</strong> - Titanium facebook SDK v5</li>
+	<li><strong>Added</strong> - Titanium Facebook SDK v5</li>
 	<li><strong>Added</strong> - Facebook Likes for Blogs</li>
 	<li><strong>Added</strong> - Facebook Commenting for Blogs</li>
 	<li><strong>Added</strong> - Portals now come with a preconfigured facebook app (associated with your web portal)</li>
