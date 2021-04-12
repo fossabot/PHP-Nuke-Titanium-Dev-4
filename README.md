@@ -22,10 +22,10 @@
 	<li><strong>Added</strong> - Network Projects for network use, to report errors with themes modules or general code bugs</li>
 	<li><strong>Added</strong> - Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes)</li>
 	<li><strong>Update</strong> - Admin <strong>Portal Menu v5</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
-	<li><strong>Update</strong> - Admin <strong>Authors Panel</strong>&nbsp;updated</li>
-	<li><strong>Update</strong> - Admin <strong>Blocks Panel</strong>&nbsp;updated</li>
+	<li><strong>Update</strong> - Admin <strong>Authors Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
+	<li><strong>Update</strong> - Admin <strong>Blocks Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
 	<li><strong>Update</strong> - Admin <strong>Backup Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
-	<li><strong>Update</strong> - Admin <strong>Modules Panel</strong> re-write</li>
+	<li><strong>Update</strong> - Admin <strong>Modules Panel</strong></li>
 	<li><strong>Re-Write</strong> - <strong>of the title_and_meta_tags(); function</strong> for Facebook SDK v5</li>
 	<li><strong>Re-Write</strong> - <strong>Web_Links</strong> Module</li>
 	<li><strong>Removed</strong> - News Module</li>
