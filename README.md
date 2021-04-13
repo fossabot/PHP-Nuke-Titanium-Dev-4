@@ -21,6 +21,7 @@
 	<li><strong>Added</strong> - Flykit for designing themes on the Fly (used to edit CSS in realtime)</li>
 	<li><strong>Added</strong> - Network Projects for network use, to report errors with themes modules or general code bugs</li>
 	<li><strong>Added</strong> - Each theme will automatically switch to the needed mime-type on the Fly! (awesome for old themes)</li>
+	<li><strong>Update</strong> - nuke_session database table uname and module was set to VARCHAR 255</li>
 	<li><strong>Update</strong> - Admin <strong>Portal Menu v5</strong>&nbsp;updated for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
 	<li><strong>Update</strong> - Admin <strong>Authors Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
 	<li><strong>Update</strong> - Admin <strong>Blocks Panel</strong> updated for <strong><span style="color:#3498db">PHP 7.xx</span></strong></li>
