@@ -1,6 +1,9 @@
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
 <ul>
+	<li><strong>Added</strong> - New Theme Dragon Skull v1.04</li>
+	<li><strong>Added</strong> - New Theme Limo Tint v1.9</li>
+	<li><strong>Added</strong> - New Default Theme Inferno v1.0</li>
 	<li><strong>Added</strong> - fbconfig.php configuration file for the Titanium Facebook SDK v5</li>
 	<li><strong>Added</strong> - Deactivate Account for Titanium Facebook SDK v5</li>
 	<li><strong>Added</strong> - Google Site Map v1.0 for <strong><span style="color:#3498db">PHP 7.xx&nbsp;</span></strong></li>
