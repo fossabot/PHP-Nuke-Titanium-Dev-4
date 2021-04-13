@@ -57,21 +57,12 @@
 
 global $theme_name;
 
-echo "\n\n/* Universal/css/body.php Fly Kit for PHP-Nuke Titanium - Design Themes On The Fly */\n"; 
+echo "\n\n/* Inferno/css/body.php Fly Kit for PHP-Nuke Titanium - Design Themes On The Fly */\n"; 
 echo "/* When we are done we will move this code to style.css */\n\n"; 
 
 global $screen_width, $screen_height;
 
 ?>
-/*---------------------------------------------------------------*/
-/* Full Screen Video Background v1.0                             */
-/*                                                               */
-/* Designed and Coded By: TheGhost                               */
-/* Coded On: 22nd January, 2007                                  */
-/* Copyright © 2007 TheGhost All Rights Reserved                 */
-/*                                                               */
-/* This uses Advanced Resolution Checking v1.0                   */
-/*---------------------------------------------------------------*/
 .fullscreen-bg {
   position: fixed;
   top: 0;
@@ -168,16 +159,12 @@ margin: 0px 0px 0px 0px;
 z-index: 777;
 }
 
-@import url(//db.onlinewebfonts.com/c/783dd6c2d08bdc67012a0eec73fc1702?family=80sPXLW00-Thin);
-
-@font-face {font-family: "80sPXLW00-Thin"; src: url("//db.onlinewebfonts.com/t/783dd6c2d08bdc67012a0eec73fc1702.eot"); src: url("//db.onlinewebfonts.com/t/783dd6c2d08bdc67012a0eec73fc1702.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/783dd6c2d08bdc67012a0eec73fc1702.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/783dd6c2d08bdc67012a0eec73fc1702.woff") format("woff"), url("//db.onlinewebfonts.com/t/783dd6c2d08bdc67012a0eec73fc1702.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/783dd6c2d08bdc67012a0eec73fc1702.svg#80sPXLW00-Thin") format("svg"); }
-
 .marquee_one {
 overflow: hidden;
 margin: 10px;
-font-family: "80sPXLW00-Thin";
+font-family:'Lato', sans-serif;
 width: 481px;
-height: 20px;
+height: 15px;
 border: 1px solid #404040;
 position: absolute;
 margin: -83px 115px 15px 115px;
@@ -191,12 +178,12 @@ color: rgb(104, 182, 4);
 .marquee_two {
 overflow: hidden;
 margin: 10px;
-font-family: "80sPXLW00-Thin";
+font-family:'Lato', sans-serif;
 width: 481px;
-height: 20px;
+height: 15px;
 border: 1px solid #404040;
 position: absolute;
-margin: -83px 115px 150px 115px;
+margin: -83px 115px 15px 115px;
 right: 0;
 display:inline;
 z-index: 779;
