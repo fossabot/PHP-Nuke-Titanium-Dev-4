@@ -46,9 +46,9 @@ function title_and_meta_tags()
 	   if ($appID > 0): # This will not load if there is not a facebook app id.
 	      
 		             $facebookappid = "<meta property=\"fb:app_id\" content=\"".$appID."\">\n";
-		            $facebook_admin = "<meta property=\"fb:admins\" content=\"3788797984541781\">\n"; # TheGhost's facebook user ID
+		            $facebook_admin = '<meta property="fb:admins" content="3788797984541781">'."\n"; # TheGhost's facebook user ID
 	            $facebook_page_type = "<meta property=\"og:type\" content=\"website\">\n";
-		  $google_site_verification = '<meta name="google-site-verification" content="o99pC0eeVthNETkL6I5knTEX4nTAOeBeJno4ZD-EvzY" />'."\n";
+		  $google_site_verification = '<meta name="google-site-verification" content="o99pC0eeVthNETkL6I5knTEX4nTAOeBeJno4ZD-EvzY">'."\n";
 		  
 		  if(!defined('HOME_FILE')):
 

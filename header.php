@@ -52,38 +52,38 @@ function head()
 						        $ads, 
 							$browser, 
 							$ThemeSel;
-    
+
 	$ThemeSel = get_theme();
 	
     global $eighty_six_it;
 	$eighty_six_it = '<a class = "small" href="#">Programmers Making Connections. Coders Making a Difference.</a>';
 	//$eighty_six_it = '<a class = "small" href="https://www.86it.us/" target="_tab" >Proud Member Of The 86it Developers Network</a>';
-
     
+	# Auto MimeType v1.0.0 START
 	if (@file_exists(NUKE_THEMES_DIR.$ThemeSel.'/includes/mimetype.php'))  
     include(NUKE_THEMES_DIR.$ThemeSel.'/includes/mimetype.php');
 	else 
 	{
-      echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n";
-      echo "".'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="'._LANGCODE.'">'."\n";
-      echo "".'<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="https://www.facebook.com/2008/fbml">'."\n"; 
-      echo "\n\n<!-- START <head> -->\n\n";
-	  echo '<head>'."\n";
-	  echo '<!--[if IE]>';
-      echo "\n<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />\n";
+      echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd" />'."\n";
+      echo '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="'._LANGCODE.'" />'."\n";
+      echo '<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="https://www.facebook.com/2008/fbml" />'."\n"; 
+      echo "<!-- START <head> -->\n";
+      echo '<head>'."\n";
+      echo '<!--[if IE]>'."\n";
+      echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />'."\n";
       echo '<![endif]-->'."\n";
-      echo "<meta http-equiv='Content-Type' content='text/html'; charset='UTF-8';' />\n";
-      echo "<meta http-equiv='Content-Language' content='"._LANGCODE."' />\n";
-      echo "<meta http-equiv='Content-Style-Type' content='text/css' />\n";
-      echo "<meta http-equiv='Content-Script-Type' content='text/javascript' />\n";
+      echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'."\n";
+      echo '<meta http-equiv="Content-Language" content="'._LANGCODE.'" />'."\n";
+      echo '<meta http-equiv="Content-Style-Type" content="text/css" />'."\n";
+      echo '<meta http-equiv="Content-Script-Type" content="text/javascript" />'."\n";
     }	
+	# Auto MimeType v1.0.0 END
 
     include_once(NUKE_INCLUDE_DIR.'meta.php');
 
     # START function to grab the page title. - 09/07/2019
     echo "\n\n<!-- START title_and_meta_tags(); -->\n";
-    //the_pagetitle(); only used in admin section now.
-	title_and_meta_tags();
+ 	title_and_meta_tags();
     echo "\n<!-- END title_and_meta_tags(); -->\n\n";
     # END function to grab the page title. - 09/07/2019
 
@@ -318,16 +318,25 @@ function online()
 		$guest = 3;
 
 	}
-	# MSN Bot
+	# http://www.debilsoft.de/
+	# The IP Logger PRO - Your counter, your web analyzer. SAID THAT 10 People were using my ip and I am the only person here!
+	if($ip == '164.132.191.163'){
+
+        $uname = 'IP Logger Pro';
+		$guest = 3;
+
+	}
+	# Bing Bot - The MSN Bot retired in 2010
 	if(($ip == '13.66.139.157') 
 	|| ('13.66.139.19')
+	|| ('157.55.39.150')
 	){
 
-        $uname = 'MSN Bot';
+        $uname = 'Bing Bot';
 		$guest = 3;
 
 	}	
-    # This AWS
+    # This is AWS
 	if(($ip == '34.233.208.215') 
 	|| ($ip == '34.233.58.209')
 	)
@@ -408,4 +417,4 @@ endif;
 /*****[END]********************************************
  [ Mod:    NSN Center Blocks                   v2.2.1 ]
  ******************************************************/
-?>
+
