@@ -146,16 +146,16 @@ switch ($doctype)
 $output .= "\n".'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="'._LANGCODE.'">'."\n";
 $output .= "".'<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="https://www.facebook.com/2008/fbml">'."\n"; 
 
-$output .= "\n<!-- START <head> -->\n\n";
+$output .= "<!-- START <head> -->\n";
 $output .= "<head>\n";
 
 $output .= '<!--[if IE]>';
-$output .= "\n<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />\n";
+$output .= "\n".'<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />'."\n";
 $output .= '<![endif]-->';
-$output .= "\n<meta http-equiv='Content-Type' content='".$mime."; charset=".$charset.";' />\n";
-$output .= "<meta http-equiv='Content-Language' content='"._LANGCODE."' />\n";
-$output .= "<meta http-equiv='Content-Style-Type' content='text/css' />\n";
-$output .= "<meta http-equiv='Content-Script-Type' content='text/javascript' />\n";
+$output .= "\n".'<meta http-equiv="Content-Type" content="'.$mime.'; charset='.$charset.'"/>'."\n";
+$output .= '<meta http-equiv="Content-Language" content="'._LANGCODE.'" />'."\n";
+$output .= '<meta http-equiv="Content-Style-Type" content="text/css" />'."\n";
+$output .= '<meta http-equiv="Content-Script-Type" content="text/javascript" />'."\n";
 
 
 /*# NOTE: To allow for q-values with one space (text/html; q=0.5),
