@@ -36,37 +36,31 @@ if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME']))
 /*--------------------------*/
 function OpenTable()
 {
-  global $name, $title, $module_name, $block_title, $theme_name;
-  if(!empty($block_title))
-  $title = preg_replace("/_/", " ", $block_title);
-  else
-  $title = preg_replace("/_/", " ", $module_name);
-  
-?>
-<table class="maintable" border="0" width="100%" cellspacing="0" cellpadding="0">
-<tr>
-<td background="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/topmiddle.png" align="left" width="39" colspan="2">
-<img src="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/leftcorner.png" width="39" height="50">
-</td>
+  global $theme_name;
+  ?>
+  <table class="maintable" border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+  <td background="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/topmiddle.png" align="left" width="39" colspan="2">
+  <img src="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/leftcorner.png" width="39" height="50">
+  </td>
 
-<td background="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/topmiddle.png" width="100%">
-<span class="blocktitle"><div align="center"><?=$title?></div></span>
-</td>
+  <td background="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/topmiddle.png" width="100%">
+  <span class="blocktitle"><div align="center"><?=$block_title?></div></span>
+  </td>
 
-<td background="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/topmiddle.png" align="right" width="39" colspan="2">
-<img src="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/rightcorner.png" width="39" height="50">
-</td>
+  <td background="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/topmiddle.png" align="right" width="39" colspan="2">
+  <img src="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/rightcorner.png" width="39" height="50">
+  </td>
 
-</tr>
-<tr>
+  </tr>
+  <tr>
 
-<td width="15" background="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/leftside.png">
-</td>
+  <td width="15" background="<?=HTTPS?>themes/<?=$theme_name?>/tables/OpenTable/leftside.png">
+  </td>
 
-<td width="24">
-</td>
-<td width="100%">
-<?
-
+  <td width="24">
+  </td>
+  <td width="100%">
+  <?
 }
 ?>

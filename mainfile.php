@@ -736,69 +736,65 @@ function title($text)
 	endif;
 }
 
-function is_active($module) {
+function is_active($module) 
+{
     global $prefix, $db, $cache;
     static $active_modules;
-    if (is_array($active_modules)) {
-        return(isset($active_modules[$module]) ? 1 : 0);
-    }
-    if ((($active_modules = $cache->load('active_modules', 'config')) === false) || empty($active_modules)) {
-        $active_modules = array();
+    if (is_array($active_modules)) 
+    return(isset($active_modules[$module]) ? 1 : 0);
+    if ((($active_modules = $cache->load('active_modules', 'config')) === false) || empty($active_modules)):
+		$active_modules = array();
         $result = $db->sql_query('SELECT `title` FROM `'.$prefix.'_modules` WHERE `active`="1"');
-        while(list($title) = $db->sql_fetchrow($result, SQL_NUM)) {
+		while(list($title) = $db->sql_fetchrow($result, SQL_NUM)):
             $active_modules[$title] = 1;
-        }
-        $db->sql_freeresult($result);
+        endwhile;
+		$db->sql_freeresult($result);
         $cache->save('active_modules', 'config', $active_modules);
-    }
-    return (isset($active_modules[$module]) ? 1 : 0);
+    endif;
+	return (isset($active_modules[$module]) ? 1 : 0);
 }
 
-function render_blocks($side, $block) {
-    global $plus_minus_images, $currentlang, $collapse, $collapsetype;
-    define_once('BLOCK_FILE', true);
-
+function render_blocks($side, $block) 
+{
+	global $plus_minus_images, $currentlang, $collapse, $collapsetype;
+	define_once('BLOCK_FILE', true);
     //Include the block lang files
-    if (file_exists(NUKE_LANGUAGE_DIR.'blocks/lang-'.$currentlang.'.php')) {
+    if (file_exists(NUKE_LANGUAGE_DIR.'blocks/lang-'.$currentlang.'.php')) 
         include_once(NUKE_LANGUAGE_DIR.'blocks/lang-'.$currentlang.'.php');
-    } else {
+    else
         include_once(NUKE_LANGUAGE_DIR.'blocks/lang-english.php');
-    }
-/*****[BEGIN]******************************************
+ /*****[BEGIN]******************************************
  [ Mod:     Switch Content Script              v2.0.0 ]
  ******************************************************/
-    if($collapse) 
-    {
-        if (!$collapsetype)
-        {
+    if($collapse): 
+        if (!$collapsetype):
             $block['title'] = $block['title'] . "&nbsp;&nbsp;&nbsp;<img src=\"".$plus_minus_images['minus']."\" class=\"showstate\" name=\"minus\" width=\"9\" height=\"9\" border=\"0\" onclick=\"expandcontent(this, 'block".$block['bid']."')\" alt=\"\" style=\"cursor: pointer;\" />";
             // $block['title'] = $block['title'].'&nbsp;&nbsp;&nbsp;'.get_evo_icon('evo-sprite minus showstate', false, 'expandcontent(this, \'block'.$block['bid'].'\')');
-        } 
-        else 
-        {
+        else: 
             $block['title'] = "<a href=\"javascript:expandcontent(this, 'block".$block['bid']."')\">".$block['title']."</a>";
-        }
+        endif;
         $block['content'] = "<div id=\"block".$block['bid']."\" class=\"switchcontent\">".$block['content']."</div>";
-    }
+    endif;
 /*****[END]********************************************
  [ Mod:     Switch Content Script              v2.0.0 ]
  ******************************************************/
-    if (empty($block['url'])) {
-        if (empty($block['blockfile'])) {
-            if ($side == 'c' || $side == 'd') {
+    if (empty($block['url'])): 
+        if (empty($block['blockfile'])): 
+            if ($side == 'c' || $side == 'd'): 
                 themecenterbox($block['title'], decode_bbcode($block['content'], 1, true));
-            } else {
+			else: 
                 themesidebox($block['title'], decode_bbcode($block['content'], 1, true), $block['bid']);
-            }
-        } else {
+            endif;
+		else: 
             blockfileinc($block['title'], $block['blockfile'], $side, $block['bid']);
-        }
-    } else {
+		endif;
+	else: 
         headlines($block['bid'], $side, $block);
-    }
+	endif;
 }
 
-function blocks_visible($side) {
+function blocks_visible($side) 
+{
     global $showblocks;
 
     $showblocks = ($showblocks == null) ? 3 : $showblocks;
@@ -809,9 +805,8 @@ function blocks_visible($side) {
     if (!$showblocks && !defined('ADMIN_FILE')) return false;
 
     //If in the admin show l blocks
-    if (defined('ADMIN_FILE')) {
-        return true;
-    }
+    if (defined('ADMIN_FILE')) 
+    return true;
 
     //If set to 3 its all blocks
     if ($showblocks == 3) return true;
@@ -820,14 +815,12 @@ function blocks_visible($side) {
     $blocks = blocks($side, true);
 
     //If there are no blocks
-    if (!$blocks) {
-        return false;
-    }
+    if (!$blocks)
+    return false;
 
     //Check for blocks to show
-    if (($showblocks == 1 && $side == 'l') || ($showblocks == 2 && $side == 'r')) {
-        return true;
-    }
+    if (($showblocks == 1 && $side == 'l') || ($showblocks == 2 && $side == 'r')) 
+    return true;
 
     return false;
 }
