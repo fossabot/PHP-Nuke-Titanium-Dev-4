@@ -35,12 +35,13 @@ if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
 /*--------------------------*/
 /* 
 /*--------------------------*/
-function themesidebox($title, $content, $bid=0) 
+function themesidebox($title, $content, $bid = 0) 
 {
     global $theme_name, $main_blocks_table_width;
     global $textcolor1, $textcolor2, $ThemeSel, $theme_name, $screen_width, $sideboxwidth;
 
-   echo"<table class=block cellSpacing=\"0\" cellPadding=\"0\" border=\"0\" width=\"248px\">"
+   echo "\n\n<!-- function themesidebox START -->\n";
+   echo"<table class=block cellSpacing=\"0\" cellPadding=\"0\" border=\"0\" width=\"249\">"
      . "<tr >"
      . "<td background=\"".HTTPS."themes/".$theme_name."/tables/OpenTable/topmiddle.png\">"
      . "<img src=\"".HTTPS."themes/".$theme_name."/tables/OpenTable/leftcorner.png\" border=\"0\" width=\"39\" height=\"50\"></td>"
@@ -78,7 +79,12 @@ function themesidebox($title, $content, $bid=0)
      . "</tr>"
      . "</table>";
 
-   global $ThemeSel;  
-   echo "<img src=\"".HTTPS."themes/".$ThemeSel."/header/spacer.png\" height=7><br>\n";
+   //global $ThemeSel;  
+   //echo "<img src=\"".HTTPS."themes/".$ThemeSel."/header/spacer.png\" height=7><br>\n";
+   echo '<div align="center" style="padding-top:6px;">';
+   echo '</div>';
+   
+   echo "\n<!-- function themesidebox END -->\n\n\n";
+
 }
 ?>

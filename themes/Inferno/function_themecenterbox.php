@@ -57,7 +57,7 @@ if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
 }
 
 /*--------------------------*/
-/* Theme CenterBox 
+/* Theme CenterBox              THIS DOES NOT APPEAR TO BEING USED
 /*--------------------------*/
 function themecenterbox($title, $content) 
 {

@@ -38,46 +38,6 @@ function themeindex($aid, $informant, $time, $title, $counter, $topic, $thetext,
     $morelink = substr($morelink, strlen($datetime)+2);
     $reads = '( <span style="color: yellow;">'.$customlang['global']['reads'].'</span>: <span style="color: red;">'.$counter.'</span> )';
 
-
-    $blow_it_out_your_ass = 'block_repeat_y_fix.png';  
-    define('THEME_INDEX_BACKGROUND', '"themes/'.$theme_name.'/images/backgrounds/'.$blow_it_out_your_ass.'"'); 
-    define('THEME_INDEX_CONTAIN', 'background-repeat: repeat-y | repeat-x;
-                                      background-position: CENTER CENTER; 
-					                                          width 100%;
-					                                         height 100%;
-					                                        opacity: 100;
-					                                blow-it-out: yourass;
-												     visibility: inherit;
-					                                         z-index: 20;
-					                               background-size: auto;');
-
-?>
-<style type="text/css">
-/*
- * function_themeindex.php - Center Content - TheGhost 08/04/2019
- *-------------------------------------------------------------------
-*/
-.themeindexflames
-{
-background-color: black;	
-background-image: 
-    url(themes/<?=$theme_name?>/images/backgrounds/topright.png), /* top black glass - TheGhost add 08/04/2019 */
-    url(themes/<?=$theme_name?>/images/backgrounds/sidebox_bottom.png); /* bottom flames - TheGhost add 08/04/2019 */
-  background-position:
-    top right, 
-    bottom left; 
-  background-repeat: 
-    repeat-x; /* this makes the top glass block and the bottom flame block repaete from left to right and vice vs - TheGhost add 08/04/2019 */ 
-	
-}
-
-table.themeindexblock {
-    background: url(<?php echo THEME_INDEX_BACKGROUND; ?>); /* Titanium background - TheGhost add 08/04/2019 */
-	<?php echo THEME_INDEX_CONTAIN; ?>
-}
-</style> 
-<?
-
    print '<table class="otthree"border="0" width="100%" cellspacing="0" cellpadding="0">';
    print '<tr>';
    print '<td background="'.HTTPS.'themes/'.$theme_name.'/tables/OpenTable/topmiddle.png" align="left" width="39" colspan="2">';
@@ -99,7 +59,7 @@ echo '<div align="left" id="text">'.''.$title.'</div><p>';
 print '<div align="left" id="text">';
 print '<hr>'.$content.'<hr></div>';	
 
-print '<div align="right">'.$posted.'<img src="themes/Titanium/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /><br />'.$datetime.' '.$topictext.' | '.$morelink.' '.$reads.'<img src="themes/'.$theme_name.'/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /></div>';
+print '<div align="right">'.$posted.'<img src="themes/'.$theme_name.'/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /><br />'.$datetime.' '.$topictext.' | '.$morelink.' '.$reads.'<img src="themes/'.$theme_name.'/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /></div>';
 CloseTable();
 }
 

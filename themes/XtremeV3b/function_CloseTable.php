@@ -51,6 +51,6 @@ function CloseTable()
 </tr>
 </table>
 <?
-echo "<img src=\"".HTTPS."themes/".$ThemeSel."/header/spacer.png\" height=7><br>\n";
+ print '<img src="'.HTTPS.'themes/'.$theme_name.'/images/invisible_pixel.gif" height=6><br>'."\n";
 }
 ?>

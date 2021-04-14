@@ -33,14 +33,14 @@ if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
 }
 
 /*--------------------------*/
-/* function themecenterbox 
+/* function themecenterbox             THIS DOES NOT APPEAR TO BEING USED
 /*--------------------------*/
 function themecenterbox($title, $content) 
 {
     global $theme_name, $main_blocks_table_width;
     global $textcolor1, $textcolor2, $ThemeSel, $theme_name, $screen_width, $sideboxwidth;
 
-   echo"<table class=block cellSpacing=\"0\" cellPadding=\"0\" border=\"0\" width=\"248px\">"
+   echo"<table class=block cellSpacing=\"0\" cellPadding=\"0\" border=\"0\" width=\"100%\">"
      . "<tr >"
      . "<td background=\"".HTTPS."themes/".$theme_name."/tables/OpenTable/topmiddle.png\">"
      . "<img src=\"".HTTPS."themes/".$theme_name."/tables/OpenTable/leftcorner.png\" border=\"0\" width=\"39\" height=\"50\"></td>"
@@ -58,7 +58,7 @@ function themecenterbox($title, $content)
      . "<td width=\"100%\" >"
      . "<table cellSpacing=\"0\" cellPadding=\"8\" width=\"100%\" border=\"0\" style=\"border-collapse: collapse\" bordercolor=\"#111111\">"
      . "<tr>"
-     . "<td width=\"$main_blocks_table_width\">"
+     . "<td width=\"100%\">"
      . "$content         </td>"
      . "</tr>"
      . "</table>"

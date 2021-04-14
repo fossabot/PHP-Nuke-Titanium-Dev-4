@@ -1,15 +1,14 @@
 <?php
-
 /*--------------------------*/
 /* XtremeV3 Header Section  */
 /*--------------------------*/
 /* Fixed & Full Width Style */
 /*--------------------------*/
-
-if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) 
-    exit('Access Denied');
+if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) exit('Access Denied');
 
 global $sitename, $slogan, $name, $banners, $db, $user_prefix, $prefix, $admin_file, $userinfo, $ThemeInfo, $theme_name;
+
+print "\n\n<!-- THEME HEADER START -->\n"; 
 
 // Check if a Registered User is Logged-In
 $username = is_user() ? $userinfo['username'] : _ANONYMOUS;
@@ -31,58 +30,53 @@ addJSToBody(xtremev3_js_dir.'menu.min.js');
 
 $ads = ads(0);
 
-echo '<div class="container" style="width: '.xtremev3_width.'">'
+print '<div class="container" style="width: '.xtremev3_width.'">'."\n";
+print '<header>'."\n";
 
-    .'<header>'
+print '<section id="flex-container">'."\n";
+print '<div class="flex-item"><img src="'.xtremev3_hdr_images.'HDR_01.png" style="width: 37px; height: 150px;"></div>'."\n";
+print '<div class="flex-item" style="width: 100%; height: 150px; background-image: url('.xtremev3_hdr_images.'HDR_BgRepeat.png)"><div class="wrapLogo"></div><div id="hdr-banner-ads">'.$ads.'</div></div>'."\n";
+print '<div class="flex-item"><img src="'.xtremev3_hdr_images.'HDR_03.png" style="width: 37px; height: 150px;"></div>'."\n";
+print '</section>'."\n";
 
-    .'<section id="flex-container">'
-    .'  <div class="flex-item"><img src="'.xtremev3_hdr_images.'HDR_01.png" style="width: 37px; height: 150px;"></div>'
-    .'  <div class="flex-item" style="width: 100%; height: 150px; background-image: url('.xtremev3_hdr_images.'HDR_BgRepeat.png)"><div class="wrapLogo">&nbsp;</div><div id="hdr-banner-ads">'.$ads.'</div></div>'
-    .'  <div class="flex-item"><img src="'.xtremev3_hdr_images.'HDR_03.png" style="width: 37px; height: 150px;"></div>'
-    .'</section>'
+print '<section id="flex-container">'."\n";
+print '<div class="flex-item"><img src="'.xtremev3_hdr_images.'HDRbartop_01.png" style="width: 114px; height: 9px;"></div>'."\n";
+print '<div class="flex-item" style="width: 100%; height: 9px; background-image: url('.xtremev3_hdr_images.'HDRbartop_Bg_Stretch.png)"></div>'."\n";
+print '<div class="flex-item"><img src="'.xtremev3_hdr_images.'HDRbartop_03.png" style="width: 114px; height: 9px;"></div>'."\n";
+print '</section>'."\n";
 
-    .'<section id="flex-container">'
-    .'  <div class="flex-item"><img src="'.xtremev3_hdr_images.'HDRbartop_01.png" style="width: 114px; height: 9px;"></div>'
-    .'  <div class="flex-item" style="width: 100%; height: 9px; background-image: url('.xtremev3_hdr_images.'HDRbartop_Bg_Stretch.png)"></div>'
-    .'  <div class="flex-item"><img src="'.xtremev3_hdr_images.'HDRbartop_03.png" style="width: 114px; height: 9px;"></div>'
-    .'</section>'
-
-    .'<section id="flex-container">'
-    .'  <div class="flex-item"><img src="'.xtremev3_hdr_images.'HDRnav_01.png" style="width: 98px; height: 29px;"></div>' #  style="width: 98px; height: 29px;"
-    .'  <div class="flex-item" style="width: 100%; height: 29px; background-image: url('.xtremev3_hdr_images.'HDRnav_Bg_Stretch.png)">';
+print '<section id="flex-container">'."\n";
+print '<div class="flex-item"><img src="'.xtremev3_hdr_images.'HDRnav_01.png" style="width: 98px; height: 29px;"></div>'."\n";
+print '<div class="flex-item" style="width: 100%; height: 29px; background-image: url('.xtremev3_hdr_images.'HDRnav_Bg_Stretch.png)">'."\n";
 include(xtremev3_theme_dir.'HDRnavi.php');
-echo '  </div>'
-    .'  <div class="flex-item"><img src="'.xtremev3_hdr_images.'HDRnav_03.png" style="width: 98px; height: 29px;"></div>'
-    .'</section>'
+print '</div>'."\n";
+print '<div class="flex-item"><img src="'.xtremev3_hdr_images.'HDRnav_03.png" style="width: 98px; height: 29px;"></div>'."\n";
+print '</section>'."\n";
 
-    .'<section id="flex-container">'
-    .'  <div class="welcomebg"><div style="padding-top: 23px;">'.$username.'</div></div>'
-    .'  <div style="width: 100%; height: 60px; background-image: url('.xtremev3_hdr_images.'Usernav_Bg_Stretch.png)">'
-    .'    <div class="bviewed center">Best Viewed w/Minimum Screen Resolution of 1368px or Higher!</div>'
-    .'  </div>'
-    .'  <div class="userlinksbg">'
-    .'    <div style="padding-top:5px; padding-left:98px;">'.$theuser.'</div>'
-    .'  </div>'
-    .'</section>'
+print '<section id="flex-container">'."\n";
+print '<div class="welcomebg"><div style="padding-top: 23px;">'.$username.'</div></div>'."\n";
+print '<div style="width: 100%; height: 60px; background-image: url('.xtremev3_hdr_images.'Usernav_Bg_Stretch.png)">'."\n";
+print '<div class="bviewed center">Best Viewed w/Minimum Screen Resolution of 1368px or Higher!</div>'."\n";
+print '</div>'."\n";
+print '<div class="userlinksbg">'."\n";
+print '<div style="padding-top:5px; padding-left:98px;">'.$theuser.'</div>'."\n";
+print '</div>'."\n";
+print '</section>'."\n";
 
-    .'  </header>'
+print '</header>'."\n";
 
-    .'<section id="flex-container">'
-    .'  <div style="background-image: url('.xtremev3_images_dir.'sideleft.png); vertical-align: top"><img src="'.xtremev3_images_dir.'spacer.gif" style="width: 40px; height: 5px" alt=""></div>';
+print '<section id="flex-container">'."\n";
+print '<div style="background-image: url('.xtremev3_images_dir.'sideleft.png); vertical-align: top"><img src="'.xtremev3_images_dir.'spacer.gif" style="width: 40px; height: 5px" alt=""></div>'."\n";
 
 if(blocks_visible('left')):
-
-    echo'  <div class="body-background" style="vertical-align: top;">';
+    print '<div class="body-background" style="vertical-align: top;">'."\n";
     blocks('left');
-    echo '  </div>'
-        .'  <div class="body-background" style="vertical-align: top;"><img src="'.xtremev3_images_dir.'spacer.gif" style="width: 5px; height: 1px" border="0" alt=""></div>'
-        .'  <div class="body-background" style="width: 100%">';
-
+    print '</div>'
+         .'<div class="body-background" style="vertical-align: top;"><img src="'.xtremev3_images_dir.'spacer.gif" style="width: 5px; height: 1px" border="0" alt=""></div>'
+         .'<div class="body-background" style="width: 100%">'."\n";
 else:
-
-    echo '  <div class="body-background2" style="vertical-align: top;"></div>'
-        .'  <div class="body-background" style="width: 100%">';
-    
+    print '<div class="body-background2" style="vertical-align: top;"></div>'
+         .'<div class="body-background" style="width: 100%">'."\n";
 endif;
-
+print "\n<!-- THEME HEADER END -->\n\n\n";
 ?>

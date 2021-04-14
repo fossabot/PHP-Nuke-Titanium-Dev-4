@@ -69,7 +69,19 @@ function themearticle($aid, $informant, $datetime, $title, $counter, $thetext, $
     facebook_comments();
     print '<!-- facebook functions END -->'."\n\n\n";	
 
-    print '<div align="right">'.$posted.'<img src="themes/Titanium/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /><br />'.$reads.'<img src="themes/'.$theme_name.'/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /></div>';
+    print '<div align="right">'.$posted.'<img src="themes/'.$theme_name.'/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /><br />'.$reads.'<img src="themes/'.$theme_name.'/images/invisible_pixel.gif" alt="" width="4" height="1" border="0" /></div>';
 
-CloseTable();
+    print '</td>';
+    print '<td width="25"></td>';
+    print '<td width="15" background="'.HTTPS.'themes/'.$theme_name.'/tables/CloseTable/rightside.png"></td>';
+    print '</tr>';
+    print '<tr>';
+    print '<td align="left" width="39" colspan="2"><img src="'.HTTPS.'themes/'.$theme_name.'/tables/CloseTable/leftbottomcorner.png"></td>';
+    print '<td background="'.HTTPS.'themes/'.$theme_name.'/tables/CloseTable/bottommiddle.png" width="100%"></td>';
+    print '<td align="right" width="39" colspan="2"><img src="'.HTTPS.'themes/'.$theme_name.'/tables/CloseTable/bottomrightcorner.png"></td>';
+    print '</tr>';
+    print '</table>';
+
+    print '<img src="'.HTTPS.'themes/'.$theme_name.'/images/invisible_pixel.gif" height=6><br>'."\n";
+
 }
