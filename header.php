@@ -48,7 +48,6 @@ function head()
 							$sitekey, 
 							     $db, 
 							$banners, 
-						   $sitename, 
 						        $ads, 
 							$browser, 
 							$ThemeSel;

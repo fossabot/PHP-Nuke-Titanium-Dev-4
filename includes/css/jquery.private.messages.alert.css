@@ -7,16 +7,15 @@
 	transition: background-color 1s;
 }
 
-.private-msg-overlay-inner 
-{
+.private-msg-overlay-inner {
 	display: none; 
-	opacity: 1;
-	position: fixed; 
-	top: 40%; 
-	left: 40%; 
-	z-index: 1000;
-	text-align: center;
-	color: white;
+	 opacity: 1;
+	  position: fixed; 
+	   top: 40%; 
+	    left: 40%; 
+	     z-index: 1000;
+	      text-align: center;
+	        color: white;
 }
 
 .private_msg_alert_message
