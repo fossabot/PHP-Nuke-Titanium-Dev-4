@@ -1,4 +1,9 @@
-<<<<<<< HEAD
+# The 86it Developers Network
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e4723bfd1ee443a292fb647797d35313)](https://app.codacy.com/gh/ernestbuffington/PHP-Nuke-Titanium-Dev-4?utm_source=github.com&utm_medium=referral&utm_content=ernestbuffington/PHP-Nuke-Titanium-Dev-4&utm_campaign=Badge_Grade_Settings)
+
+Powered by: PHP-Nuke Titanium Dev 4<br />
+Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
@@ -41,15 +46,6 @@
 	<li><strong>Removed</strong> - Topics Module</li>
 	<li><strong>Removed</strong> - Site_Map Module</li>
 </ul>
-
-=======
-# The 86it Developers Network
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e4723bfd1ee443a292fb647797d35313)](https://app.codacy.com/gh/ernestbuffington/PHP-Nuke-Titanium-Dev-4?utm_source=github.com&utm_medium=referral&utm_content=ernestbuffington/PHP-Nuke-Titanium-Dev-4&utm_campaign=Badge_Grade_Settings)
-
-Powered by: PHP-Nuke Titanium Dev 4<br />
-Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
->>>>>>> Add Codacy badge
 
 <h2>Server Requirements</h2>
 
