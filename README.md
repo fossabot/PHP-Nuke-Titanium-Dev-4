@@ -1,8 +1,15 @@
+# The 86it Developers Network
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e4723bfd1ee443a292fb647797d35313)](https://app.codacy.com/gh/ernestbuffington/PHP-Nuke-Titanium-Dev-4?utm_source=github.com&utm_medium=referral&utm_content=ernestbuffington/PHP-Nuke-Titanium-Dev-4&utm_campaign=Badge_Grade_Settings)
+
+Powered by: PHP-Nuke Titanium Dev 4<br />
+Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
 <ul>
     <li><strong>Added</strong> - Google Titanium SDK v5 - This adds all the support you need for Google Developers</li>
+	<li><strong>Added</strong> - New Theme Z3b v1.0</li>
 	<li><strong>Added</strong> - New Theme Dragon Skull v1.04</li>
 	<li><strong>Added</strong> - New Theme Limo Tint v1.9</li>
 	<li><strong>Added</strong> - New Default Theme Inferno v1.0</li>
@@ -40,7 +47,6 @@
 	<li><strong>Removed</strong> - Topics Module</li>
 	<li><strong>Removed</strong> - Site_Map Module</li>
 </ul>
-
 
 <h2>Server Requirements</h2>
 
@@ -94,12 +100,6 @@ If you need help with an install do not hesitate to submit a request by clicking
 
 <p><strong>The PHP-Nuke Titanium Team </strong>(This is the US Support Team)<br />
 <a href="https://www.86it.us/index.php">http://www.86it.us/index.php</a></p>
-
-<h2>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</h2>
-
-<p>PHP-Nuke Titanium&nbsp;is licensed as free software under the GNU general public license for non-profit use, because there are so many people to include in the license please refer to the licenses.pdf file. Re-selling or direct&nbsp;marketing this software for commercial use is forbidden by the GNU general public license, the result of doing so can lead to legal action been taken against you so please ensure to read and understand the license before using this software for development and personal use.</p>
-
-<p>The skinny on this jargon is to do what you want with the software and always give full credit to the original copyright owners. You can sell a modified version of this software but you must always give credit to the original copyright owners. I suggest you do some research and find out who owns PHP-Nuke. The Original Copyright belonged to&nbsp;Francisco Burzi who added to a version of&nbsp;Thatware and the copyright owner for that software is&nbsp;David Norman. This is Open-Source software and should be treated as such.</p>
 
 <h2>Warranty</h2>
 
