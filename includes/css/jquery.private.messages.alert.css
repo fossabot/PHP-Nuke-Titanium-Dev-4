@@ -1,13 +1,12 @@
-.private-msg-overlay 
-{
-	position: absolute;
-	display: none; 
+.private-msg-overlay{
+  position: absolute;
+   display: none; 
 	z-index: 999; 
-	opacity: 0.8;	
-	transition: background-color 1s;
+	 opacity: 0.8;	
+	 transition: background-color 1s;
 }
 
-.private-msg-overlay-inner {
+.private-msg-overlay-inner{
 	display: none; 
 	 opacity: 1;
 	  position: fixed; 
