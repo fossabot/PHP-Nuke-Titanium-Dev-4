@@ -9,6 +9,7 @@ Core Engine: PHP-Nuke Evolution Xtremem 2.0.9f<br />
 
 <ul>
     <li><strong>Added</strong> - Google Titanium SDK v5 - This adds all the support you need for Google Developers</li>
+	<li><strong>Added</strong> - New Theme Z3b v1.0</li>
 	<li><strong>Added</strong> - New Theme Dragon Skull v1.04</li>
 	<li><strong>Added</strong> - New Theme Limo Tint v1.9</li>
 	<li><strong>Added</strong> - New Default Theme Inferno v1.0</li>
