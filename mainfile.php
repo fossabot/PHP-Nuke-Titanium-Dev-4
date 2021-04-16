@@ -46,6 +46,7 @@
       Extra Functions                          v1.0.0       12/22/2005
 	  NSN Center Blocks                        v2.2.1       05/26/2009
  ************************************************************************/
+# Damaris Soto
 
 if(defined('NUKE_EVO')) 
 return;
@@ -54,9 +55,8 @@ return;
 if(defined('NUKE_TITANIUM')) 
 return;
 
-if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])) {
-    exit('Access Denied');
-}
+if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME']))
+exit('Access Denied');
 
 # Network Support
 #character set define XHTML1.0
@@ -86,51 +86,49 @@ define('PHPVERS', @phpversion());
 define_once('EVO_VERSION', NUKE_EVO . ' ' . EVO_EDITION);
 define('PHP_5', version_compare(PHPVERS, '5.0.0', '>='));
 
-if (!ini_get('register_globals')) {
+if (!ini_get('register_globals')): 
 	$import = true;
 	//Need register_globals so try the built in import function
-	if (function_exists('import_request_variables')) {
+	if (function_exists('import_request_variables')):
 		@import_request_variables('GPC');
-	} else {
-		function evo_import_globals($array) {
-			foreach ($array as $k => $v) {
+	else: 
+		function evo_import_globals($array)
+		{
+			foreach ($array as $k => $v):
 				global $$k;
 				$$k = $v;
-			}
+			endforeach;
 		}
-		if (!empty($_GET)) {
-			evo_import_globals($_GET);
-		}
-		if (!empty($_POST)) {
-			evo_import_globals($_POST);
-		}
-		if (!empty($_COOKIE)) {
-			evo_import_globals($_COOKIE);
-		}
-	}
-}
+		if (!empty($_GET))
+		evo_import_globals($_GET);
+		if (!empty($_POST))
+		evo_import_globals($_POST);
+		if (!empty($_COOKIE))
+		evo_import_globals($_COOKIE);
+	endif;
+endif;
 
 $admin = (isset($_COOKIE['admin'])) ? $_COOKIE['admin'] : false;
 $user = (isset($_COOKIE['user'])) ? $_COOKIE['user'] : false;
-if ((isset($_POST['name']) && !empty($_POST['name'])) && (isset($_GET['name']) && !empty($_GET['name']))) {
+
+if ((isset($_POST['name']) && !empty($_POST['name'])) && (isset($_GET['name']) && !empty($_GET['name']))) 
     $name = (isset($_GET['name']) && !stristr($_GET['name'],'..') && !stristr($_GET['name'],'://')) ? addslashes(trim($_GET['name'])) : false;
-} else {
+else 
     $name = (isset($_REQUEST['name']) && !stristr($_REQUEST['name'],'..') && !stristr($_REQUEST['name'],'://')) ? addslashes(trim($_REQUEST['name'])) : false;
-}
+
 $start_mem = function_exists('memory_get_usage') ? memory_get_usage() : 0;
 $start_time = get_microtime();
 
 // Stupid handle to create REQUEST_URI for IIS 5 servers
-if (preg_match('/IIS/', $_SERVER['SERVER_SOFTWARE']) && isset($_SERVER['SCRIPT_NAME'])) {
+if (preg_match('/IIS/', $_SERVER['SERVER_SOFTWARE']) && isset($_SERVER['SCRIPT_NAME'])):
     $requesturi = $_SERVER['SCRIPT_NAME'];
-    if (isset($_SERVER['QUERY_STRING'])) {
-        $requesturi .= '?'.$_SERVER['QUERY_STRING'];
-    }
+    if (isset($_SERVER['QUERY_STRING']))
+    $requesturi .= '?'.$_SERVER['QUERY_STRING'];
     $_SERVER['REQUEST_URI'] = $requesturi;
-}
+endif;
 
 // PHP5 with register_long_arrays off?
-if (PHP_5 && (!@ini_get('register_long_arrays') || @ini_get('register_long_arrays') == '0' || strtolower(@ini_get('register_long_arrays')) == 'off')) {
+if (PHP_5 && (!@ini_get('register_long_arrays') || @ini_get('register_long_arrays') == '0' || strtolower(@ini_get('register_long_arrays')) == 'off')):
     $HTTP_POST_VARS =& $_POST;
     $HTTP_GET_VARS =& $_GET;
     $HTTP_SERVER_VARS =& $_SERVER;
@@ -138,14 +136,14 @@ if (PHP_5 && (!@ini_get('register_long_arrays') || @ini_get('register_long_array
     $HTTP_ENV_VARS =& $_ENV;
     $HTTP_POST_FILES =& $_FILES;
     if (isset($_SESSION)) $HTTP_SESSION_VARS =& $_SESSION;
-}
+endif;
 
-if (isset($_COOKIE['DONATION'])) {
+if (isset($_COOKIE['DONATION'])):
     setcookie('DONATION', null, time()-3600);
     $type = preg_match('/IIS|Microsoft|WebSTAR|Xitami/', $_SERVER['SERVER_SOFTWARE']) ? 'Refresh: 0; URL=' : 'Location: ';
 	$url = str_replace('&amp;', "&", $url);
     header($type . 'modules.php?name=Donations&op=thankyou');
-}
+endif;
 
 # absolute path Mod - Start  01/01/2012 by Ernest Allen Buffington                                                                                                    #       
 $rel_path=array();
@@ -161,27 +159,17 @@ if ( ($rel_path['file'] == $rel_path['script']) && (strlen($_SERVER['DOCUMENT_RO
     $href_path = '/'.str_replace($_SERVER['DOCUMENT_ROOT'], '', $rel_path['script'] );
 
     if ( substr($href_path, 0, 2) == '//') 
-	{
-        $href_path = substr($href_path, 1);
-    }
+    $href_path = substr($href_path, 1);
 } 
-else
-if (strlen($rel_path['file']) == (strlen($_SERVER['DOCUMENT_ROOT']) - 1) ) 
-{
+elseif (strlen($rel_path['file']) == (strlen($_SERVER['DOCUMENT_ROOT']) - 1) ) 
     $href_path = '';
-} 
-else
-if ( strlen($rel_path['script']) > strlen($_SERVER['DOCUMENT_ROOT']) && (strlen($_SERVER['DOCUMENT_ROOT']) > strlen($rel_path['file'])) ) 
-{
+elseif ( strlen($rel_path['script']) > strlen($_SERVER['DOCUMENT_ROOT']) && (strlen($_SERVER['DOCUMENT_ROOT']) > strlen($rel_path['file'])) ) 
     $href_path = '';
-} 
-else
-if (strlen($rel_path['file']) > strlen($_SERVER['DOCUMENT_ROOT'])) 
+elseif (strlen($rel_path['file']) > strlen($_SERVER['DOCUMENT_ROOT'])) 
 {
-    $href_path = '/'.str_replace($_SERVER['DOCUMENT_ROOT'], '', $rel_path['file']);
-    if ( substr($href_path, 0, 2) == '//') {
+	$href_path = '/'.str_replace($_SERVER['DOCUMENT_ROOT'], '', $rel_path['file']);
+    if ( substr($href_path, 0, 2) == '//') 
         $href_path = substr($href_path, 1);
-    }
 } 
 else 
 {
@@ -322,33 +310,29 @@ define('CAN_MOD_INI', !stristr(ini_get('disable_functions'), 'ini_set'));
 
 // If a class hasn't been loaded yet find the required file on the server and load
 // it in using the special autoloader detection built into PHP5+
-if (!function_exists('classAutoloader')) 
-{
+if (!function_exists('classAutoloader')): 
     function classAutoloader($class) 
     {
         // Set the class file path
-        if (preg_match('/Exception/', $class)) {
-            $file = NUKE_CLASS_EXCEPTION_DIR . strtolower($class) . '.php';
-        } else {
-            $file = NUKE_CLASSES_DIR . 'class.' . strtolower($class) . '.php';
-        }
-
-        if (!class_exists($class, false) && file_exists($file)) {
-            require_once($file);
-        }
+        if (preg_match('/Exception/', $class)) 
+        $file = NUKE_CLASS_EXCEPTION_DIR . strtolower($class) . '.php';
+        else
+        $file = NUKE_CLASSES_DIR . 'class.' . strtolower($class) . '.php';
+        if (!class_exists($class, false) && file_exists($file))
+        require_once($file);
     }
     spl_autoload_register('classAutoloader');
-}
+endif;
 
 //Check for these functions to see if we can use the new captcha
 // if(function_exists('imagecreatetruecolor') && function_exists('imageftbbox')) {
 //     define('CAPTCHA',true);
 // }
 
-if (CAN_MOD_INI) {
+if (CAN_MOD_INI):
     ini_set('magic_quotes_sybase', 0);
     ini_set('zlib.output_compression', 0);
-}
+endif;
 
 # facebook SDK Mod START
 if (@file_exists(NUKE_BASE_DIR.'fbconfig.php')):  
@@ -369,16 +353,16 @@ endif;
 
 // Include config file
 @require_once(NUKE_BASE_DIR.'config.php');
-if(!$directory_mode) {
-    $directory_mode = 0777;
-} else {
-    $directory_mode = 0755;
-}
-if (!$file_mode) {
-    $file_mode = 0666;
-} else {
-    $file_mode = 0644;
-}
+
+if(!$directory_mode)
+$directory_mode = 0777;
+else
+$directory_mode = 0755;
+
+if (!$file_mode)
+$file_mode = 0666;
+else
+$file_mode = 0644;
 
 // Core exceptions handler
 include_once(NUKE_INCLUDE_DIR . 'exception.php');
@@ -396,25 +380,27 @@ $agent = $identify->identify_agent();
 
 @require_once(NUKE_INCLUDE_DIR.'log.php');
 
-if (ini_get('output_buffering') && !isset($agent['bot'])) {
+if (ini_get('output_buffering') && !isset($agent['bot'])):
     ob_end_clean();
     header('Content-Encoding: none');
-}
+endif;
 
 $do_gzip_compress = false;
-if (GZIPSUPPORT && !ini_get('zlib.output_compression') && isset($_SERVER['HTTP_ACCEPT_ENCODING']) && preg_match('/gzip/i', $_SERVER['HTTP_ACCEPT_ENCODING'])) {
-    if (version_compare(PHPVERS, '4.3.0', '>=')) { # PHP 4.2.x seems to give memleak
+if (GZIPSUPPORT && !ini_get('zlib.output_compression') 
+&& isset($_SERVER['HTTP_ACCEPT_ENCODING']) 
+&& preg_match('/gzip/i', $_SERVER['HTTP_ACCEPT_ENCODING'])):
+    if (version_compare(PHPVERS, '4.3.0', '>=')): # PHP 4.2.x seems to give memleak
         ob_start('ob_gzhandler');
-    } else {
+    else:
         $do_gzip_compress = true;
         ob_start();
         ob_implicit_flush(0);
         header('Content-Encoding: gzip');
-    }
-} else {
+    endif;
+else:
     ob_start();
     ob_implicit_flush(0);
-}
+endif;
 
 include_once(NUKE_INCLUDE_DIR.'constants.php');
 @require_once(NUKE_CLASSES_DIR.'class.cache.php');
@@ -440,29 +426,29 @@ include_once(NUKE_INCLUDE_DIR.'validation.php');
 // so that they dont have to be called each time
 // And as you can see, getusrinfo() is now deprecated.
 // Because you dont have to call it anymore, just call $userinfo
-if(is_user()) {
+if(is_user()):
     $cookie = cookiedecode();
     $userinfo = get_user_field('*', $cookie[1], true);
-} else {
+else:
     $cookie = array();
     $userinfo = get_user_field('*', 'Anonymous', true);
-}
+endif;
 
 //If they have been deactivated send them to logout to kill their cookie and sessions
-if (is_array($userinfo) && isset($userinfo['user_active']) && $userinfo['user_id'] != 1 && $userinfo['user_id'] != 0 && $userinfo['user_active'] == 0 && $_GET['name'] != 'Your_Account') {
+if (is_array($userinfo) && isset($userinfo['user_active']) 
+&& $userinfo['user_id'] != 1 && $userinfo['user_id'] != 0 
+&& $userinfo['user_active'] == 0 && $_GET['name'] != 'Your_Account'):
     redirect('modules.php?name=Your_Account&op=logout');
     die();
-}
+endif;
 
-if(stristr($_SERVER['REQUEST_URI'], '.php/')) {
-    redirect(str_replace('.php/', '.php', $_SERVER['REQUEST_URI']));
-}
+if(stristr($_SERVER['REQUEST_URI'], '.php/'))
+redirect(str_replace('.php/', '.php', $_SERVER['REQUEST_URI']));
 
 include_once(NUKE_MODULES_DIR.'Your_Account/includes/mainfileend.php');
 
-if (isset($_POST['clear_cache'])) {
-    $cache->clear();
-}
+if (isset($_POST['clear_cache']))
+$cache->clear();
 
 define('NUKE_FILE', true);
 $dbi = $db->db_connect_id;
@@ -474,9 +460,10 @@ $reasons = array('As Is', 'Offtopic', 'Flamebait', 'Troll', 'Redundant', 'Insigh
 $AllowableHTML = array('b'=>1, 'i'=>1, 'a'=>2, 'em'=>1, 'br'=>1, 'strong'=>1, 'blockquote'=>1, 'tt'=>1, 'li'=>1, 'ol'=>1, 'ul'=>1, 'pre'=>1);
 
 $nukeconfig = load_nukeconfig();
-foreach($nukeconfig as $var => $value) {
+
+foreach($nukeconfig as $var => $value):
     $$var = $value;
-}
+endforeach;
 
 /*****[BEGIN]******************************************
  [ Base:    Language Selector                  v3.0.0 ]
@@ -593,26 +580,24 @@ include_once(NUKE_MODULES_DIR.'Shout_Box/shout.php');
  [ Mod:    Shoutbox                            v8.5.2 ]
  ******************************************************/
 
-if (file_exists(NUKE_INCLUDE_DIR.'custom_files/custom_mainfile.php')) {
-    require_once(NUKE_INCLUDE_DIR.'custom_files/custom_mainfile.php');
-}
+if (file_exists(NUKE_INCLUDE_DIR.'custom_files/custom_mainfile.php'))
+require_once(NUKE_INCLUDE_DIR.'custom_files/custom_mainfile.php');
 
-if(!defined('FORUM_ADMIN') && !isset($ThemeSel) && !defined('RSS_FEED')) {
+if(!defined('FORUM_ADMIN') && !isset($ThemeSel) && !defined('RSS_FEED')):
     $ThemeSel = get_theme();
     include_once(NUKE_THEMES_DIR . $ThemeSel . '/theme.php');
-}
+endif;
 
 /*****[BEGIN]******************************************
  [ Base:    Admin File Check                   v3.0.0 ]
  ******************************************************/
-if (!defined('FORUM_ADMIN')) {
+if (!defined('FORUM_ADMIN')) :
     global $admin_file;
-    if(!isset($admin_file) || empty($admin_file)) {
+    if(!isset($admin_file) || empty($admin_file)) 
         die('You must set a value for $admin_file in config.php');
-    } elseif (!empty($admin_file) && !file_exists(NUKE_BASE_DIR.$admin_file.'.php')) {
+    elseif (!empty($admin_file) && !file_exists(NUKE_BASE_DIR.$admin_file.'.php'))
         die('The $admin_file you defined in config.php does not exist');
-    }
-}
+endif;
 
 /*****[END]********************************************
  [ Base:    Admin File Check                   v3.0.0 ]
@@ -620,90 +605,113 @@ if (!defined('FORUM_ADMIN')) {
 function define_once($constant, $value) 
 {
     if(!defined($constant)) 
-	{
-        define($constant, $value);
-    }
+    define($constant, $value);
 }
 
-function is_admin($trash=0) {
+function is_admin($trash=0) 
+{
     static $adminstatus;
-    if(isset($adminstatus)) return $adminstatus;
-    $admincookie = isset($_COOKIE['admin']) ? $_COOKIE['admin'] : false;
-    if (!$admincookie) { return $adminstatus = 0; }
-    $admincookie = (!is_array($admincookie)) ? explode(':', base64_decode($admincookie)) : $admincookie;
+    
+	if(isset($adminstatus)) 
+	return $adminstatus;
+    
+	$admincookie = isset($_COOKIE['admin']) ? $_COOKIE['admin'] : false;
+    
+	if (!$admincookie) 
+	return $adminstatus = 0; 
+    
+	$admincookie = (!is_array($admincookie)) ? explode(':', base64_decode($admincookie)) : $admincookie;
     $aid = $admincookie[0];
     $pwd = $admincookie[1];
     $aid = substr(addslashes($aid), 0, 25);
-    if (!empty($aid) && !empty($pwd)) {
-        if (!function_exists('get_admin_field')) {
+
+    if (!empty($aid) && !empty($pwd)):
+        if (!function_exists('get_admin_field')):
             global $db, $prefix;
             $pass = $db->sql_ufetchrow("SELECT `pwd` FROM `" . $prefix . "_authors` WHERE `aid` = '" .  str_replace("\'", "''", $aid) . "'", SQL_ASSOC);
             $pass = (isset($pass['pwd'])) ? $pass['pwd'] : '';
-        } else {
+        else:
             $pass = get_admin_field('pwd', $aid);
-        }
-        if ($pass == $pwd && !empty($pass)) {
-            return $adminstatus = 1;
-        }
-    }
+        endif;
+        if ($pass == $pwd && !empty($pass)) 
+        return $adminstatus = 1;
+    endif;
     return $adminstatus = 0;
 }
 
-function is_god_admin($trash=0) {
+function is_god_admin($trash=0) 
+{
     static $godadminstatus;
-    if(isset($godadminstatus)) return $godadminstatus;
+
+    if(isset($godadminstatus)) 
+	return $godadminstatus;
+
     $godadmincookie = isset($_COOKIE['admin']) ? $_COOKIE['admin'] : false;
-    if (!$godadmincookie) { return $godadminstatus = 0; }
-    $godadmincookie = (!is_array($godadmincookie)) ? explode(':', base64_decode($godadmincookie)) : $godadmincookie;
+    
+	if (!$godadmincookie) 
+	return $godadminstatus = 0; 
+    
+	$godadmincookie = (!is_array($godadmincookie)) ? explode(':', base64_decode($godadmincookie)) : $godadmincookie;
     $aid = $godadmincookie[0];
     $pwd = $godadmincookie[1];
     $godaid = substr(addslashes($aid), 0, 25);
-    if (!empty($godaid) && !empty($pwd)) {
-        if (!function_exists('get_admin_field')) {
+
+    if (!empty($godaid) && !empty($pwd)):
+        if (!function_exists('get_admin_field')):
             global $db;
             $pass    = $db->sql_ufetchrow("SELECT `pwd` FROM `" . _AUTHOR_TABLE."` WHERE `aid` = '" .  str_replace("\'", "''", $godaid) . "'", SQL_ASSOC);
             $godname = $db->sql_ufetchrow("SELECT `name` FROM `" . _AUTHOR_TABLE."` WHERE `aid` = '" .  str_replace("\'", "''", $godaid) . "'", SQL_ASSOC);
             $pass    = (isset($pass['pwd'])) ? $pass['pwd'] : '';
             $godname = (isset($godname['name'])) ? $godname['name'] : '';
-        } else {
+        else:
             $pass    = get_admin_field('pwd', $godaid);
             $godname = get_admin_field('name', $godaid);
-        }
-        if ( ($pass == $pwd && !empty($pass)) && ( $godname == 'God') )  {
-            return $godadminstatus = 1;
-        }
-    }
+        endif;
+        if ( ($pass == $pwd && !empty($pass)) && ( $godname == 'God') )  
+        return $godadminstatus = 1;
+    endif;
     return $godadminstatus = 0;
 }
 
-function is_user($trash=0) {
+function is_user($trash=0) 
+{
     static $userstatus;
-    if(isset($userstatus)) return $userstatus;
-    $usercookie = isset($_COOKIE['user']) ? $_COOKIE['user'] : false;
-    if (!$usercookie) { return $userstatus = 0; }
-    $usercookie = (!is_array($usercookie)) ? explode(':', base64_decode($usercookie)) : $usercookie;
+    if(isset($userstatus)) 
+	return $userstatus;
+    
+	$usercookie = isset($_COOKIE['user']) ? $_COOKIE['user'] : false;
+    
+	if (!$usercookie) 
+	return $userstatus = 0; 
+    
+	$usercookie = (!is_array($usercookie)) ? explode(':', base64_decode($usercookie)) : $usercookie;
     $uid = $usercookie[0];
     $pwd = $usercookie[2];
     $uid = intval($uid);
-    if (!empty($uid) AND !empty($pwd)) {
+
+    if (!empty($uid) AND !empty($pwd)):
         $user_password = get_user_field('user_password', $uid);
-        if ($user_password == $pwd && !empty($user_password)) {
-            return $userstatus = 1;
-        }
-    }
+        if ($user_password == $pwd && !empty($user_password))
+        return $userstatus = 1;
+    endif;
     return $userstatus = 0;
 }
 
-function cookiedecode($trash=0) {
+function cookiedecode($trash=0) 
+{
     global $cookie;
     static $rcookie;
-    if(isset($rcookie)) { return $rcookie; }
+
+    if(isset($rcookie)) 
+	return $rcookie; 
+
     $usercookie = $_COOKIE['user'];
     $rcookie = (!is_array($usercookie)) ? explode(':', base64_decode($usercookie)) : $usercookie;
     $pass = get_user_field('user_password', $rcookie[1], true);
-    if ($rcookie[2] == $pass && !empty($pass)) {
-        return $cookie = $rcookie;
-    }
+
+    if ($rcookie[2] == $pass && !empty($pass))
+    return $cookie = $rcookie;
+    
     return false;
 }
 
@@ -740,9 +748,11 @@ function is_active($module)
 {
     global $prefix, $db, $cache;
     static $active_modules;
-    if (is_array($active_modules)) 
+    
+	if (is_array($active_modules)) 
     return(isset($active_modules[$module]) ? 1 : 0);
-    if ((($active_modules = $cache->load('active_modules', 'config')) === false) || empty($active_modules)):
+    
+	if ((($active_modules = $cache->load('active_modules', 'config')) === false) || empty($active_modules)):
 		$active_modules = array();
         $result = $db->sql_query('SELECT `title` FROM `'.$prefix.'_modules` WHERE `active`="1"');
 		while(list($title) = $db->sql_fetchrow($result, SQL_NUM)):
@@ -802,14 +812,16 @@ function blocks_visible($side)
     $side = strtolower($side[0]);
 
     //If there are no blocks for this module && not admin file
-    if (!$showblocks && !defined('ADMIN_FILE')) return false;
+    if (!$showblocks && !defined('ADMIN_FILE')) 
+	return false;
 
     //If in the admin show l blocks
     if (defined('ADMIN_FILE')) 
     return true;
 
     //If set to 3 its all blocks
-    if ($showblocks == 3) return true;
+    if ($showblocks == 3) 
+	return true;
 
     //Count the blocks on the side
     $blocks = blocks($side, true);
@@ -1220,38 +1232,34 @@ function ads($position)
 {
     global $prefix, $db, $sitename, $adminmail, $nukeurl, $banners;
 
-    echo "\n\n<!-- function ads EXECUTE -->\n";
-	
-	if(!$banners) 
-	{ 
-	  return ''; 
-	}
+    if(!$banners) { return ''; }
     
 	$position = intval($position);
-    $result = $db->sql_query("SELECT * FROM `".$prefix."_banner` WHERE `position`='$position' AND `active`='1' ORDER BY RAND() LIMIT 0,1");
-    $numrows = $db->sql_numrows($result);
+   
+	$result = $db->sql_query("SELECT * FROM `".$prefix."_banner` WHERE `position`='$position' AND `active`='1' ORDER BY RAND() LIMIT 0,1");
     
-	if ($numrows < 1) 
-	return '';
+	$numrows = $db->sql_numrows($result);
+    
+	if ($numrows < 1) return '';
     
 	$row = $db->sql_fetchrow($result, SQL_ASSOC);
-    $db->sql_freeresult($result);
+    
+	$db->sql_freeresult($result);
     
 	foreach($row as $var => $value) 
 	{
         if (isset($$var)) 
 		unset($$var);
-        
-		$$var = $value;
+        $$var = $value;
     }
-    
-	$bid = intval($bid);
+    $bid = intval($bid);
     
 	if(!is_admin()) 
 	{
         $db->sql_query("UPDATE `".$prefix."_banner` SET `impmade`=" . $impmade . "+1 WHERE `bid`='$bid'");
     }
-    $sql2 = "SELECT `cid`, `imptotal`, `impmade`, `clicks`, `date`, `ad_class`, `ad_code`, `ad_width`, `ad_height` FROM `".$prefix."_banner` WHERE `bid`='$bid'";
+    
+	$sql2 = "SELECT `cid`, `imptotal`, `impmade`, `clicks`, `date`, `ad_class`, `ad_code`, `ad_width`, `ad_height` FROM `".$prefix."_banner` WHERE `bid`='$bid'";
     $result2 = $db->sql_query($sql2);
     list($cid, $imptotal, $impmade, $clicks, $date, $ad_class, $ad_code, $ad_width, $ad_height) = $db->sql_fetchrow($result2, SQL_NUM);
     $db->sql_freeresult($result2);
@@ -1261,16 +1269,13 @@ function ads($position)
     $clicks = intval($clicks);
     
 	/* Check if this impression is the last one and print the banner */
-    if (($imptotal <= $impmade) && ($imptotal != 0)) 
-	{
+    if (($imptotal <= $impmade) && ($imptotal != 0)) {
         $db->sql_query("UPDATE `".$prefix."_banner` SET `active`='0' WHERE `bid`='$bid'");
         $sql3 = "SELECT `name`, `contact`, `email` FROM `".$prefix."_banner_clients` WHERE `cid`='$cid'";
         $result3 = $db->sql_query($sql3);
         list($c_name, $c_contact, $c_email) = $db->sql_fetchrow($result3, SQL_NUM);
         $db->sql_freeresult($result3);
-        
-		if (!empty($c_email)) 
-		{
+        if (!empty($c_email)) {
             $from = $sitename.' <'.$adminmail.'>';
             $to = $c_contact.' <'.$c_email.'>';
             $message = _HELLO." $c_contact:\n\n";
@@ -1294,26 +1299,22 @@ function ads($position)
 	if ($ad_class == "code") 
 	{
         $ad_code = stripslashes($ad_code);
-        $ads = '<div align="center">'.$ad_code.'</div>';
+        $ads = "<div align=\"center\">$ad_code</div>";
     } 
-	else
-	if ($ad_class == "flash") 
+	elseif ($ad_class == "flash") 
 	{
         $ads = "<div align=\"center\">"
-              ."<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0\" width=\"".$ad_width."\" height=\"".$ad_height."\" id=\"$bid\">"
+              ."<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0\" width=\"".$ad_width."\" height=\"".$ad_height."\" id=\"$bid\">"
               ."<param name=\"movie\" value=\"".$imageurl."\" />"
               ."<param name=\"quality\" value=\"high\" />"
-              ."<embed src=\"".$imageurl."\" quality=\"high\" width=\"".$ad_width."\" height=\"".$ad_height."\" name=\"".$bid."\" align=\"\" type=\"application/x-shockwave-flash\" pluginspage=\"https://www.macromedia.com/go/getflashplayer\"></embed></object>"
+              ."<embed src=\"".$imageurl."\" quality=\"high\" width=\"".$ad_width."\" height=\"".$ad_height."\" name=\"".$bid."\" align=\"\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\"></embed></object>"
               ."</div>";
     } 
 	else 
 	{
-        $ads = "<div class=\"banner_box\" align=\"center\"><a href=\"index.php?op=ad_click&amp;bid=$bid\" target=\"_blank\"><img class=\"banner_box\" src=\"$imageurl\" border=\"0\" alt=\"$alttext\" title=\"$alttext\"></a></div>";
+        $ads = "<div class=\"banner_box\" align=\"center\"><a href=\"index.php?op=ad_click&amp;bid=$bid\" target=\"_blank\"><img src=\"$imageurl\" border=\"0\" alt=\"$alttext\" title=\"$alttext\"></a></div>";
     }
-    
-    echo "<!-- Personal Ads DONE -->\n\n\n";
-	return $ads;
-
+    return $ads;
 }
 
 function network_ads($position) 
@@ -1414,7 +1415,6 @@ function network_ads($position)
     
     echo "<!-- Networks Ads DONE -->\n\n\n";
 	return $ads;
-
 }
 
 /*

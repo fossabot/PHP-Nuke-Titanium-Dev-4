@@ -71,7 +71,21 @@ $do_gzip_compress,
     if(isset($has_echoed) && $has_echoed == 1) 
 	return; 
 
-        $footmsg = "<span class=\"footmsg\"><br />\n";
+global $powered_by;
+$powered_by = '<font size="3">PHP-Nuke Titanium Copyright &copy; 2010 2021 by Ernest Buffington.<br /> 
+ All logos, trademarks and posts in this site are property of their respective owners, all the rest <br />&copy; '.date('l jS \of F Y h:i:s A').' by Brandon Maintenance Management, LLC.<br />
+ Powered by PHP-Nuke Titanium Dev 4<br /><br />
+ <strong>CREDITS</strong><br />
+ PHP-Nuke Copyright &copy; 2006 by Francisco Burzi.<br /> 
+ PHP-Nuke Evolution Basic<br /> 
+ PHP-Nuke Evolution Xtreme UK Version<br />
+ PHP-Nuke Evolution Xtreme US Version<br />
+ Bob Marion of NukeScripts.Net<br />  
+ Ernest Buffington of 86it.us<br>
+ </font>
+ ';
+
+        $footmsg = "<span class=\"footmsg\">\n";
         
 $footmsg .= '<font size="5"><strong><a class="greatminds" href="modules.php?name=Google-Site-Map" target="_self"><font color="#4285f4">G</font><font color="#ea4335">o</font><font color="#fbbc05">o</font><font color="#4285f4">g</font><font color="#34a853">l</font><font color="#ea4335">e</font> <font color="#4285f4">S</font><font color="#ea4335">i</font><font color="#fbbc05">t</font><font color="#4285f4">e</font><font color="#ea4335">m</font><font color="#34a853">a</font><font color="#ea4335">p</font></a></strong></font><br />';
 		
@@ -93,7 +107,7 @@ $footmsg .= '<font size="5"><strong><a class="greatminds" href="modules.php?name
         //$footmsg = (preg_match(HEX_PREG,$footmsg)) ? $footmsg : $footmsg."<br />".ord_crypt_decode(HEX_CACHED)."<br />";
         global $digits_color;
 
-        		$footmsg .= "<hr>[ "
+        		$footmsg .= "[ "
                   . "<a href=\"".HTTPS."modules.php?name=Network&file=about\">"
                   . "About Us</a> ] - [ "
                   . "<a href=\"".HTTPS."modules.php?name=Network&file=disclaimer\">"
@@ -101,7 +115,7 @@ $footmsg .= '<font size="5"><strong><a class="greatminds" href="modules.php?name
                   . "<a href=\"".HTTPS."modules.php?name=Network&file=privacy\">"
                   . "Privacy Statement</a> ] - [ "
                   . "<a href=\"".HTTPS."modules.php?name=Network&file=terms\">"
-                  . "Terms of Use</a> ]<hr>\n";
+                  . "Terms of Use</a> ]<br>\n";
 				  
 		$total_time = (get_microtime() - $start_time);
         $total_time = '<span class="copyright">[ '._PAGEGENERATION."<strong><font color='".$digits_color."'> ".substr($total_time,0,4)."</font></strong> "._SECONDS."";
@@ -348,10 +362,6 @@ $db3->sql_close(); //close music database
  [ Other:   DB Connectors                      v2.0.0 ]
  [ Other:   Persistent DB Connection           v2.0.0 ]
  ******************************************************/
-
-# PHP-Nuke Copyright &copy; 2006 by Francisco Burzi. 
-# All logos, trademarks and posts in this site are property of their respective owners, all the rest &copy; 2006 by the site owner.
-# Powered by PHP-Nuke Nuke Titanium
 
 if(GZIPSUPPORT && $do_gzip_compress) 
 {

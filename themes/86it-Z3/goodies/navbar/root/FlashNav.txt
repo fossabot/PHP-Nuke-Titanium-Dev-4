@@ -1,0 +1,44 @@
+&1text1= Home
+&link1url1=index.php
+&1text2= Gallery
+&link1url2=modules.php?name=coppermine
+&1text3= Forums
+&link1url3=modules.php?name=Forums
+&1text4= Downloads
+&link1url4=modules.php?name=Downloads
+&1text5= Videos
+&link1url5=modules.php?name=VideosUFO
+&1text6= News
+&link1url6=modules.php?name=Blog
+&1text7=Account
+&link1url7=modules.php?name=Your_Account
+
+&2text1= Your Info
+&link2url1=modules.php?name=Your_Account&op=edituser
+&2text2= Your Journal
+&link2url2=modules.php?name=Journal&file=edit
+&2text3= Contact
+&link2url3=modules.php?name=Feedback
+&2text4= Chat room
+&link2url4=modules.php?name=FlashChat
+&2text5= UFO hot lines
+&link2url5=modules.php?name=UFO_Hot_Lines
+&2text6= Messages
+&link2url6=modules.php?name=Private_Messages
+&2text7= Search
+&link2url7=modules.php?name=Search
+
+&3text1= Videos
+&link3url1=modules.php?name=VideosUFO
+&3text2= Pictures
+&link3url2=modules.php?name=coppermine
+&3text3= Links
+&link3url3=modules.php?name=Web_Links
+&3text4= News
+&link3url4=modules.php?name=Blog
+&3text5= Members
+&link3url5=modules.php?name=Members_List
+&3text6= Messages
+&link3url6=modules.php?name=Private_Messages
+&3text7= Forums
+&link3url7=

@@ -82,9 +82,9 @@ function head()
     include_once(NUKE_INCLUDE_DIR.'meta.php');
 
     # START function to grab the page title. - 09/07/2019
-    echo "\n\n<!-- START title_and_meta_tags(); -->\n";
+    echo "<!-- START title_and_meta_tags(); -->\n";
  	title_and_meta_tags();
-    echo "\n<!-- END title_and_meta_tags(); -->\n\n";
+    echo "<!-- END title_and_meta_tags(); -->\n\n";
     # END function to grab the page title. - 09/07/2019
 
 	################################################################

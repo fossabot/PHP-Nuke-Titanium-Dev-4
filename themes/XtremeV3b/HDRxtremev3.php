@@ -30,10 +30,12 @@ addJSToBody(xtremev3_js_dir.'menu.min.js');
 
 $ads = ads(0);
 
+global $theme_name;
 print '<div class="container" style="width: '.xtremev3_width.'">'."\n";
 print '<header>'."\n";
 
 print '<section id="flex-container">'."\n";
+
 print '<div class="flex-item"><img src="'.xtremev3_hdr_images.'HDR_01.png" style="width: 37px; height: 150px;"></div>'."\n";
 print '<div class="flex-item" style="width: 100%; height: 150px; background-image: url('.xtremev3_hdr_images.'HDR_BgRepeat.png)"><div class="wrapLogo"></div><div id="hdr-banner-ads">'.$ads.'</div></div>'."\n";
 print '<div class="flex-item"><img src="'.xtremev3_hdr_images.'HDR_03.png" style="width: 37px; height: 150px;"></div>'."\n";

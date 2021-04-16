@@ -88,8 +88,8 @@ function title_and_meta_tags()
 			$facebook_ogimage = '<meta property="og:image:secure_url" content="'.HTTPS.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/'.$module_name.'.png" />'."\n";
 
 			$facebookimagetype = '<meta property="og:image:type" content="image/png" />'."\n";
-            $facebook_ogimage_width = '<meta property="og:image:width" content="200" />'."\n";
-            $facebook_ogimage_height = '<meta property="og:image:height" content="200" />'."\n";
+            $facebook_ogimage_width = '<meta property="og:image:width" content="1200" />'."\n";
+            $facebook_ogimage_height = '<meta property="og:image:height" content="628" />'."\n";
 		    $facebookimage_alt = '<meta property="og:image:alt" content="Title png File" />'."\n";
 			$facebook_ogurl = "<meta property=\"og:url\" content=\"".HTTPS."modules.php?name=$name\" />\n";
 
@@ -112,8 +112,8 @@ function title_and_meta_tags()
 				 $facebook_og_title = '<meta property="og:title" content="'.$newpagetitle.'" />'."\n";
                  endif;
 	             
-				 $facebook_ogimage_normal = '<meta property="og:image" content="'.HTTP.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/'.$module_name.'.png" />'."\n";
-	             $facebook_ogimage = '<meta property="og:image:secure_url" content="'.HTTPS.'themes/'.$ThemeSel.'/includes/facebook/'.$module_name.'/'.$module_name.'.png" />'."\n";
+				 $facebook_ogimage_normal = '<meta property="og:image" content="'.HTTP.'modules/'.$module_name.'/images/logo.png" />'."\n";
+	             $facebook_ogimage = '<meta property="og:image:secure_url" content=content="'.HTTP.'modules/'.$module_name.'/images/logo.png" />'."\n";
                  
 				 $facebook_ogurl = "<meta property=\"og:url\" content=\"".HTTPS."modules.php?name=$name&file=article&sid=$sid\" />\n";
               	         $facebook_ia_markup_url = "<meta property=\"ia:markup_url\" content=\"".HTTPS."modules.php?name=$name&file=article&sid=$sid\" />\n";
@@ -127,6 +127,50 @@ function title_and_meta_tags()
 			     $hometext = stripslashes(check_html($hometext, "nohtml")); 	 	 
 
                  $facebook_ogdescription = '<meta property="og:description" content="'.$hometext.'" />'."\n";
+				 
+				 $structured_data = '<script type="application/ld+json">'."\n";
+    
+	             $structured_data .= '{'."\n\n\n";
+                 $structured_data .= '  "@context": "https://schema.org/",'."\n";
+                 $structured_data .= '  "@type": "NewsArticle",'."\n\n";
+				 
+				 $structured_data .= '  "mainEntityOfPage": {'."\n";
+                 $structured_data .= '  "@type": "WebPage",'."\n";
+                 $structured_data .= '  "@id": "'.HTTPS.'modules.php?name='.$module_name.'&file=article&sid='.$sid.'"'."\n";
+                 $structured_data .= '  },'."\n\n";
+				 
+				 $structured_data .= '  "headline": "'.$art.'",'."\n\n";
+                 $structured_data .= '  "image": ['."\n";
+                 $structured_data .= '  "'.HTTPS.'images/google/1x1.png",'."\n";
+                 $structured_data .= '  "'.HTTPS.'images/google/4x3.png",'."\n";
+                 $structured_data .= '  "'.HTTPS.'images/google/16x9.png"'."\n";
+                 $structured_data .= '  ],'."\n\n";
+				 
+                 list($time) = $db->sql_ufetchrow("SELECT `time` FROM `".$prefix."_stories` WHERE `sid`='".$sid."'", SQL_NUM);
+				 $structured_data .= '  "datePublished": "'.$time.'",'."\n";
+				 list($dtm) = $db->sql_ufetchrow("SELECT `dateModified` FROM `".$prefix."_stories` WHERE `sid`='".$sid."'", SQL_NUM);
+                 $structured_data .= '  "dateModified": "'.$dtm.'",'."\n\n";
+                 
+				 list($name) = $db->sql_ufetchrow("SELECT `informant` FROM `".$prefix."_stories` WHERE `sid`='".$sid."'", SQL_NUM);
+				 list($username) = $db->sql_ufetchrow("SELECT `name` FROM `".$prefix."_users` WHERE `username`='".$name."'", SQL_NUM);
+				 $structured_data .= '  "author": {'."\n";
+                 $structured_data .= '  "@type": "Person",'."\n";
+                 $structured_data .= '  "name": "'.$username.'"'."\n";
+                 $structured_data .= '  },'."\n\n";
+                 
+				 $structured_data .= ' "publisher": {'."\n";
+                 $structured_data .= '   "@type": "Organization",'."\n";
+                 $structured_data .= '   "name": "'.$sitename.'",'."\n\n";
+                 
+				 $structured_data .= '   "logo": {'."\n";
+                 $structured_data .= '   "@type": "ImageObject",'."\n";
+                 $structured_data .= '   "url": "'.HTTPS.'images/google/1x1.png"'."\n";
+                 $structured_data .= '   }'."\n";
+                 
+				 $structured_data .= '  }'."\n\n";
+                 $structured_data .= "\n\n\n".'}'."\n";
+                 $structured_data .= '</script>'."\n";
+
             }
 			endif; 			
 			   if (@file_exists(TITANIUM_THEMES_DIR.'/includes/facebook/'.$module_name.'/'.$module_name.'.php')): # Added by Ernest Buffington
@@ -152,6 +196,47 @@ function title_and_meta_tags()
 	        $newpagetitle= "$sitename $item_delim $top $item_delim $art";
 			$facebook_og_title = '<meta property="og:title" content="'.$newpagetitle.'" />'."\n";
 
+            $facebook_ogdescription = '<meta property="og:description" content="'.$hometext.'" />'."\n";
+			
+			$structured_data = "\n".'<script type="application/ld+json">'."\n";
+    
+	        $structured_data .= '{'."\n\n\n";
+            $structured_data .= '  "@context": "https://schema.org/",'."\n";
+            $structured_data .= '  "@type": "NewsArticle",'."\n\n";
+				 
+			$structured_data .= '  "mainEntityOfPage": {'."\n";
+            $structured_data .= '  "@type": "WebPage",'."\n";
+            $structured_data .= '  "@id": "'.HTTPS.'index.php"'."\n";
+            $structured_data .= '  },'."\n\n";
+				 
+			$structured_data .= '  "headline": "Welcome to The 86it Developers Network 86it™",'."\n\n";
+            $structured_data .= '  "image": ['."\n";
+            $structured_data .= '  "'.HTTPS.'images/google/1x1.png",'."\n";
+            $structured_data .= '  "'.HTTPS.'images/google/4x3.png",'."\n";
+            $structured_data .= '  "'.HTTPS.'images/google/16x9.png"'."\n";
+            $structured_data .= '  ],'."\n\n";
+			        list($dp) = $db->sql_ufetchrow("SELECT `datePublished` FROM `".$prefix."_config`", SQL_NUM);	 
+			$structured_data .= '  "datePublished": "'.$dp.'",'."\n";
+			        list($dmod) = $db->sql_ufetchrow("SELECT `dateModified` FROM `".$prefix."_config`", SQL_NUM);	 
+            $structured_data .= '  "dateModified": "'.$dmod.'",'."\n\n";
+                 
+			$structured_data .= '  "author": {'."\n";
+            $structured_data .= '  "@type": "Person",'."\n";
+            $structured_data .= '  "name": "Ernest Allen Buffington"'."\n";
+            $structured_data .= '  },'."\n\n";
+                 
+			$structured_data .= ' "publisher": {'."\n";
+            $structured_data .= '   "@type": "Organization",'."\n";
+            $structured_data .= '   "name": "'.$sitename.'",'."\n\n";
+                 
+			$structured_data .= '   "logo": {'."\n";
+            $structured_data .= '   "@type": "ImageObject",'."\n";
+            $structured_data .= '   "url": "'.HTTPS.'images/google/1x1.png"'."\n";
+            $structured_data .= '   }'."\n";
+                 
+			$structured_data .= '  }'."\n\n";
+            $structured_data .= "\n\n\n".'}'."\n";
+            $structured_data .= '</script>'."\n";
 			
 			if (@file_exists(TITANIUM_THEMES_DIR.'/includes/facebook/Index/Index.php')): # Added by Ernest Buffington  
 	        include(TITANIUM_THEMES_DIR.'/includes/facebook/Index/Index.php');           # Load extra meta settings for Index
@@ -183,7 +268,10 @@ function title_and_meta_tags()
 	print $facebook_og_title;
 	endif;
 	
-	print '<title>'.$sitename.' '.$newpagetitle.'</title>';
+	print '<title>'.$sitename.' '.$newpagetitle.'</title>'."\n";
+	
+	print $structured_data;
+
 }
 
 /**

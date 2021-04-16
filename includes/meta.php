@@ -61,13 +61,17 @@ if(($metatags = $cache->load('metatags', 'config')) === false)
 /*****[END]********************************************
  [ Base:    Caching System                     v3.0.0 ]
  ******************************************************/
+
+$metastring .= '<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">'."\n";
+
 /**
  * Only add the meta tag below if the theme is bootstrap made.
  */
 if(defined('BOOTSTRAP'))
-$metastring .= '<meta name="viewport" content="width=device-width; maximum-scale=1.0; user-scalable=no" />'."\n";
+$metastring .= '<meta name="viewport" content="width=device-width, maximum-scale=1.0; user-scalable=no" />'."\n";
 else
-$metastring .= '<meta name="viewport" content="width=device-width; initial-scale=1.0" />'."\n";
+$metastring .= '<meta name="viewport" content="width=device-width, initial-scale=1.0" />'."\n";
+
 
 for($i=0,$j=count($metatags);$i<$j;$i++) 
 {
