@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e4723bfd1ee443a292fb647797d35313)]
+
 <h2>Changes in the US Version of PHP-Nuke Titanium</h2>
 
 <ul>
