@@ -145,7 +145,6 @@ echo '</div>';
 echo '<div align="center" style="padding-top:15px;">';
 echo '</div>';
 
-
 //echo '<div class="center">'.ads(3).'</div>';
 
 //echo '<a class="copyright" href="javascript: void(0)" onclick="window.open(\''.theme_dir.'copyrights.php\', \'windowname1\', \'width=800, height=500\'); return false;">';

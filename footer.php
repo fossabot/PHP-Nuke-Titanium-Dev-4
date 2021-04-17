@@ -221,9 +221,12 @@ $footmsg .= '<font size="5"><strong><a class="greatminds" href="modules.php?name
           $footmsg .= "</form>";
         }
 		# END updated 09/12/2019 Ernest Allen Buffington
-		
+
 	echo $footmsg;
     $has_echoed = 1;
+
+    global $screen_width, $screen_height, $theme_resolution;
+    print '<div align="center">Your Screen Resolution is '.$theme_resolution.'</div>';
 
 echo "\n<!-- START facebook connector -->\n";
 if ( defined('facebook') ):
