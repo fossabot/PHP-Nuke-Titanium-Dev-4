@@ -2562,29 +2562,10 @@ function previewAdminStory($automated, $year, $day, $month, $hour, $min, $subjec
     include(NUKE_BASE_DIR.'footer.php');
 }
 
-function postAdminStory($automated, 
-                             $year, 
-							  $day, 
-							$month, 
-							 $hour, 
-							  $min, 
-						  $subject, 
-						 $hometext, 
-						 $bodytext, 
-						    $topic, 
-							$catid, 
-							$ihome, 
-						$alanguage, 
-						    $acomm, 
-					   $topic_icon, 
-					       $writes, 
-						$pollTitle, 
-					   $optionText, 
-					      $assotop) 
+function postAdminStory($automated, $year, $day, $month, $hour, $min, $subject, $hometext, $bodytext, $topic, $catid, $ihome, $alanguage, $acomm, $topic_icon, $writes, $pollTitle, $optionText, $assotop) 
 {
     global $ultramode, $aid, $prefix, $db, $Version_Num, $admin_file;
-    
-	// Copyright (c) 2000-2005 by NukeScripts Network
+    // Copyright (c) 2000-2005 by NukeScripts Network
     if($Version_Num >= 6.6) 
 	{ 
 	  for ($i=0; $i<count($assotop); $i++) 
@@ -2592,8 +2573,8 @@ function postAdminStory($automated,
 	    $associated .= "$assotop[$i]-"; 
 	  } 
 	}
-
     // Copyright (c) 2000-2005 by NukeScripts Network
+    
 	if ($automated == 1) 
 	{
         if ($day < 10) 
@@ -2613,22 +2594,9 @@ function postAdminStory($automated,
         $notes = Fix_Quotes($notes);
         
 		// Copyright (c) 2000-2005 by NukeScripts Network
-        $new_sql  = "insert into ".$prefix."_autonews values (NULL, 
-		                                                   '$catid', 
-														     '$aid', 
-													     '$subject', 
-														    '$date', 
-													    '$hometext', 
-														'$bodytext', 
-														   '$topic', 
-														  '$author', 
-														   '$notes', 
-														   '$ihome', 
-													   '$alanguage', 
-													       '$acomm', 
-													  '$associated', 
-													  '$topic_icon', 
-													      '$writes')";
+        $new_sql  = "insert into ".$prefix."_autonews values (NULL, '$catid', '$aid', '$subject', '$date', '$hometext', '$bodytext', '$topic', '$author', '$notes', '$ihome', '$alanguage', '$acomm'";
+        $new_sql .= ", '$associated'";
+        $new_sql .= ", '$topic_icon', '$writes')";
         $result = $db->sql_query($new_sql);
         // Copyright (c) 2000-2005 by NukeScripts Network
 
@@ -2644,7 +2612,7 @@ function postAdminStory($automated,
     } 
 	else 
 	{
-        $subject  = Fix_Quotes($subject);
+        $subject = Fix_Quotes($subject);
         $hometext = Fix_Quotes($hometext);
         $bodytext = Fix_Quotes($bodytext);
     
@@ -2654,16 +2622,11 @@ function postAdminStory($automated,
             $timeStamp = time();
             $pollTitle = Fix_Quotes($pollTitle);
 
-            if(!$db->sql_query("INSERT INTO ".$prefix."_poll_desc VALUES (NULL, '$pollTitle', 
-			                                                                    '$timeStamp', 
-																				         '0', 
-																				'$alanguage', 
-																				         '0')")) 
-                                                                                  return;
+            if(!$db->sql_query("INSERT INTO ".$prefix."_poll_desc VALUES (NULL, '$pollTitle', '$timeStamp', '0', '$alanguage', '0')")) 
+            return;
             
 			$object = $db->sql_fetchrow($db->sql_query("SELECT pollID FROM ".$prefix."_poll_desc WHERE pollTitle='$pollTitle'"));
-            
-			$id = $object["pollID"];
+            $id = $object["pollID"];
             $id = intval($id);
             
 			for($i = 1, $maxi = count($optionText); $i <= $maxi; $i++) 
@@ -2671,17 +2634,8 @@ function postAdminStory($automated,
                 if(!empty($optionText[$i])) 
                 $optionText[$i] = Fix_Quotes($optionText[$i]);
                 
-				if(!$db->sql_query("INSERT INTO ".$prefix."_poll_data (pollID, 
-				                                                   optionText, 
-																  optionCount, 
-																       voteID) 
-																	    
-												  VALUES 
-															('$id', 
-												 '$optionText[$i]', 
-												               '0', 
-															  '$i')")) 
-                                                  return;
+				if(!$db->sql_query("INSERT INTO ".$prefix."_poll_data (pollID, optionText, optionCount, voteID) VALUES ('$id', '$optionText[$i]', '0', '$i')")) 
+                return;
             }
         } 
 		else 
@@ -2690,42 +2644,17 @@ function postAdminStory($automated,
             $id = 0;
         }
         
-		
-		// Copyright (c) 2000-2005 by NukeScripts Network 
-        $new_sql  = "insert into ".$prefix."_stories values (NULL, 
-		                                                 '$catid', 
-														   '$aid', 
-													   '$subject', 
-													        now(),
-														    now(),		 
-													  '$hometext', 
-													  '$bodytext', 
-													          '0', 
-															  '0', 
-														 '$topic', 
-														   '$aid', 
-														 '$notes', 
-														 '$ihome', 
-													 '$alanguage', 
-													     '$acomm', 
-													   '$haspoll', 
-													        '$id', 
-															  '0', 
-															  '0', 
-													'$associated', 
-													'$topic_icon', 
-													    '$writes')";
+		// Copyright (c) 2000-2005 by NukeScripts Network
+        $new_sql  = "insert into ".$prefix."_stories values (NULL, '$catid', '$aid', '$subject', now(), '$hometext', '$bodytext', '0', '0', '$topic', '$aid', '$notes', '$ihome', '$alanguage', '$acomm', '$haspoll', '$id', '0', '0'";
+        $new_sql .= ", '$associated'";
+        $new_sql .= ", '$topic_icon', '$writes')";
         $result = $db->sql_query($new_sql);
-		
         // Copyright (c) 2000-2005 by NukeScripts Network
 
         $result = $db->sql_query("select sid from ".$prefix."_stories WHERE title='$subject' order by time DESC limit 0,1");
-        
-		list($artid) = $db->sql_fetchrow($result);
-        
-		$artid = intval($artid);
-        
-		$db->sql_query("UPDATE ".$prefix."_poll_desc SET artid='$artid' WHERE pollID='$id'");
+        list($artid) = $db->sql_fetchrow($result);
+        $artid = intval($artid);
+        $db->sql_query("UPDATE ".$prefix."_poll_desc SET artid='$artid' WHERE pollID='$id'");
        
 	    if (!$result) 
         exit();
