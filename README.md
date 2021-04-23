@@ -1,6 +1,7 @@
 # The 86it Developers Network
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e4723bfd1ee443a292fb647797d35313)](https://app.codacy.com/gh/ernestbuffington/PHP-Nuke-Titanium-Dev-4?utm_source=github.com&utm_medium=referral&utm_content=ernestbuffington/PHP-Nuke-Titanium-Dev-4&utm_campaign=Badge_Grade_Settings)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fernestbuffington%2FPHP-Nuke-Titanium-Dev-4.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fernestbuffington%2FPHP-Nuke-Titanium-Dev-4?ref=badge_shield)
 
 Powered by: PHP-Nuke Titanium Dev 4<br />
 Core Engine: PHP-Nuke Evolution Xtreme 2.0.9f<br />
@@ -104,3 +105,7 @@ If you need help with an install do not hesitate to submit a request by clicking
 <h2>Warranty</h2>
 
 <p>Because PHP-Nuke Titanium is licensed free of charge, there is no warranty for the package, to the extent permitted by applicable law. Except when otherwise stated in writing, the PHP-Nuke Titanium Team provides PHP-Nuke Titanium &quot;as is&quot; without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the package is with you. Should the package prove defective, you assume the cost of all necessary servicing, repair, or correction.</p>
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fernestbuffington%2FPHP-Nuke-Titanium-Dev-4.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fernestbuffington%2FPHP-Nuke-Titanium-Dev-4?ref=badge_large)
